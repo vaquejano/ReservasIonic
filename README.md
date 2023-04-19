@@ -1,2 +1,2 @@
 # ReservasIonic
-Projeto de trabalho
+Projeto do trabalho
