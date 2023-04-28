@@ -1,0 +1,7 @@
+{
+  "name": "codigoionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
