@@ -1,13 +1,30 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">usuario</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <ion-item style="margin-bottom: 5px">
+    <ion-label position="floating" stacked> CPF </ion-label>
+    <ion-input [(ngModel)]="usuario.cpf_usuario"></ion-input>
+  </ion-item>
+
+  <ion-item style="margin-bottom: 5px">
+    <ion-label position="floating" stacked> SENHA </ion-label>
+    <ion-input [(ngModel)]="usuario.senha_usuario"></ion-input>
+  </ion-item>
+
+  <ion-button color="primary">
+    <ion-icon slot="start" name="airplane-outline"></ion-icon>
+    ENTRAR
+  </ion-button>
+  <BR>
+
+  <ion-button color="danger" routerLink="/cadastrousuario">
+    <ion-icon slot="start" name="airplane-outline"></ion-icon>
+    CRIAR CONTA
+  </ion-button>
+
 </ion-content>
