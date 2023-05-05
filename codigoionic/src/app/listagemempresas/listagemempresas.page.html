@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listagem das Empresas</ion-title>
+  </ion-toolbar>
+
+  <!-- <ion-grid>
+    <ion-row class="ion-align-items-center cor-letra">
+      <ion-slides pager="false" [options]="slideOpts">
+        <ion-slide *ngFor="let categ of categs; let ix = index"
+          [ngClass]="categ.codigo == selected ? 'ativado' : 'desativado'" (click)="setSelected(categ.codigo)">
+          {{ categ.nome }}
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid> -->
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-row>
+    <ion-col size="6" *ngFor="let descricaoempresa of descricaoempresas; let ix = index" [hidden]="!descricaoempresa.visibled"
+      (click)="goDescricaoempresa(descricaoempresa)">
+      <ion-row>
+        <ion-col size="12" class="card-descricaoempresa">
+
+          <ion-row>
+            <ion-col size="12" class="img-descricaoempresa">
+              <img [src]="pathImgs + descricaoempresa.imagem[0]">
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-text-center fonte">
+            <ion-col>
+              {{ descricaoempresa.nome }}
+
+
+            </ion-col>
+          </ion-row>
+

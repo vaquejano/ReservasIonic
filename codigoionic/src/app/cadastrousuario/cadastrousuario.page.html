@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
     <ion-title>cadastrousuario</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -32,7 +35,7 @@
   </ion-button>
   <BR>
 
-  <ion-button color="danger" routerLink="/usuario" (click)="save()">
+  <ion-button color="danger" routerLink="/usuario">
     <ion-icon slot="start" name="airplane-outline"></ion-icon>
     CRIAR CONTA
   </ion-button>

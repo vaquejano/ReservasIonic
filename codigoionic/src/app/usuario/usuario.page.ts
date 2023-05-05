@@ -17,24 +17,9 @@ export class UsuarioPage implements OnInit {
     senha_usuario : ''
   }
 
-  constructor(private service: DadosService) { }
+  constructor() { }
 
-  public save(){
-    let newObj = {
-      userId  : 10, 
-      id      : 101, 
-      title   : 'Novo objeto', 
-      body    : 'Descrição do novo objeto'
-    }
-
-    this.service.postDados(newObj).then(dados => {
-      console.log('SALVO');
-      console.log(dados);
-
-    })
-
-  }
-
+  
   ngOnInit(): void {
   }
 

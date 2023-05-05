@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>usuario</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>Tela de login</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +19,7 @@
     <ion-input [(ngModel)]="usuario.senha_usuario"></ion-input>
   </ion-item>
 
-  <ion-button color="primary">
+  <ion-button color="primary" routerLink="/listagemempresas">
     <ion-icon slot="start" name="airplane-outline"></ion-icon>
     ENTRAR
   </ion-button>
@@ -25,6 +28,11 @@
   <ion-button color="danger" routerLink="/cadastrousuario">
     <ion-icon slot="start" name="airplane-outline"></ion-icon>
     CRIAR CONTA
+  </ion-button>
+<br>
+  <ion-button color="danger">
+    <ion-icon slot="start" name="airplane-outline"></ion-icon>
+    Esqueci a Senha
   </ion-button>
 
 </ion-content>

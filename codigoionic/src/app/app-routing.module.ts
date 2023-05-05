@@ -30,6 +30,14 @@ const routes: Routes = [
     path: 'dados',
     loadChildren: () => import('./dados/dados.module').then( m => m.DadosPageModule)
   },
+  {
+    path: 'listagemempresas',
+    loadChildren: () => import('./listagemempresas/listagemempresas.module').then( m => m.ListagemempresasPageModule)
+  },
+  {
+    path: 'descricaoempresa',
+    loadChildren: () => import('./descricaoempresa/descricaoempresa.module').then( m => m.DescricaoempresaPageModule)
+  },
 
 ];
 
