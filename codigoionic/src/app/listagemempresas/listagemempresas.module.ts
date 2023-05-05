@@ -8,6 +8,8 @@ import { ListagemempresasPageRoutingModule } from './listagemempresas-routing.mo
 
 import { ListagemempresasPage } from './listagemempresas.page';
 
+//teste
+
 @NgModule({
   imports: [
     CommonModule,
