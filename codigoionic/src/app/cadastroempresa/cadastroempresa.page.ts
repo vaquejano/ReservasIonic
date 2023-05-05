@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroempresaPage implements OnInit {
 
+
+  public empresa = {
+    cod_empresa : 0,
+    nome_fantasia : '',
+    cnpj_empresa : 0,
+    email_empresa : '',
+    porte_empresa : '',
+    ramo_empresa : '',
+    senha_empresa : ''
+  }
+
   constructor() { }
 
   ngOnInit() {

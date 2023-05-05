@@ -26,7 +26,23 @@ const routes: Routes = [
   {
     path: 'cadastroempresa',
     loadChildren: () => import('./cadastroempresa/cadastroempresa.module').then( m => m.CadastroempresaPageModule)
+  },  {
+    path: 'dados',
+    loadChildren: () => import('./dados/dados.module').then( m => m.DadosPageModule)
   },
+  {
+    path: 'listagemempresas',
+    loadChildren: () => import('./listagemempresas/listagemempresas.module').then( m => m.ListagemempresasPageModule)
+  },
+  {
+    path: 'descricaoempresa',
+    loadChildren: () => import('./descricaoempresa/descricaoempresa.module').then( m => m.DescricaoempresaPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+
 ];
 
 @NgModule({

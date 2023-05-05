@@ -1,13 +1,33 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
     <ion-title>empresa</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">empresa</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+
+  <ion-item style="margin-bottom: 5px">
+    <ion-label position="floating" stacked> CNPJ </ion-label>
+    <ion-input [(ngModel)]="empresa.cnpj_empresa"></ion-input>
+  </ion-item>
+
+  <ion-item style="margin-bottom: 5px">
+    <ion-label position="floating" stacked> Senha </ion-label>
+    <ion-input [(ngModel)]="empresa.senha_empresa"></ion-input>
+  </ion-item>
+
+  <ion-button color="primary">
+    <ion-icon slot="start" name="airplane-outline"></ion-icon>
+    ENTRAR
+  </ion-button>
+  <BR>
+
+  <ion-button color="danger" routerLink="/cadastroempresa">
+    <ion-icon slot="start" name="airplane-outline"></ion-icon>
+    CRIAR CONTA
+  </ion-button>
 </ion-content>
