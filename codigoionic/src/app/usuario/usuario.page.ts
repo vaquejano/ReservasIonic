@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { DadosService } from '../api/dados.service';
 
 @Component({
   selector: 'app-usuario',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioPage implements OnInit {
 
+
+  public usuario = {
+    cod_usuario : 0,
+    cpf_usuario : 0,
+    email_usuario : '',
+    nome_usuario : '',
+    senha_usuario : ''
+  }
+
   constructor() { }
 
-  ngOnInit() {
+  
+  ngOnInit(): void {
   }
 
 }
