@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'descricaoempresa',
     loadChildren: () => import('./descricaoempresa/descricaoempresa.module').then( m => m.DescricaoempresaPageModule)
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
 
 ];
 
