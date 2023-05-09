@@ -3,14 +3,14 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
       </ion-buttons>
-    <ion-title>Tela de login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   
   <ion-item style="margin-bottom: 5px">
-    <ion-label position="floating" stacked> CPF </ion-label>
+    <ion-label position="floating" stacked> CPF OU E-MAIL </ion-label>
     <ion-input [(ngModel)]="usuario.cpf_usuario"></ion-input>
   </ion-item>
 
@@ -25,7 +25,7 @@
   </ion-button>
   <BR>
 
-  <ion-button color="danger" routerLink="/cadastrousuario">
+  <ion-button color="primary" routerLink="/cadastrousuario">
     <ion-icon slot="start" name="airplane-outline"></ion-icon>
     CRIAR CONTA
   </ion-button>

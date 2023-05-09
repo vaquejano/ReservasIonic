@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
       </ion-buttons>
-    <ion-title>empresa</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
   
 
   <ion-item style="margin-bottom: 5px">
-    <ion-label position="floating" stacked> CNPJ </ion-label>
+    <ion-label position="floating" stacked> CNPJ OU E-MAIL </ion-label>
     <ion-input [(ngModel)]="empresa.cnpj_empresa"></ion-input>
   </ion-item>
 
@@ -26,7 +26,7 @@
   </ion-button>
   <BR>
 
-  <ion-button color="danger" routerLink="/cadastroempresa">
+  <ion-button color="primary" routerLink="/cadastroempresa">
     <ion-icon slot="start" name="airplane-outline"></ion-icon>
     CRIAR CONTA
   </ion-button>
