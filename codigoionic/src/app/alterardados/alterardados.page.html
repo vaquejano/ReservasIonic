@@ -1,9 +1,9 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
       </ion-buttons>
-    <ion-title>cadastrousuario</ion-title>
+    <ion-title>Alterar Dados</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -29,9 +29,9 @@
     <ion-input [(ngModel)]="usuario.senha_usuario"></ion-input>
   </ion-item>
 
-  <ion-button color="primary" routerLink="/usuario">
+  <ion-button color="primary" routerLink="/perfil">
     <ion-icon slot="start" name="airplane-outline"></ion-icon>
-    CADASTRAR
+    Alterar
   </ion-button>
   
 

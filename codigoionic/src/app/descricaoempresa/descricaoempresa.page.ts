@@ -10,13 +10,16 @@ export class DescricaoempresaPage {
 
   public pathImgs = '../../assets/img/';
 
+  public reservas = 0;
+
   public descricaoempresa = {
     codigo: 0,
     categoria: 0,
     nome: '',
     descricao: '',
     imagem: [],
-    visibled: false
+    visibled: false,
+    preco: 10
   }
 
   constructor(private route: ActivatedRoute) { 
@@ -26,4 +29,14 @@ export class DescricaoempresaPage {
   }
 
   
+  public add(){
+    this.reservas += 1;
+  }
+
+  public remove(){
+    if(this.reservas > 0){
+      this.reservas -= 1;
+    }
+  }
+
 }
