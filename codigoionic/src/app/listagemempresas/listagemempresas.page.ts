@@ -10,12 +10,7 @@ export class ListagemempresasPage {
 
     public selected = 0;
 
-    // public categs = [
-    //   { codigo: 1, nome: 'Empresa 1'},
-    //   { codigo: 2, nome: 'Empresa 2'},
-    //   { codigo: 3, nome: 'Empresa 3'},
-    //   { codigo: 4, nome: 'Empresa 4'},
-    // ];
+    
 
     public pathImgs = '../../assets/img/';
 
@@ -25,11 +20,6 @@ export class ListagemempresasPage {
       { codigo: 3, categoria: 1, nome: 'Empresa 3', descricao: 'Restaurante Japones', visibled: false, imagem: ['empresa3.jpg', 'empresaa3.jpg']},
       { codigo: 4, categoria: 1, nome: 'Empresa 4', descricao: 'Restaurante Chines', visibled: false, imagem: ['empresa4.jpg', 'empresaa4.jpg']},
     ]
-
-
-    // public slideOpts = {
-    //   slidesPerView: 1
-    // }
 
     
 

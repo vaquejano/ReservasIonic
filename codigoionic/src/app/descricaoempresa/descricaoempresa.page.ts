@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-descricaoempresa',
@@ -22,10 +24,20 @@ export class DescricaoempresaPage {
     preco: 10
   }
 
-  constructor(private route: ActivatedRoute) { 
+  constructor(private route: ActivatedRoute, public alertController: AlertController) { 
     this.route.queryParams.subscribe(params=>{
       this.descricaoempresa = params['descricaoempresa']
     });
+  }
+
+
+  async mostrarAlerta() {
+    const alerta = await this.alertController.create({
+      header: 'Foi Reservado Com Sucesso!',
+      buttons: ['OK']
+    });
+  
+    await alerta.present();
   }
 
   
