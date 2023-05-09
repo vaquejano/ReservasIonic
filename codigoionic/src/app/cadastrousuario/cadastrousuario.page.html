@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>cadastrousuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-item style="margin-bottom: 5px">
+    <ion-label position="floating" stacked> CPF </ion-label>
+    <ion-input [(ngModel)]="usuario.cpf_usuario"></ion-input>
+  </ion-item>
+
+  <ion-item style="margin-bottom: 5px">
+    <ion-label position="floating" stacked> EMAIL </ion-label>
+    <ion-input [(ngModel)]="usuario.email_usuario"></ion-input>
+  </ion-item>
+
+  <ion-item style="margin-bottom: 5px">
+    <ion-label position="floating" stacked> Nome </ion-label>
+    <ion-input [(ngModel)]="usuario.nome_usuario"></ion-input>
+  </ion-item>
+
+  <ion-item style="margin-bottom: 5px">
+    <ion-label position="floating" stacked> SENHA </ion-label>
+    <ion-input [(ngModel)]="usuario.senha_usuario"></ion-input>
+  </ion-item>
+
+  <ion-button color="primary">
+    <ion-icon slot="start" name="airplane-outline"></ion-icon>
+    ENTRAR
+  </ion-button>
+  <BR>
+
+  <ion-button color="danger" routerLink="/usuario">
+    <ion-icon slot="start" name="airplane-outline"></ion-icon>
+    CRIAR CONTA
+  </ion-button>
+
+
+</ion-content>
