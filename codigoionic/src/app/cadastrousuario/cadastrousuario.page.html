@@ -29,10 +29,17 @@
     <ion-input [(ngModel)]="usuario.senha_usuario"></ion-input>
   </ion-item>
 
-  <ion-button color="primary" routerLink="/usuario">
+  <ion-button id="present-alert" color="primary"> 
     <ion-icon slot="start" name="airplane-outline"></ion-icon>
     CADASTRAR
   </ion-button>
+    <ion-alert
+    routerLink="/usuario"
+    trigger="present-alert"
+    header="Finalizado"
+    message="Cadastro concluído!"
+    [buttons]="alertButtons"
+    ></ion-alert>
   
 
 

@@ -16,6 +16,8 @@ export class CadastrousuarioPage implements OnInit {
     senha_usuario : ''
   }
 
+  public alertButtons = ['OK'];
+
   constructor() { }
 
   
