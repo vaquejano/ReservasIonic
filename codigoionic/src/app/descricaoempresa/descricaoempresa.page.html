@@ -10,6 +10,15 @@
 </ion-header>
 
 <ion-content>
+  <ion-row class="ion-text-end">
+  <ion-col>
+    <ion-button color="primary" routerLink="/cardapio">
+      <ion-icon name="restaurant-outline"></ion-icon>
+        Cardápio
+    </ion-button>
+  </ion-col>
+  </ion-row>
+
   <ion-row>
     <ion-col size="12" class="img-lanche" >
       <img [src]="pathImgs + descricaoempresa.imagem[0]">

@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+    
+    
+    <ion-row class="ion-align-items-center">
+      <ion-col size="3">
+    <ion-button color="primary" routerLink="/perfilempresa">
+      <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+      Perfil
+    </ion-button>
+  </ion-col>
+
+  <ion-col size="6" class="ion-text-center">
+    {{ dados.nome}}
+   </ion-col>
+
+  <ion-col size-="3" class="ion-text-end">
+    <ion-button color="primary" routerLink="/home">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      Sair
+    </ion-button>
+  </ion-col>
+  </ion-row>
+
+  </ion-toolbar>
+
+
+</ion-header>
+
+
+
+<ion-content>
+</ion-content>
+          
+

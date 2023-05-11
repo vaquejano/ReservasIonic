@@ -13,9 +13,9 @@ export class PerfilPage {
   constructor() {
     // Aqui você pode buscar os dados do usuário do seu banco de dados ou de outro serviço.
     // Por enquanto, vamos preencher os campos com alguns dados fictícios.
-    this.nome = 'nome';
-    this.email = 'joao.silva@email.com';
-    this.telefone = '(00) 00000-0000';
+    this.nome = '';
+    this.email = '';
+    this.telefone = '';
   }
 
   alterarDados() {

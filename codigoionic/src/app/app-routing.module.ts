@@ -45,6 +45,14 @@ const routes: Routes = [
     path: 'alterardados',
     loadChildren: () => import('./alterardados/alterardados.module').then( m => m.AlterardadosPageModule)
   },
+  {
+    path: 'listagemreservas',
+    loadChildren: () => import('./listagemreservas/listagemreservas.module').then( m => m.ListagemreservasPageModule)
+  },
+  {
+    path: 'perfilempresa',
+    loadChildren: () => import('./perfilempresa/perfilempresa.module').then( m => m.PerfilempresaPageModule)
+  },
 
 
 ];
