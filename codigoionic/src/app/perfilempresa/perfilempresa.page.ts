@@ -15,6 +15,7 @@ export class PerfilempresaPage implements OnInit {
   ramo_empresa: string;
   senha_empresa: string;
   dados: any;
+ 
 
   constructor(private dadosservice: DadosService) {
     // Aqui você pode buscar os dados do usuário do seu banco de dados ou de outro serviço.
@@ -25,10 +26,13 @@ export class PerfilempresaPage implements OnInit {
     this.porte_empresa = '';
     this.ramo_empresa = '';
     this.senha_empresa = '';
+    this.dados = dadosservice;
   }
+
+
   ngOnInit() {
 
-    this.dados.get('empresa').then((empresa: { nome_fantasia: string; cnpj: number; email: string; porte_empresa: string; ramo_empresa: string; }) => {
+    this.dados.getAllDados('empresas').then((empresa: { nome_fantasia: string; cnpj: number; email: string; porte_empresa: string; ramo_empresa: string; }) => {
       this.nome_fantasia = empresa.nome_fantasia;
       this.cnpj = empresa.cnpj;
       this.email = empresa.email;

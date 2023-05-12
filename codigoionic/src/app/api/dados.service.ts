@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DadosService {
 
-    private host = 'localhost:8080/api/'
+    private host = 'localhost:8080/api/empresas'
 
   constructor(private http: HttpClient) { }
 
