@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConexaousuarioService } from '../conexaousuario/conexaousuario.service';
 
 @Component({
   selector: 'app-perfil',
@@ -6,21 +7,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage {
-  nome: string;
-  email: string;
-  telefone: string;
+  nome_usuario: string;
+  email_usuario: string;
+  cpf_usuario: string;
+  senha_usuario: string;
+  dados: any;
 
-  constructor() {
+  constructor(private conexaousuarioservice: ConexaousuarioService) {
     // Aqui você pode buscar os dados do usuário do seu banco de dados ou de outro serviço.
     // Por enquanto, vamos preencher os campos com alguns dados fictícios.
-    this.nome = '';
-    this.email = '';
-    this.telefone = '';
+    this.nome_usuario = '';
+    this.email_usuario = '';
+    this.cpf_usuario = '';
+    this.senha_usuario = '';
   }
 
-  alterarDados() {
-    // Aqui você pode abrir uma nova página ou modal para permitir que o usuário altere seus dados.
-    // Por enquanto, vamos apenas exibir uma mensagem no console.
-    console.log('Alterar dados...');
+  getAllDados() {
+    this.dados.getAllDados('usuarios').then((usuario: { nome_usuario: string; cpf_usuario: string; email_usuario: string; senha_usuario: string; }) => {
+      this.nome_usuario = usuario.nome_usuario;
+      this.email_usuario = usuario.email_usuario;
+      this.cpf_usuario = usuario.cpf_usuario;
+      this.senha_usuario = usuario.senha_usuario;
+
+    });
+
   }
 }

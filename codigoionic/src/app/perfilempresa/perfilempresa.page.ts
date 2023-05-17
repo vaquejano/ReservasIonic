@@ -6,11 +6,11 @@ import { DadosService } from '../api/dados.service';
   templateUrl: './perfilempresa.page.html',
   styleUrls: ['./perfilempresa.page.scss'],
 })
-export class PerfilempresaPage implements OnInit {
+export class PerfilempresaPage {
 
   nome_fantasia: string;
-  cnpj: number;
-  email: string;
+  cnpj_empresa: number;
+  email_empresa: string;
   porte_empresa: string;
   ramo_empresa: string;
   senha_empresa: string;
@@ -21,8 +21,8 @@ export class PerfilempresaPage implements OnInit {
     // Aqui você pode buscar os dados do usuário do seu banco de dados ou de outro serviço.
     // Por enquanto, vamos preencher os campos com alguns dados fictícios.
     this.nome_fantasia = '';
-    this.cnpj = 0;
-    this.email = '';
+    this.cnpj_empresa = 0;
+    this.email_empresa = '';
     this.porte_empresa = '';
     this.ramo_empresa = '';
     this.senha_empresa = '';
@@ -30,12 +30,12 @@ export class PerfilempresaPage implements OnInit {
   }
 
 
-  ngOnInit() {
+  getAllDados() {
 
-    this.dados.getAllDados('empresas').then((empresa: { nome_fantasia: string; cnpj: number; email: string; porte_empresa: string; ramo_empresa: string; }) => {
+    this.dados.get('empresas').then((empresa: { nome_fantasia: string; cnpj_empresa: number; email_empresa: string; porte_empresa: string; ramo_empresa: string; }) => {
       this.nome_fantasia = empresa.nome_fantasia;
-      this.cnpj = empresa.cnpj;
-      this.email = empresa.email;
+      this.cnpj_empresa = empresa.cnpj_empresa;
+      this.email_empresa = empresa.email_empresa;
       this.porte_empresa = empresa.porte_empresa;
       this.ramo_empresa = empresa.ramo_empresa;
   });

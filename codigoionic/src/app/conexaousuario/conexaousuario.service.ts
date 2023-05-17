@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DadosService {
+export class ConexaousuarioService {
 
-  private host = 'localhost:8080/api/empresas'
+  private host = 'localhost:8080/api/usuarios'
 
   constructor(private http: HttpClient) { }
 
@@ -76,5 +76,8 @@ export class DadosService {
     })
   }
 }
+
+
+
 
 

@@ -53,6 +53,10 @@ const routes: Routes = [
     path: 'perfilempresa',
     loadChildren: () => import('./perfilempresa/perfilempresa.module').then( m => m.PerfilempresaPageModule)
   },
+  {
+    path: 'alterardadosempresa',
+    loadChildren: () => import('./alterardadosempresa/alterardadosempresa.module').then( m => m.AlterardadosempresaPageModule)
+  },
 
 
 ];

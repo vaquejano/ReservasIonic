@@ -15,25 +15,30 @@
 
     <ion-card-content>
       <ion-item>
-        <ion-label>Nome:</ion-label>
-        <ion-input [(ngModel)]="nome"></ion-input>
+        <ion-label> Nome: </ion-label>
+        <ion-text> {{ nome_usuario }} </ion-text>
       </ion-item>
 
       <ion-item>
-        <ion-label>E-mail:</ion-label>
-        <ion-input [(ngModel)]="email"></ion-input>
+        <ion-label> E-mail: </ion-label>
+        <ion-text> {{ email_usuario }} </ion-text>
       </ion-item>
 
       <ion-item>
-        <ion-label>Telefone:</ion-label>
-        <ion-input [(ngModel)]="telefone"></ion-input>
+        <ion-label> CPF: </ion-label>
+        <ion-text> {{ cpf_usuario }} </ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label> Senha: </ion-label>
+        <ion-text> {{ senha_usuario }} </ion-text>
       </ion-item>
     </ion-card-content>
   </ion-card>
 
   <ion-row>
     <ion-col size="6">
-      <ion-button color="primary" routerLink="/alterardados" (click)="alterarDados()">
+      <ion-button color="primary" routerLink="/alterardados">
         <ion-icon slot="start" name="airplane-outline"></ion-icon>
         Alterar dados
       </ion-button>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DadosService } from '../api/dados.service';
 
 @Component({
   selector: 'app-listagemreservas',
@@ -8,19 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListagemreservasPage implements OnInit {
 
-  public dados = {
-    codigo: 0,
-    nome : '',
-    imagem: []
+  nome_fantasia: string;
+  dados: any;
+  
+  
+
+  constructor(private dadosservice: DadosService) {
+
+    this.nome_fantasia = 'nome_fantasia';
+    this.dados = dadosservice;
 
   }
 
-  
-  
-
-  constructor() {}
-
   ngOnInit() {
+
+    this.dados.getAllDados('empresas').then((empresa: { nome_fantasia: string;}) => {
+      this.nome_fantasia = empresa.nome_fantasia;
+    });
   }
   
 }
