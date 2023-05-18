@@ -9,7 +9,7 @@ import { ConexaousuarioService } from '../conexaousuario/conexaousuario.service'
 export class PerfilPage {
   nome_usuario: string;
   email_usuario: string;
-  cpf_usuario: string;
+  cpf_usuario: number;
   senha_usuario: string;
   dados: any;
 
@@ -18,12 +18,12 @@ export class PerfilPage {
     // Por enquanto, vamos preencher os campos com alguns dados fictícios.
     this.nome_usuario = '';
     this.email_usuario = '';
-    this.cpf_usuario = '';
+    this.cpf_usuario = 0;
     this.senha_usuario = '';
   }
 
   getAllDados() {
-    this.dados.getAllDados('usuarios').then((usuario: { nome_usuario: string; cpf_usuario: string; email_usuario: string; senha_usuario: string; }) => {
+    this.dados.getAllDados('usuarios').then((usuario: { nome_usuario: string; cpf_usuario: number; email_usuario: string; senha_usuario: string; }) => {
       this.nome_usuario = usuario.nome_usuario;
       this.email_usuario = usuario.email_usuario;
       this.cpf_usuario = usuario.cpf_usuario;

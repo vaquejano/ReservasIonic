@@ -10,11 +10,13 @@ export class AlterardadosempresaPage{
   public empresa = {
     nome_fantasia : '',
     email_empresa : '',
+    nome_responsavel : '',
+    endereco_empresa : '',
     senha_empresa : ''
   }
 
   constructor() { }
 
-  
+
 
 }

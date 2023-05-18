@@ -1,34 +1,44 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="fundo">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
       </ion-buttons>
-    <ion-title>Alterar Dados</ion-title>
+    <ion-title>Alterar dados</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="fundo">
 
-  <ion-item style="margin-bottom: 5px">
+  <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Nome Fantasia </ion-label>
     <ion-input [(ngModel)]="empresa.nome_fantasia"></ion-input>
   </ion-item>
 
-   <ion-item style="margin-bottom: 5px">
-    <ion-label position="floating" stacked> EMAIL </ion-label>
+   <ion-item style="margin-bottom: 5px" class="fundo">
+    <ion-label position="floating" stacked> E-mail </ion-label>
     <ion-input [(ngModel)]="empresa.email_empresa"></ion-input>
   </ion-item>
 
-  <ion-item style="margin-bottom: 5px">
-    <ion-label position="floating" stacked> SENHA </ion-label>
+  <ion-item style="margin-bottom: 5px" class="fundo">
+    <ion-label position="floating" stacked> Nome do responsável </ion-label>
+    <ion-input [(ngModel)]="empresa.nome_responsavel"></ion-input>
+  </ion-item>
+
+  <ion-item style="margin-bottom: 5px" class="fundo">
+    <ion-label position="floating" stacked> Endereço </ion-label>
+    <ion-input [(ngModel)]="empresa.endereco_empresa"></ion-input>
+  </ion-item>
+
+  <ion-item style="margin-bottom: 5px" class="fundo">
+    <ion-label position="floating" stacked> Senha </ion-label>
     <ion-input [(ngModel)]="empresa.senha_empresa"></ion-input>
   </ion-item>
 
   <ion-button color="primary" routerLink="/perfilempresa">
-    <ion-icon slot="start" name="airplane-outline"></ion-icon>
+    <ion-icon slot="start" name="checkbox-outline"></ion-icon>
     Alterar
   </ion-button>
-  
+
 
 
 </ion-content>

@@ -11,14 +11,17 @@ export class CadastroempresaPage implements OnInit {
   public empresa = {
     cod_empresa : 0,
     nome_fantasia : '',
-    cnpj_empresa : 0,
+    cnpj_empresa : '',
     email_empresa : '',
+    nome_responsavel: '',
     porte_empresa : '',
     ramo_empresa : '',
     senha_empresa : ''
   }
 
   constructor() { }
+
+  public alertButtons = ['OK'];
 
   ngOnInit() {
   }

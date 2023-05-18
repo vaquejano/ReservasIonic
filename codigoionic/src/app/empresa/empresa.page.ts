@@ -10,7 +10,7 @@ export class EmpresaPage implements OnInit {
 
   public empresa = {
     cod_empresa : 0,
-    cnpj_empresa : 0,
+    cnpj_empresa : '',
     senha_empresa : ''
   }
 

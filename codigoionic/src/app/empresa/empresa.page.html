@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="fundo">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
       </ion-buttons>
@@ -7,27 +7,33 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  
+<ion-content [fullscreen]="true" class="fundo">
 
-  <ion-item style="margin-bottom: 5px">
+
+  <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> CNPJ OU E-MAIL </ion-label>
     <ion-input [(ngModel)]="empresa.cnpj_empresa"></ion-input>
   </ion-item>
 
-  <ion-item style="margin-bottom: 5px">
+  <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Senha </ion-label>
     <ion-input [(ngModel)]="empresa.senha_empresa"></ion-input>
   </ion-item>
 
   <ion-button color="primary" routerLink="/listagemreservas">
-    <ion-icon slot="start" name="airplane-outline"></ion-icon>
+    <ion-icon slot="start" name="enter-outline"></ion-icon>
     ENTRAR
   </ion-button>
   <BR>
 
   <ion-button color="primary" routerLink="/cadastroempresa">
-    <ion-icon slot="start" name="airplane-outline"></ion-icon>
+    <ion-icon slot="start" name="duplicate-outline"></ion-icon>
     CRIAR CONTA
   </ion-button>
+  <br>
+  <ion-button color="danger">
+    <ion-icon slot="start" name="alert-circle-outline"></ion-icon>
+    Esqueci a Senha
+  </ion-button>
+
 </ion-content>

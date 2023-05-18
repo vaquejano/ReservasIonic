@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="fundo">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -9,12 +9,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="fundo">
   <ion-row class="ion-text-end">
   <ion-col>
     <ion-button color="primary" routerLink="/cardapio">
       <ion-icon name="restaurant-outline"></ion-icon>
-        Cardápio
+         Cardápio
     </ion-button>
   </ion-col>
   </ion-row>
@@ -31,10 +31,8 @@
     </ion-col>
   </ion-row>
 </ion-content>
-  
 
-
-<ion-footer>
+<ion-footer style="background-color: #f1f0ec;">
   <ion-row class="ion-text-end">
   <ion-col size="10.5" class="fonte">
     <b>Escolha a quantidade de lugares!</b>
@@ -44,7 +42,7 @@
     <ion-col>
       <ion-label class="custom-text"> <b>{{ descricaoempresa.preco }}</b> </ion-label>
     </ion-col>
-    
+
     <ion-col size="6">
       <ion-row class="ion-align-items-center">
         <ion-col size="4" class="ion-text-center">
@@ -52,23 +50,21 @@
             <ion-icon name="add"></ion-icon>
           </ion-button>
         </ion-col>
-      
+
         <ion-col size="4" class="ion-text-center">
           <ion-input type="number" [(ngModel)]="reservas"></ion-input>
         </ion-col>
-    
+
         <ion-col size="4" class="ion-text-center">
           <ion-button (click)="remove()">
             <ion-icon name="remove"></ion-icon>
           </ion-button>
         </ion-col>
 
-        
-
         <ion-col class="ion-text-end">
           <ion-button color="primary" routerLink="/listagemempresas" (click)="mostrarAlerta()">
-            <ion-icon  name="person-circle-outline"></ion-icon>
-            RESERVAR
+            <ion-icon  name="checkbox-outline"></ion-icon>
+             RESERVAR
           </ion-button>
         </ion-col>
       </ion-row>

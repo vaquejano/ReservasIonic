@@ -11,11 +11,13 @@ export class PerfilempresaPage {
   nome_fantasia: string;
   cnpj_empresa: number;
   email_empresa: string;
+  nome_responsavel: string;
+  endereco_empresa: string;
   porte_empresa: string;
   ramo_empresa: string;
   senha_empresa: string;
   dados: any;
- 
+
 
   constructor(private dadosservice: DadosService) {
     // Aqui você pode buscar os dados do usuário do seu banco de dados ou de outro serviço.
@@ -23,6 +25,8 @@ export class PerfilempresaPage {
     this.nome_fantasia = '';
     this.cnpj_empresa = 0;
     this.email_empresa = '';
+    this.nome_responsavel = '',
+    this.endereco_empresa = '',
     this.porte_empresa = '';
     this.ramo_empresa = '';
     this.senha_empresa = '';
@@ -32,10 +36,12 @@ export class PerfilempresaPage {
 
   getAllDados() {
 
-    this.dados.get('empresas').then((empresa: { nome_fantasia: string; cnpj_empresa: number; email_empresa: string; porte_empresa: string; ramo_empresa: string; }) => {
+    this.dados.get('empresas').then((empresa: { nome_fantasia: string; cnpj_empresa: number; email_empresa: string; nome_responsavel: string; endereco_empresa: string; porte_empresa: string; ramo_empresa: string; }) => {
       this.nome_fantasia = empresa.nome_fantasia;
       this.cnpj_empresa = empresa.cnpj_empresa;
       this.email_empresa = empresa.email_empresa;
+      this.nome_responsavel = empresa.nome_responsavel;
+      this.endereco_empresa = empresa.endereco_empresa;
       this.porte_empresa = empresa.porte_empresa;
       this.ramo_empresa = empresa.ramo_empresa;
   });

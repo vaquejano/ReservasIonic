@@ -10,7 +10,7 @@ export class CadastrousuarioPage implements OnInit {
 
   public usuario = {
     cod_usuario : 0,
-    cpf_usuario : 0,
+    cpf_usuario : '',
     email_usuario : '',
     nome_usuario : '',
     senha_usuario : ''
@@ -20,7 +20,7 @@ export class CadastrousuarioPage implements OnInit {
 
   constructor() { }
 
-  
+
 
   ngOnInit() {
   }

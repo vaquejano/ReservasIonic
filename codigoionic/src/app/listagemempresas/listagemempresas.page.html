@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="fundo">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
       </ion-buttons>
-    
-    
+
+
     <ion-row class="ion-align-items-center">
       <ion-col size="3">
     <ion-button color="primary" routerLink="/perfil">
@@ -19,18 +19,18 @@
 
   <ion-col size-="3" class="ion-text-end">
     <ion-button color="primary" routerLink="/home">
-      <ion-icon name="person-circle-outline"></ion-icon>
-      Sair
+      Sair 
+      <ion-icon name="exit-outline"></ion-icon>
+
     </ion-button>
   </ion-col>
   </ion-row>
 
   </ion-toolbar>
 
-
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="fundo">
 
   <ion-row>
     <ion-col size="6" *ngFor="let descricaoempresa of descricaoempresas; let ix = index" [hidden]="!descricaoempresa.visibled"
