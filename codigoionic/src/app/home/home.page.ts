@@ -9,4 +9,7 @@ export class HomePage {
 
   constructor() {}
 
+  public pathImgs = '../../assets/img/';
+  
+
 }
