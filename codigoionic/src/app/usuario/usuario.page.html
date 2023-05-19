@@ -1,7 +1,7 @@
 <!-- <ion-header>
   <ion-toolbar class="fundo">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button routerLink="/home"></ion-back-button>
       </ion-buttons>
     <ion-title>Login</ion-title>
   </ion-toolbar>
@@ -12,7 +12,7 @@
   <img src="assets/img/resrvtab.png">
 
   <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked> CPF OU E-MAIL </ion-label>
+    <ion-label position="floating" stacked>CPF</ion-label>
     <ion-input [(ngModel)]="usuario.cpf_usuario"></ion-input>
   </ion-item>
 
@@ -20,21 +20,27 @@
     <ion-label position="floating" stacked> SENHA </ion-label>
     <ion-input [(ngModel)]="usuario.senha_usuario"></ion-input>
   </ion-item>
-
-  <ion-button color="primary" routerLink="/listagemempresas">
+<br>
+  <ion-button class="login-button green-button" routerLink="/listagemempresas" expand="full">
     <ion-icon slot="start" name="enter-outline"></ion-icon>
-    ENTRAR
+    Entrar
   </ion-button>
+
   <BR>
 
-  <ion-button color="primary" routerLink="/cadastrousuario">
-    <ion-icon slot="start" name="duplicate-outline"></ion-icon>
-    CRIAR CONTA
-  </ion-button>
+<ion-text routerLink="/cadastrousuario">Criar conta</ion-text>
 <br>
-  <ion-button color="danger">
+<br>
+<ion-text>Esqueci a senha</ion-text>
+
+  <!-- <ion-button color="primary" routerLink="/cadastrousuario">
+    <ion-icon slot="start" name="duplicate-outline"></ion-icon>
+    Criar conta
+  </ion-button> -->
+<br>
+  <!-- <ion-button color="danger">
     <ion-icon slot="start" name="alert-circle-outline"></ion-icon>
     Esqueci a Senha
-  </ion-button>
+  </ion-button> -->
 
 </ion-content>
