@@ -31,20 +31,37 @@ export class PerfilempresaPage {
     this.ramo_empresa = '';
     this.senha_empresa = '';
     this.dados = dadosservice;
+    this.getDadoById();
   }
 
+  // public getAllDados2(){
+  //   this.dadosservice.getAllDados().then((dados:any) => {
+  //     console.log(dados);
+  //   })
+  // }
 
-  getAllDados() {
+  public getDadoById(){
+    this.dadosservice.getDadoById(1).then((dados:any) => {
+      this.nome_fantasia = dados.nomeFantasia;
+      this.cnpj_empresa = dados.cnpjEmpresa;
+      this.email_empresa = dados.emailEmpresa;
+      this.nome_responsavel =  '',
+      this.endereco_empresa = '',
+      this.porte_empresa = dados.porteEmpresa;
+      this.ramo_empresa = dados.ramoEmpresa;
+      this.senha_empresa = dados.senhaEmpresa;
+    })
+  }
 
-    this.dados.get('empresas').then((empresa: { nome_fantasia: string; cnpj_empresa: number; email_empresa: string; nome_responsavel: string; endereco_empresa: string; porte_empresa: string; ramo_empresa: string; }) => {
-      this.nome_fantasia = empresa.nome_fantasia;
-      this.cnpj_empresa = empresa.cnpj_empresa;
-      this.email_empresa = empresa.email_empresa;
-      this.nome_responsavel = empresa.nome_responsavel;
-      this.endereco_empresa = empresa.endereco_empresa;
-      this.porte_empresa = empresa.porte_empresa;
-      this.ramo_empresa = empresa.ramo_empresa;
-  });
-}
+  // getAllDados() {
 
+  //   this.dados.get('empresas').then((empresa: { nome_fantasia: string; cnpj_empresa: number; email_empresa: string; nome_responsavel: string; endereco_empresa: string; porte_empresa: string; ramo_empresa: string; }) => {
+  //     this.nome_fantasia = empresa.nome_fantasia;
+  //     this.cnpj_empresa = empresa.cnpj_empresa;
+  //     this.email_empresa = empresa.email_empresa;
+  //     this.nome_responsavel = empresa.nome_responsavel;
+  //     this.endereco_empresa = empresa.endereco_empresa;
+  //     this.porte_empresa = empresa.porte_empresa;
+  //     this.ramo_empresa = empresa.ramo_empresa;
+  // });
 }

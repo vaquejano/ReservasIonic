@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DadosService {
 
-  private host = 'localhost:8080/api/empresas'
+  private host = 'http://localhost:8080/api/empresa/'
 
   constructor(private http: HttpClient) { }
 
@@ -14,7 +14,6 @@ export class DadosService {
     return new Promise((ret) => {
 
       this.http.get(this.host).subscribe(dados => {
-
         ret(dados);
       })
     })
