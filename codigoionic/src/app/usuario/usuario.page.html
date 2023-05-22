@@ -1,10 +1,7 @@
 <ion-header>
-  <!-- <ion-toolbar class="fundo"> -->
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <!-- <ion-title>Login</ion-title> -->
-  <!-- </ion-toolbar> -->
 </ion-header>
 
 
@@ -21,7 +18,10 @@
     <ion-label position="floating" stacked>Senha</ion-label>
     <ion-input [(ngModel)]="usuario.senha_usuario"></ion-input>
   </ion-item>
+
 <br>
+<br>
+
   <ion-button class="login-button green-button" routerLink="/listagemempresas" expand="full">
     <ion-icon slot="start" name="enter-outline"></ion-icon>
     Entrar
@@ -37,14 +37,5 @@
 
 <!-- NÃO APAGAR OS ESPAÇOS ACIMA, É O QUE FAZ OS LINKS FICAREM CENTRALIZADOS! -->
 
-  <!-- <ion-button color="primary" routerLink="/cadastrousuario">
-    <ion-icon slot="start" name="duplicate-outline"></ion-icon>
-    Criar conta
-  </ion-button> -->
 <br>
-  <!-- <ion-button color="danger">
-    <ion-icon slot="start" name="alert-circle-outline"></ion-icon>
-    Esqueci a Senha
-  </ion-button> -->
-
 </ion-content>

@@ -1,11 +1,8 @@
-<!-- <ion-header>
-  <ion-toolbar class="fundo">
+<ion-header>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
-      </ion-buttons>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header> -->
+    </ion-buttons>
+</ion-header>
 
 <ion-content [fullscreen]="true" class="fundo">
 
@@ -21,20 +18,20 @@
     <ion-input [(ngModel)]="empresa.senha_empresa"></ion-input>
   </ion-item>
 
-  <ion-button color="primary" routerLink="/listagemreservas">
-    <ion-icon slot="start" name="enter-outline"></ion-icon>
-    ENTRAR
-  </ion-button>
-  <BR>
+<br>
+<br>
 
-  <ion-button color="primary" routerLink="/cadastroempresa">
-    <ion-icon slot="start" name="duplicate-outline"></ion-icon>
-    CRIAR CONTA
+  <ion-button class="login-button green-button" routerLink="/listagemreservas" expand="full">
+    <ion-icon slot="start" name="enter-outline"></ion-icon>
+    Entrar
   </ion-button>
-  <br>
-  <ion-button color="danger">
-    <ion-icon slot="start" name="alert-circle-outline"></ion-icon>
-    Esqueci a Senha
-  </ion-button>
+
+<br>
+<br>
+
+<ion-text routerLink="/cadastroempresa">                                       Criar conta</ion-text>
+<br>
+<br>
+<ion-text>                                  Esqueci a senha</ion-text>
 
 </ion-content>
