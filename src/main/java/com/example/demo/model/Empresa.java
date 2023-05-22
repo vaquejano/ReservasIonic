@@ -30,20 +30,24 @@ public class Empresa {
    private String ramoEmpresa;
     @Column(name="porte_empresa")
    private String porteEmpresa;
-
+    @Column(name="nome_responsavel")
+   private String nomeResponsavel;
+    @Column (name="endereco_empresa")
+   private String enderecoEmpresa;
     public Empresa() {
 }
-    
-   
-    public Empresa(int codEmpresa, String nomeFantasia, String cnpjEmpresa, String emailEmpresa, String senhaEmpresa, String ramoEmpresa, String porteEmpresa) {
+
+    public Empresa(int codEmpresa, String nomeFantasia, String cnpjEmpresa, String senhaEmpresa, String emailEmpresa, String ramoEmpresa, String porteEmpresa, String nomeResponsavel, String enderecoEmpresa) {
         this.codEmpresa = codEmpresa;
         this.nomeFantasia = nomeFantasia;
-        this.cnpjEmpresa= cnpjEmpresa;
+        this.cnpjEmpresa = cnpjEmpresa;
         this.senhaEmpresa = senhaEmpresa;
         this.emailEmpresa = emailEmpresa;
         this.ramoEmpresa = ramoEmpresa;
         this.porteEmpresa = porteEmpresa;
-}
+        this.nomeResponsavel = nomeResponsavel;
+        this.enderecoEmpresa = enderecoEmpresa;
+    }
 
     public int getCodEmpresa() {
         return codEmpresa;
@@ -73,6 +77,14 @@ public class Empresa {
         return porteEmpresa;
     }
 
+    public String getNomeResponsavel() {
+        return nomeResponsavel;
+    }
+
+    public String getEnderecoEmpresa() {
+        return enderecoEmpresa;
+    }
+
     public void setNomeFantasia(String nomeFantasia) {
         this.nomeFantasia = nomeFantasia;
     }
@@ -96,6 +108,15 @@ public class Empresa {
     public void setPorteEmpresa(String porteEmpresa) {
         this.porteEmpresa = porteEmpresa;
     }
+
+    public void setNomeResponsavel(String nomeResponsavel) {
+        this.nomeResponsavel = nomeResponsavel;
+    }
+
+    public void setEnderecoEmpresa(String enderecoEmpresa) {
+        this.enderecoEmpresa = enderecoEmpresa;
+    }
+   
 
 
 }
