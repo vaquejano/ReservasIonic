@@ -1,22 +1,16 @@
 <ion-header>
-  <ion-toolbar class="fundo">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
-      </ion-buttons>
-    <ion-title>Cadastro do usuário</ion-title>
-  </ion-toolbar>
+    </ion-buttons>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="fundo">
 
+  <img src="assets/img/resrvtab.png">
+
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Nome </ion-label>
     <ion-input [(ngModel)]="usuario.nome_usuario"></ion-input>
-  </ion-item>
-
-  <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked> EMAIL </ion-label>
-    <ion-input [(ngModel)]="usuario.email_usuario"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
@@ -25,14 +19,29 @@
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked> SENHA </ion-label>
+    <ion-label position="floating" stacked> E-mail </ion-label>
+    <ion-input [(ngModel)]="usuario.email_usuario"></ion-input>
+  </ion-item>
+
+  <ion-item style="margin-bottom: 5px" class="fundo">
+    <ion-label position="floating" stacked> Senha </ion-label>
     <ion-input [(ngModel)]="usuario.senha_usuario"></ion-input>
   </ion-item>
 
-  <ion-button id="present-alert" color="primary">
+  <ion-item style="margin-bottom: 5px" class="fundo">
+    <ion-label position="floating" stacked> Telefone </ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+<br>
+<br>
+
+  <ion-button id="present-alert" class="cadastrar-button green-button" expand="full">
     <ion-icon slot="start" name="duplicate-outline"></ion-icon>
-    CADASTRAR
+    Cadastrar
   </ion-button>
+
+
     <ion-alert
     routerLink="/usuario"
     trigger="present-alert"
