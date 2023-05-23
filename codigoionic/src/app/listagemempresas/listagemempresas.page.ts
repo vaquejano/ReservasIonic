@@ -15,10 +15,10 @@ export class ListagemempresasPage {
     public pathImgs = '../../assets/img/';
 
     public descricaoempresas = [
-      { codigo: 1, categoria: 1, nome: 'Empresa 1', descricao: 'Restaurante de Pizza', visibled: false, imagem: ['empresa1.jpg', 'empresaa1.jpg']},
-      { codigo: 2, categoria: 1, nome: 'Empresa 2', descricao: 'Restaurante de Lanche', visibled: false, imagem: ['empresa2.jpg', 'empresaa2.jpg']},
-      { codigo: 3, categoria: 1, nome: 'Empresa 3', descricao: 'Restaurante Japones', visibled: false, imagem: ['empresa3.jpg', 'empresaa3.jpg']},
-      { codigo: 4, categoria: 1, nome: 'Empresa 4', descricao: 'Restaurante Chines', visibled: false, imagem: ['empresa4.jpg', 'empresaa4.jpg']},
+      { codigo: 1, categoria: 1, nome: 'Pizza Hut', descricao: 'Restaurante de Pizza', visibled: false, imagem: ['pizzahut.png', 'empresaa1.jpg']},
+      { codigo: 2, categoria: 1, nome: 'Black Bull', descricao: 'Restaurante de Lanche', visibled: false, imagem: ['blackbull.png', 'empresaa2.jpg']},
+      { codigo: 3, categoria: 1, nome: 'Matsuri', descricao: 'Restaurante Japones', visibled: false, imagem: ['matsuri.png', 'empresaa3.jpg']},
+      { codigo: 4, categoria: 1, nome: 'Tacos', descricao: 'Restaurante Chines', visibled: false, imagem: ['tacos.png', 'empresaa4.jpg']},
     ]
 
     
