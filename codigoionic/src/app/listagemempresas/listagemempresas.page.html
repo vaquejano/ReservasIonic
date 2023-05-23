@@ -9,48 +9,34 @@
     
 
     <ion-toolbar class="fundo">
-      <ion-buttons slot="start">
-        <ion-back-button></ion-back-button>
-        </ion-buttons>
+      
       
       <div class="ion-page" id="main-content">
+        
+        
+
         <ion-header>
+          
           <ion-toolbar>
+            
+            <!-- <ion-buttons slot="start">
+              <ion-back-button>Back</ion-back-button>
+              </ion-buttons> -->
+
+              
             <ion-buttons slot="end">
               <ion-menu-button></ion-menu-button>
+              
             </ion-buttons>
+            
             <ion-title>Empresas</ion-title>
             
           </ion-toolbar>
           
         </ion-header>
-        <ion-content class="ion-padding"> Tap the button in the toolbar to open the menu. </ion-content>
+       
       </div>
-
-      
-  
-  
-      <!-- <ion-row class="ion-align-items-center">
-        <ion-col size="2">
-      <ion-button color="primary" routerLink="/perfil">
-        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
-        Perfil
-      </ion-button>
-    </ion-col>
-          <ion-col size="6">
-            <div class=ion-text-center><b>Empresas</b></div>
-        </ion-col>
-  
-    <ion-col size-="2" class="ion-text-end">
-      <ion-button color="primary" routerLink="/home">
-        Sair 
-        <ion-icon name="exit-outline"></ion-icon>
-  
-      </ion-button>
-    </ion-col>
-    </ion-row> -->
-  
-    
+   
   
     </ion-toolbar>
   
@@ -61,14 +47,20 @@
       <ion-header>
         <ion-toolbar>
           <ion-title>Menu</ion-title>
+          
         </ion-toolbar>
+        <br>
+        
         <div class="ops-menu ion-text-center">
-        <ion-text routerLink="/perfil"><b>Perfil</b></ion-text>
+          <ion-icon name="person-outline"></ion-icon>
+        <ion-text routerLink="/perfil"><b> Perfil</b></ion-text>
         <br>
-        <ion-text routerLink="/home"><b>Sair </b></ion-text>
-        <ion-icon name="exit-outline"></ion-icon>
-      </div>
         <br>
+        <ion-icon style="size: 1px;" name="exit-outline"></ion-icon>
+        <ion-text routerLink="/home"><b> Sair</b></ion-text>
+              </div>
+        
+              <br>
 
       </ion-header>
       
