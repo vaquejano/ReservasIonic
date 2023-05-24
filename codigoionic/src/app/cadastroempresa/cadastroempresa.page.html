@@ -10,41 +10,46 @@
 
 <ion-item style="margin-bottom: 5px" class="fundo">
   <ion-label position="floating" stacked> CNPJ </ion-label>
-  <ion-input [(ngModel)]="dados.cnpj_empresa"></ion-input>
+  <ion-input [(ngModel)]="dados.cnpjEmpresa"></ion-input>
 </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating"> Nome Fantasia </ion-label>
-    <ion-input [(ngModel)]="dados.nome_fantasia"></ion-input>
+    <ion-input [(ngModel)]="dados.nomeFantasia"></ion-input>
   </ion-item>
 
-  <ion-item style="margin-bottom: 5px" class="fundo">
+  <!-- <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating"> Porte da Empresa </ion-label>
-    <ion-select [(ngModel)]="dados.porte_empresa" placeholder="Selecione uma opção">
+    <ion-select [(ngModel)]="dados.porteEmpresa" placeholder="Selecione uma opção">
       <ion-select-option [value]="'G'"> Grande </ion-select-option>
       <ion-select-option [value]="'M'"> Medio </ion-select-option>
       <ion-select-option [value]="'P'"> Pequena </ion-select-option>
     </ion-select>
+  </ion-item> -->
+
+  <ion-item style="margin-bottom: 5px" class="fundo">
+    <ion-label position="floating" stacked> Porte da Empresa </ion-label>
+    <ion-input [(ngModel)]="dados.porteEmpresa"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Ramo da Empresa </ion-label>
-    <ion-input [(ngModel)]="dados.ramo_empresa"></ion-input>
+    <ion-input [(ngModel)]="dados.ramoEmpresa"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Responsável pela empresa </ion-label>
-    <ion-input [(ngModel)]="dados.nome_responsavel"></ion-input>
+    <ion-input [(ngModel)]="dados.nomeResponsavel"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> E-mail </ion-label>
-    <ion-input [(ngModel)]="dados.email_empresa"></ion-input>
+    <ion-input [(ngModel)]="dados.emailEmpresa"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Senha </ion-label>
-    <ion-input [(ngModel)]="dados.senha_empresa"></ion-input>
+    <ion-input [(ngModel)]="dados.senhaEmpresa"></ion-input>
   </ion-item>
 
   <br>
@@ -55,7 +60,7 @@
     Cadastrar
   </ion-button> -->
 
-  <ion-button class="cadastrar-button green-button" expand="full" (click)="postDados()">
+  <ion-button class="cadastrar-button green-button" expand="full" (click)="salvaEmpresa()">
   <ion-button id="present-alert" class="cadastrar-button green-button" expand="full">
     <ion-icon slot="start" name="duplicate-outline"></ion-icon>
     Cadastrar

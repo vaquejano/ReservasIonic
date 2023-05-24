@@ -6,11 +6,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class CadastroempresaService {
 
-  private host = 'http://localhost:8080/api/empresa/'
+  private host = 'http://localhost:8080/api/empresa'
 
   constructor(private http: HttpClient) { }
 
-  public postDados(obj: any) {
+  public salvaEmpresa(obj: any) {
     return new Promise((ret) => {
 
 
