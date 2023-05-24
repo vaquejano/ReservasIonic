@@ -1,28 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="fundo">
+
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
-      </ion-buttons>
-
-
-    <ion-row class="ion-align-items-center">
-      <ion-col size="3">
-    <ion-button color="primary" routerLink="/perfilempresa">
-      <ion-icon slot="start" name="business-outline"></ion-icon>
-      Perfil
-    </ion-button>
-  </ion-col>
-
+    </ion-buttons>  
+  
+        <ion-row class="ion-align-items-center">
+    
   <ion-col size="6" class="ion-text-center">
-    {{ nome_fantasia }}
+    Reservas {{ nome_fantasia }}
    </ion-col>
 
-  <ion-col size-="3" class="ion-text-end">
+   
+   <ion-col class="ion-text-end" routerLink="/perfil">
+    <ion-icon size="large" name="person-sharp"></ion-icon>
+    <br>
+  <ion-text><b> Perfil</b></ion-text>
+</ion-col>
+   
+
+  <!-- <ion-col size-="3" class="ion-text-end">
     <ion-button color="primary" routerLink="/home">
     Sair 
       <ion-icon name="exit-outline"></ion-icon>
     </ion-button>
-  </ion-col>
+  </ion-col> -->
   </ion-row>
 
   </ion-toolbar>
