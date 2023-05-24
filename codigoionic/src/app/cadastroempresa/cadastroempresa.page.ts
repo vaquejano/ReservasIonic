@@ -34,11 +34,23 @@ export class CadastroempresaPage {
   this.ramo_empresa = '';
   this.senha_empresa = '';
   this.dados = cadastroempresaservice;
-  this.salvaEmpresa();
+ 
   }
 
   public salvaEmpresa(){
-    this.cadastroempresaservice.salvaEmpresa(0).then((dados:any) => {
+    const obj = {
+
+      nomeFantasia    : this.nome_fantasia,
+      cnpjEmpresa     : this.cnpj_empresa,
+      enderecoEmpresa : this.endereco_empresa,
+      emailEmpresa    : this.email_empresa,
+      ramoEmpresa      : this.ramo_empresa,
+      porteEmpresa    : this.porte_empresa,
+      nomeResponsavel : this.nome_responsavel,
+      senhaEmpresa    : this.senha_empresa
+    }
+
+    this.cadastroempresaservice.salvaEmpresa(obj).then((dados:any) => {
       this.nome_fantasia = dados.nomeFantasia;
       this.cnpj_empresa = dados.cnpjEmpresa;
       this.email_empresa = dados.emailEmpresa;
