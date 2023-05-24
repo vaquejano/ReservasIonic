@@ -8,12 +8,12 @@ import { LoginempresaService } from '../api/loginempresa.service';
 })
 export class EmpresaPage {
 
-  cnpj_empresa : any;
-  senha_empresa : any;
+  cnpjEmpresa : any;
+  senhaEmpresa : any;
  
   constructor(private loginempresaservice: LoginempresaService) { }
-  fazerLogin() {
-    this.loginempresaservice.verificarCredenciais(this.cnpj_empresa, this.senha_empresa)
+  verificarCredenciais() {
+    this.loginempresaservice.verificarCredenciais(this.cnpjEmpresa, this.senhaEmpresa)
       .subscribe(
         (resposta) => {
           console.log('certo')
