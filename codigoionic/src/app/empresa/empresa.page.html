@@ -10,19 +10,19 @@
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked>CNPJ</ion-label>
-    <ion-input [(ngModel)]="empresa.cnpj_empresa"></ion-input>
+    <ion-input [(ngModel)]="cnpj_empresa"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Senha </ion-label>
-    <ion-input [(ngModel)]="empresa.senha_empresa"></ion-input>
+    <ion-input [(ngModel)]="senha_empresa"></ion-input>
   </ion-item>
 
 <br>
 <br>
 
 <div class="ion-text-center">
-  <ion-button shape="round" class="login-button green-button" routerLink="/listagemreservas">
+  <ion-button shape="round" class="login-button green-button" routerLink="/listagemreservas" (click)="fazerLogin()">
     <ion-icon slot="start" name="enter-outline"></ion-icon>
     <b>Entrar</b>
   </ion-button>
