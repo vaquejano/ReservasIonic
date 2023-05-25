@@ -1,0 +1,35 @@
+.perfil-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .margin-nome {
+    margin-top: -18px;
+    
+  }
+  
+  .margin-data {
+    margin-top: -2px;
+    
+  }
+
+  .personaliza-card {
+    max-width: 300px;
+    max-height: 100px;
+    margin: 0 auto;
+    background-color: #3D4A58;
+    border-radius: 40px;
+  }  
+
+  .tamanho-nome {
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+  }
+
+  .tamanho-data {
+    font-size: 13px;
+    color: white;
+    text-transform: capitalize;
+  }

@@ -1,40 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="fundo">
-
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>  
-  
-        <ion-row class="ion-align-items-center">
-    
-  <ion-col size="6" class="ion-text-center">
-    Reservas {{ nome_fantasia }}
-   </ion-col>
-
-   
-   <ion-col class="ion-text-end" routerLink="/perfil">
-    <ion-icon size="large" name="person-sharp"></ion-icon>
-    <br>
-  <ion-text><b> Perfil</b></ion-text>
-</ion-col>
-   
-
-  <!-- <ion-col size-="3" class="ion-text-end">
-    <ion-button color="primary" routerLink="/home">
-    Sair 
-      <ion-icon name="exit-outline"></ion-icon>
-    </ion-button>
-  </ion-col> -->
-  </ion-row>
-
+      <ion-back-button style="color:black; font-weight: bold;"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      {{ nome_fantasia }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="perfil" routerLink="/perfil">
+        <ion-icon size="large" name="person-sharp" style="margin-right: 3px; color:black"></ion-icon>
+        <b style="color:black">Perfil</b>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
-
-
 </ion-header>
-
-
-
 <ion-content class="fundo">
-</ion-content>
-
-
+  <br>
+  <ion-card class="personaliza-card">
+    <ion-icon size="large" style="color: #00BF15; position: absolute; top: 50%; right: 8px; transform: translate(0, -50%);" name="checkmark-circle-sharp"></ion-icon>>
+    <ion-icon size="large" style="color: #F25165; position: absolute; top: 50%; right: 45px; transform: translate(0, -50%);" name="close-circle-sharp"></ion-icon> 
+    <ion-card-header class="borda-arredondada">
+      <ion-card-subtitle class="margin-data">
+        <span class="tamanho-data">Data/hora reserva</span>
+      </ion-card-subtitle>
+      <ion-card-subtitle class="margin-nome">
+        <span class="tamanho-nome">Nome cliente</span>
+      </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </ion-content>
