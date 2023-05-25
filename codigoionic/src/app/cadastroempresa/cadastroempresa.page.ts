@@ -19,10 +19,6 @@ export class CadastroempresaPage {
   senha_empresa: any;
   dados: any;
 
-
-
-  
-
   constructor(private cadastroempresaservice: CadastroempresaService) { 
 
   this.nome_fantasia = '';
@@ -61,7 +57,6 @@ export class CadastroempresaPage {
       this.senha_empresa = dados.senhaEmpresa;
     })
   }
-
 
   public alertButtons = ['OK'];
 

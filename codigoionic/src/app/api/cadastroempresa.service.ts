@@ -18,7 +18,6 @@ console.log(obj)
       let headers = new HttpHeaders();
       headers.append('Content-Type', 'application/json; charset=UTF-8');
 
-
       this.http.post(this.host, obj, { headers: headers }).subscribe(dados => {
 
         ret(dados);

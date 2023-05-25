@@ -22,16 +22,27 @@ public class Usuario {
    private String senhaUsuario;
     @Column(name="email_usuario")
    private String emailUsuario;
+    @Column(name="telefone_usuario")
+   private String telefoneUsuario;
     
     public Usuario() {
     }
 
-    public Usuario(int codUsuario, String nomeUsuario, String cpfUsuario, String senhaUsuario, String emailUsuario) {
+    public Usuario(int codUsuario, String nomeUsuario, String cpfUsuario, String senhaUsuario, String emailUsuario, String telefoneUsuario) {
         this.codUsuario = codUsuario;
         this.nomeUsuario = nomeUsuario;
         this.cpfUsuario = cpfUsuario;
         this.senhaUsuario = senhaUsuario;
         this.emailUsuario = emailUsuario;
+        this.telefoneUsuario = telefoneUsuario;
+    }
+
+    public String getTelefoneUsuario() {
+        return telefoneUsuario;
+    }
+
+    public void setTelefoneUsuario(String telefoneUsuario) {
+        this.telefoneUsuario = telefoneUsuario;
     }
 
     public int getCodUsuario() {
