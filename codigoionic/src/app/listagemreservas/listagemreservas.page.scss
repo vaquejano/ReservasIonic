@@ -5,15 +5,11 @@
   }
   
   .margin-nome {
-    margin-top: -18px;
+    margin-top: -30px;
+    margin-left: 45px;
     
   }
   
-  .margin-data {
-    margin-top: -2px;
-    
-  }
-
   .personaliza-card {
     max-width: 300px;
     max-height: 100px;
@@ -32,4 +28,12 @@
     font-size: 13px;
     color: white;
     text-transform: capitalize;
+  }
+
+  .icon-men-card{
+    margin-top: 10;
+    color:white;
+    position: absolute;
+    bottom: 90%;
+    left: -1%;
   }
