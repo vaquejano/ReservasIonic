@@ -4,8 +4,8 @@
     align-items: center;
   }
   
-  .margin-nome {
-    margin-top: -30px;
+  .nome {
+    margin-top: -32px;
     margin-left: 45px;
     
   }
@@ -30,10 +30,11 @@
     text-transform: capitalize;
   }
 
-  .icon-men-card{
-    margin-top: 10;
-    color:white;
-    position: absolute;
-    bottom: 90%;
-    left: -1%;
+  .icon-men-card {
+    position: relative;
+    color: white;
+    top: -37px;
   }
+  
+
+  
