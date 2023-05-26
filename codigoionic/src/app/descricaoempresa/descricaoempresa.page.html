@@ -4,20 +4,31 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center fonte cor-letra">
-      <b>{{ descricaoempresa.nome }}</b>
+      <!-- <b>{{ descricaoempresa.nome }}</b> -->
+      Reserva
     </ion-title>
+    <ion-row class="ion-text-end">
+      <ion-col>
+       
+       
+        <!-- <ion-button color="primary" routerLink="/cardapio">
+          <ion-icon name="restaurant-outline"></ion-icon>
+             Cardápio
+          </ion-button> -->
+      
+          <ion-col size="2">
+            <img src="assets/img/cardapio.png" routerLink="/cardapio" style="width: 30px; height: 30px;">
+            <ion-text><h6>Cardápio</h6></ion-text>
+          </ion-col>
+
+      
+        </ion-col>
+      </ion-row>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="fundo">
-  <ion-row class="ion-text-end">
-  <ion-col>
-    <ion-button color="primary" routerLink="/cardapio">
-      <ion-icon name="restaurant-outline"></ion-icon>
-         Cardápio
-    </ion-button>
-  </ion-col>
-  </ion-row>
+
 
   <ion-row>
     <ion-col size="12" class="img-lanche" >
