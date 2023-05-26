@@ -37,10 +37,10 @@ public class EmpresaServiceImpl implements EmpresaService{
     @Override
     public void deleteByIdEmpresa(Integer codEmpresa){
         empresaRepository.deleteById(codEmpresa);
-}
+    }
 
-  
-   
-
- 
+    @Override
+    public Optional<Empresa> getByCnpjEmpresa(String cnpjEmpresa) {
+        return empresaRepository.findByCnpjEmpresa(cnpjEmpresa);
+    }
 }
