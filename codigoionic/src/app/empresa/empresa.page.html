@@ -21,11 +21,11 @@
 <br>
 <br>
 
-<div class="ion-text-center">
-  <ion-button shape="round" class="login-button green-button" routerLink="/listagemreservas" (click)="buscarEmpresa()">
-    <ion-icon slot="start" name="enter-outline"></ion-icon>
-    <b>Entrar</b>
-  </ion-button>
+<div *ngIf="loginBemSucedido">
+  <a routerLink="/listagemreservas">Ir para a página de listagem de reservas</a>
+</div>
+<div *ngIf="!loginBemSucedido">
+  <button ion-button (click)="fazerLogin()">Entrar</button>
 </div>
 
 <br>

@@ -1,19 +1,23 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginempresaService {
-
-  private host = 'http://localhost:8080/api/empresas/'
+  private host = 'http://localhost:8080/api';
 
   constructor(private http: HttpClient) { }
 
-  verificarCredenciais(cnpj_empresa: any, senha_empresa: any) {
-    const endpoint = `${this.host}verificar-credenciais`;
-    const body = { cnpj_empresa, senha_empresa };
+  verificarCredenciais(cnpj: string, senha: string): Observable<boolean> {
+    const url = `${this.host}/login`; // Substitua pelo URL correto do seu endpoint de login
 
-    return this.http.post(endpoint, body);
+    const body = {
+      cnpjEmpresa: cnpj,
+      senhaEmpresa: senha
+    };
+
+    return this.http.post<boolean>(url, body);
   }
 }

@@ -79,7 +79,7 @@ public class EmpresaController {
         return ResponseEntity.status(HttpStatus.OK).body("Empresa removida com sucesso");
     }
 
-    @PostMapping("/empresas")
+    @PostMapping("/login")
 @ApiResponses({
     @ApiResponse(code = 200, message = "Login realizado com sucesso"),
     @ApiResponse(code = 401, message = "Credenciais inválidas")
