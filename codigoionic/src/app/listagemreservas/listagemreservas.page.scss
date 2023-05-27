@@ -3,38 +3,124 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .nome {
     margin-top: -32px;
     margin-left: 45px;
-    
+
   }
-  
+
   .personaliza-card {
     max-width: 300px;
     max-height: 100px;
     margin: 0 auto;
     background-color: #3D4A58;
     border-radius: 40px;
-  }  
+  }
 
   .tamanho-nome {
     font-size: 18px;
     color: white;
-    text-transform: capitalize;
   }
 
   .tamanho-data {
-    font-size: 13px;
+    font-size: 14px;
     color: white;
-    text-transform: capitalize;
+
+  }
+
+  .icon-col {
+    display: flex;
+    align-items: center;
   }
 
   .icon-men-card {
-    position: relative;
     color: white;
-    top: -37px;
-  }
-  
 
-  
+  }
+
+  .icon-wrapper-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    right: 8px;
+    top: -15px;
+  }
+
+  .border-right {
+    position: absolute;
+    top: 50%;
+    right: 84%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 110%;
+    background-color: white;
+  }
+
+  .icon-wrapper-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .perfil-icon {
+    font-size: 32px;
+  }
+
+  .icon-wrapper-perfil .label {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 8px;
+  }
+
+  .perfil-container {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+
+  }
+
+  .perfil {
+    --background: transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 11px;
+
+  }
+  .perfil:hover {
+    --background: transparent;
+
+  }
+
+  .perfil:active {
+    --background: transparent;
+
+  }
+
+
+  .icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    font-weight: bold;
+
+  }
+
+  .icon-wrapper ion-icon {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  }
+
+  .icon-wrapper .label {
+    color: black;
+  margin-top: 8px;
+  }

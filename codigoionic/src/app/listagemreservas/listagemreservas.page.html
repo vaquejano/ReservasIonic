@@ -6,32 +6,44 @@
     <ion-title class="ion-text-center">
       {{ nome_fantasia }}
     </ion-title>
-    <ion-buttons slot="end">
+
+    <ion-buttons slot="end" class="perfil-container">
       <ion-button class="perfil" routerLink="/perfilempresa">
-        <ion-icon size="large" name="person-sharp" style="margin-right: 3px; color:black"></ion-icon>
-        <b style="color:black">Perfil</b>
+        <div class="icon-wrapper">
+          <ion-icon size="large" name="person-sharp" style="color: black;"></ion-icon>
+          <div class="label;">Perfil</div>
+        </div>
       </ion-button>
     </ion-buttons>
+
+
+
   </ion-toolbar>
 </ion-header>
+
+
 <ion-content class="fundo">
   <br>
   <ion-card class="personaliza-card">
-    <ion-icon size="large" style="color: #00BF15; position: absolute; top: 50%; right: 8px; transform: translate(0, -50%);" name="checkmark-circle-sharp"></ion-icon>>
-    <ion-icon size="large" style="color: #F25165; position: absolute; top: 50%; right: 45px; transform: translate(0, -50%);" name="close-circle-sharp"></ion-icon> 
+    <ion-icon size="large" style="color: #00BF15; position: absolute; top: 50%; right: 15px; transform: translate(0, -50%);" name="checkmark-circle-sharp"></ion-icon>>
+    <ion-icon size="large" style="color: #F25165; position: absolute; top: 50%; right: 50px; transform: translate(0, -50%);" name="close-circle-sharp"></ion-icon>
     <ion-card-header class="borda-arredondada">
       <ion-col>
-      <ion-icon size="large" name="person-sharp" class="icon-men-card"></ion-icon>
+        <div class="icon-wrapper-card">
+          <ion-icon size="large" name="person-sharp" class="icon-men-card"></ion-icon>
+          <div class="border-right"></div>
+        </div>
       </ion-col>
+
       <ion-col>
       <ion-card-subtitle style="margin-left: 45px; bottom: 8px;">
-        <span class="tamanho-data">Data/hora reserva</span>
+        <span class="tamanho-data"><b>Data/hora reserva </b></span>
       </ion-card-subtitle>
     </ion-col>
     <ion-col>
-      <ion-card-title class="nome">
-        <span class="tamanho-nome">Nome cliente</span>
-      
+      <ion-card-title class="nome" style="top: -10px">
+        <span class="tamanho-nome"><b>Nome cliente</b></span>
+
       </ion-card-title>
     </ion-col>
       </ion-card-header>
