@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DadosService } from '../api/dados.service';
-import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-listagemreservas',
@@ -11,8 +10,6 @@ export class ListagemreservasPage implements OnInit {
 
   nome_fantasia: string;
   dados: any;
-
-
 
   constructor(private dadosservice: DadosService) {
 
@@ -26,6 +23,10 @@ export class ListagemreservasPage implements OnInit {
     this.dados.getAllDados('empresas').then((empresa: { nome_fantasia: string;}) => {
       this.nome_fantasia = empresa.nome_fantasia;
     });
+
+
   }
+
+  public pathImgs = '../../assets/img/';
 
 }

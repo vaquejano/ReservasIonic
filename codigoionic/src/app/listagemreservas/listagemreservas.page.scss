@@ -4,29 +4,51 @@
     align-items: center;
   }
 
-  .nome {
-    margin-top: -32px;
-    margin-left: 45px;
+  .botao-voltar{
+    color: black;
+    font-weight: bold;
+  }
 
+  .escrita {
+    margin-top: -70px;
+    margin-left: 43px;
+    top: 5px;
+
+  }
+
+  .tamanho-escrita {
+    font-size: 16px;
+    color: white;
+  }
+
+  .botao-cancela{
+    width: 35px;
+    height: 35px;
+
+  }
+
+  .col-botao-cancela{
+    left: 249px;
+    top: 20px;
+  }
+
+  .botao-confirma{
+    width: 35px;
+    height: 35px;
+
+  }
+
+  .col-botao-confirma{
+    left: 55px;
+    top: 20px;
   }
 
   .personaliza-card {
     max-width: 300px;
-    max-height: 100px;
+    max-height: 80px;
     margin: 0 auto;
     background-color: #3D4A58;
     border-radius: 40px;
-  }
-
-  .tamanho-nome {
-    font-size: 18px;
-    color: white;
-  }
-
-  .tamanho-data {
-    font-size: 14px;
-    color: white;
-
   }
 
   .icon-col {
@@ -35,16 +57,12 @@
   }
 
   .icon-men-card {
-    color: white;
-
-  }
-
-  .icon-wrapper-card {
     position: relative;
     display: flex;
     align-items: center;
-    right: 8px;
-    top: -15px;
+    right: 10px;
+    top: -45px;
+    color: white;
   }
 
   .border-right {
@@ -53,7 +71,7 @@
     right: 84%;
     transform: translateY(-50%);
     width: 2px;
-    height: 110%;
+    height: 130%;
     background-color: white;
   }
 
