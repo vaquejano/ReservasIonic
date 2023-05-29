@@ -10,7 +10,7 @@
     <ion-buttons slot="end" class="perfil-container">
       <ion-button class="perfil" routerLink="/perfilempresa">
         <div class="icon-wrapper">
-          <ion-icon size="large" name="person-sharp" style="color: black;"></ion-icon>
+          <ion-icon size="large" name="person-sharp"></ion-icon>
           <div class="label;">Perfil</div>
         </div>
       </ion-button>
@@ -37,15 +37,16 @@
           <div class="border-right"></div>
         </div>
       </ion-col>
-
-        <ion-col>
+    <ion-col>
       <ion-card-title class="escrita">
-        <span class="tamanho-escrita">
-          <b>Nome cliente</b>
-        <br>
-      Data/hora reserva
-    </span>
-      </ion-card-title>
+        <span class="nome">
+        <ion-text ><b>Nome cliente</b></ion-text>
+        </span>
+       <br>
+       <span class="data">
+      <ion-text >Data/hora reserva</ion-text>
+    </span>      
+    </ion-card-title>
     </ion-col>
       </ion-card-header>
     </ion-card>

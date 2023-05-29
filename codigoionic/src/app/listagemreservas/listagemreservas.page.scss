@@ -10,13 +10,18 @@
   }
 
   .escrita {
-    margin-top: -70px;
+    margin-top: -80px;
     margin-left: 43px;
-    top: 5px;
-
+    top: 11px;
+    color: white;
   }
 
-  .tamanho-escrita {
+  .nome {
+    font-size: 18px;
+    
+  }
+
+  .data {
     font-size: 16px;
     color: white;
   }
@@ -61,7 +66,7 @@
     display: flex;
     align-items: center;
     right: 10px;
-    top: -45px;
+    top: -58px;
     color: white;
   }
 
@@ -71,7 +76,7 @@
     right: 84%;
     transform: translateY(-50%);
     width: 2px;
-    height: 130%;
+    height: 157%;
     background-color: white;
   }
 
@@ -128,6 +133,7 @@
     justify-content: flex-start;
     text-align: center;
     font-weight: bold;
+    color: black;
 
   }
 
