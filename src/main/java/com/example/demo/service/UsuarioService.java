@@ -15,4 +15,6 @@ public Usuario salvaUsuario(Usuario usuario);
 public Usuario atualizaUsuario(Usuario usuario);
 
 public void deleteByIdUsuario(Integer codusuario);
+
+public Optional<Usuario> getByCpfUsuarioAndSenhaUsuario(String cpfUsuario, String senhaUsuario);
 }

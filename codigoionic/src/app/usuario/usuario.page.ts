@@ -1,26 +1,57 @@
 import { Component, OnInit } from '@angular/core';
 import { DadosService } from '../api/dados.service';
+import { LoginusuarioService } from '../api/loginusuario.service';
+import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.page.html',
   styleUrls: ['./usuario.page.scss'],
 })
-export class UsuarioPage implements OnInit {
+export class UsuarioPage {
+  cpf_usuario: any;
+  senha_usuario: any;
+  loginBemSucedido = false;
 
+  constructor(
+    private loginusuarioservice: LoginusuarioService,
+    private alertController: AlertController,
+    private router: Router
+  ) { }
 
-  public usuario = {
-    cod_usuario : 0,
-    cpf_usuario : '',
-    email_usuario : '',
-    nome_usuario : '',
-    senha_usuario : ''
+  fazerLogin() {
+    const cpf = this.cpf_usuario;
+    const senha = this.senha_usuario;
+
+    this.loginusuarioservice.verificarCredenciais(cpf, senha).subscribe(
+      (credenciaisValidas) => {
+        if (credenciaisValidas) {
+          // Login bem-sucedido
+          console.log('Login realizado com sucesso');
+          this.loginBemSucedido = true;
+          this.router.navigate(['/listagemreservas']);
+        } else {
+          // Login falhou
+          console.log('Credenciais inválidas');
+          this.loginBemSucedido = false;
+          this.exibirAlerta('Dados incorretos');
+        }
+      },
+      (error) => {
+        // Tratar erro de requisição
+        console.log('Erro ao verificar credenciais', error);
+      }
+    );
   }
 
-  constructor() { }
+  async exibirAlerta(mensagem: string) {
+    const alert = await this.alertController.create({
+      header: 'Erro',
+      message: mensagem,
+      buttons: ['OK']
+    });
 
-
-  ngOnInit(): void {
+    await alert.present();
   }
-
 }

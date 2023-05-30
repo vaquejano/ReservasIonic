@@ -74,7 +74,38 @@ public class UsuarioController {
     public ResponseEntity<String> deleteByIdUsuario(@PathVariable Integer codusuario){
         usuarioService.deleteByIdUsuario(codusuario);
         return ResponseEntity.status(HttpStatus.OK).body("Usuario removido com sucesso");
-    } 
+    }
+    
+    @PostMapping("/loginusuario")
+    @ApiResponses({
+    @ApiResponse(code = 200, message = "Login realizado com sucesso"),
+    @ApiResponse(code = 401, message = "Credenciais inválidas")
+})
+public ResponseEntity<String> getByCpfUsuarioAndSenhaUsuario(@RequestBody Usuario usuario) {
+    String cpfUsuario = usuario.getCpfUsuario();
+    String senhaUsuario = usuario.getSenhaUsuario();
+
+    boolean isValid = verificarCredenciais(cpfUsuario, senhaUsuario);
+
+    if (isValid) {
+        return ResponseEntity.ok().body("{"message": "Login realizado com sucesso"}");
+    } else {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas");
+    }
+}
+
+public boolean verificarCredenciais(String cpfUsuario, String senhaUsuario) {
+    Optional<Usuario> optionalUsuario = usuarioService.getByCpfUsuarioAndSenhaUsuario(cpfUsuario, senhaUsuario);
+    if (optionalUsuario.isPresent()) {
+        Usuario usuario = optionalUsuario.get();
+        String senhaArmazenada = usuario.getSenhaUsuario();
+        String cpfArmazenado = usuario.getCpfUsuario();
+
+        return cpfUsuario.equals(cpfArmazenado) && senhaUsuario.equals(senhaArmazenada);
+    }
+
+    return false;
      
+    
     
 }

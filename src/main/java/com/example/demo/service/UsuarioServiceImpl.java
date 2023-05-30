@@ -37,6 +37,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     public void deleteByIdUsuario(Integer codUsuario) {
        usuarioRepository.deleteById(codUsuario);
     }
- 
+    
+    @Override
+    public Optional<Usuario> getByCpfUsuarioAndSenhaUsuario(String cpfUsuario, String senhaUsuario) {
+    return usuarioRepository.findByCpfUsuarioAndSenhaUsuario(cpfUsuario, senhaUsuario);
+}
 
 }
