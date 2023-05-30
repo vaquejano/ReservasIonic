@@ -11,12 +11,14 @@ export class LoginempresaService {
   constructor(private http: HttpClient) { }
 
   verificarCredenciais(cnpj: string, senha: string): Observable<boolean> {
-    const url = `${this.host}/login`; // Substitua pelo URL correto do seu endpoint de login
+    const url = `${this.host}/login/`; // Substitua pelo URL correto do seu endpoint de login
 
     const body = {
       cnpjEmpresa: cnpj,
       senhaEmpresa: senha
     };
+
+    
 
     return this.http.post<boolean>(url, body);
   }

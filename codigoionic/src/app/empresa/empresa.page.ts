@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginempresaService } from '../api/loginempresa.service';
+import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-empresa',
@@ -11,7 +13,11 @@ export class EmpresaPage {
   senha_empresa: any;
   loginBemSucedido = false;
 
-  constructor(private loginempresaservice: LoginempresaService) { }
+  constructor(
+    private loginempresaservice: LoginempresaService,
+    private alertController: AlertController,
+    private router: Router
+  ) { }
 
   fazerLogin() {
     const cnpj = this.cnpj_empresa;
@@ -23,12 +29,12 @@ export class EmpresaPage {
           // Login bem-sucedido
           console.log('Login realizado com sucesso');
           this.loginBemSucedido = true;
-          // Realize as ações necessárias após o login bem-sucedido, como redirecionar para outra página, salvar tokens de autenticação, etc.
+          this.router.navigate(['/listagemreservas']);
         } else {
           // Login falhou
           console.log('Credenciais inválidas');
           this.loginBemSucedido = false;
-          // Realize as ações necessárias para lidar com o login falho, como exibir uma mensagem de erro para o usuário, limpar campos de formulário, etc.
+          this.exibirAlerta('Dados incorretos');
         }
       },
       (error) => {
@@ -36,5 +42,15 @@ export class EmpresaPage {
         console.log('Erro ao verificar credenciais', error);
       }
     );
+  }
+
+  async exibirAlerta(mensagem: string) {
+    const alert = await this.alertController.create({
+      header: 'Erro',
+      message: mensagem,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 }

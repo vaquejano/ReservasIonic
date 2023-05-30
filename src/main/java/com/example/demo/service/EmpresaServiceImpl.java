@@ -40,7 +40,8 @@ public class EmpresaServiceImpl implements EmpresaService{
     }
 
     @Override
-    public Optional<Empresa> getByCnpjEmpresa(String cnpjEmpresa) {
-        return empresaRepository.findByCnpjEmpresa(cnpjEmpresa);
-    }
+public Optional<Empresa> getByCnpjEmpresaAndSenhaEmpresa(String cnpjEmpresa, String senhaEmpresa) {
+    return empresaRepository.findByCnpjEmpresaAndSenhaEmpresa(cnpjEmpresa, senhaEmpresa);
+}
+
 }

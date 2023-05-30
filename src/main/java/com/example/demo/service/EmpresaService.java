@@ -17,6 +17,7 @@ public interface EmpresaService {
 
     public void deleteByIdEmpresa(Integer codEmpresa);
 
-    public Optional<Empresa> getByCnpjEmpresa(String cnpjEmpresa);
+    public Optional<Empresa> getByCnpjEmpresaAndSenhaEmpresa(String cnpjEmpresa, String senhaEmpresa);
+
 
 }

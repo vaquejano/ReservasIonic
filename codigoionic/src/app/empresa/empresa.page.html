@@ -21,12 +21,23 @@
 <br>
 <br>
 
-<div *ngIf="loginBemSucedido">
-  <a routerLink="/listagemreservas">Ir para a página de listagem de reservas</a>
-</div>
-<div *ngIf="!loginBemSucedido">
-  <button ion-button (click)="fazerLogin()">Entrar</button>
-</div>
+<ion-button shape="round" class="login-button green-button" (click)="fazerLogin()">
+  <ion-icon slot="start" name="enter-outline"></ion-icon>
+  <b>Entrar</b>
+  <ng-container *ngIf="loginBemSucedido; else erroTemplate" routerLink="/listagemreservas">
+  </ng-container>
+  <ng-template #erroTemplate >
+    <br><br>
+    tentativa de colocar um alerta falha caso de errado a verificaçao de errado
+
+  </ng-template>
+</ion-button>
+
+
+
+
+
+
 
 <br>
 <br>
@@ -45,18 +56,5 @@
 </div>
 
 <br>
-
-  <!-- <ion-button class="login-button green-button" routerLink="/listagemreservas" expand="full">
-    <ion-icon slot="start" name="enter-outline"></ion-icon>
-    Entrar
-  </ion-button>
-
-<br>
-<br>
-
-<ion-text routerLink="/cadastroempresa">                                       Criar conta</ion-text>
-<br>
-<br>
-<ion-text>                                  Esqueci a senha</ion-text> -->
 
 </ion-content>
