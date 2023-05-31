@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar class="fundo">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
@@ -8,6 +8,12 @@
 </ion-header>
 
 <ion-content class="fundo">
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="10">
+    <img src="assets/img/resrvtab.png">
+  </ion-col>
+  </ion-row>
+  
   <ion-card class="fundo">
     <ion-card-header class="fundo">
       <ion-card-title>Informações do usuário</ion-card-title>
@@ -28,30 +34,22 @@
         <ion-label> CPF: </ion-label>
         <ion-text> {{ cpf_usuario }} </ion-text>
       </ion-item>
-
-      <ion-item class="fundo">
-        <ion-label> Senha: </ion-label>
-        <ion-text> {{ senha_usuario }} </ion-text>
-      </ion-item>
     </ion-card-content>
   </ion-card>
 
   <ion-row>
     <ion-col size="6">
-      <ion-button color="primary" routerLink="/alterardados">
-        <ion-icon slot="start" name="create-outline"></ion-icon>
+      <ion-button shape="round" class="alterar-button blue-button" routerLink="/alterardados"> 
+      <ion-icon slot="start" name="create-outline"></ion-icon>
         Alterar dados
       </ion-button>
     </ion-col>
 
-    <ion-col size="6" class="ion-text-end">
-      <ion-button color="danger" routerLink="/home">
+    <ion-col size="5" class="ion-text-end">
+      <ion-button shape="round" color="danger" class="alterar-button blue-button" routerLink="/home"> 
         <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
-        DESATIVAR CONTA
+        Desativar Conta
       </ion-button>
     </ion-col>
-
   </ion-row>
-
-
 </ion-content>
