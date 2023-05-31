@@ -22,12 +22,18 @@
 <br>
 <br>
 
-<div class="ion-text-center">
-  <ion-button shape="round" class="login-button green-button" routerLink="/listagemempresas">
-    <ion-icon slot="start" name="enter-outline"></ion-icon>
-    <b>Entrar</b>
-  </ion-button>
-</div>
+<ion-button shape="round" class="login-button green-button" (click)="fazerLogin()"> 
+  <ion-icon slot="start" name="enter-outline"></ion-icon>
+  <b>Entrar</b>
+  <ng-container *ngIf="loginBemSucedido; else erroTemplate">
+  </ng-container>
+  <ng-template #erroTemplate >
+    <br><br>
+
+    TENTATIVA DE COLOCAR UM ALERTA
+
+  </ng-template>
+</ion-button>
 
 <br>
 <br>

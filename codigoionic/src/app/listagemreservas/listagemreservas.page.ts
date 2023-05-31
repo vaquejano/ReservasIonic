@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DadosService } from '../api/dados.service';
+
+
 
 @Component({
   selector: 'app-listagemreservas',
@@ -11,20 +14,22 @@ export class ListagemreservasPage implements OnInit {
   nome_fantasia: string;
   dados: any;
 
-  constructor(private dadosservice: DadosService) {
-
+  constructor(private router: Router, private dadosservice: DadosService) {
     this.nome_fantasia = 'nome_fantasia';
     this.dados = dadosservice;
-
   }
 
   ngOnInit() {
-
-    this.dados.getAllDados('empresas').then((empresa: { nome_fantasia: string;}) => {
+    this.dados.getAllDados('empresas').then((empresa: { nome_fantasia: string; }) => {
       this.nome_fantasia = empresa.nome_fantasia;
     });
+  }
 
-
+  openPerfilEmpresa() {
+    this.dados.getDadoById().then((dados: any) => {
+      const idEmpresa = dados.codEmpresa;
+      this.router.navigate(['/perfilempresa'], { queryParams: { codEmpresa: idEmpresa } });
+    });
   }
 
   public pathImgs = '../../assets/img/';

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DadosService } from '../api/dados.service';
 import { LoginusuarioService } from '../api/loginusuario.service';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -30,7 +29,7 @@ export class UsuarioPage {
           // Login bem-sucedido
           console.log('Login realizado com sucesso');
           this.loginBemSucedido = true;
-          this.router.navigate(['/listagemreservas']);
+          this.router.navigate(['/listagemempresas']);
         } else {
           // Login falhou
           console.log('Credenciais inválidas');

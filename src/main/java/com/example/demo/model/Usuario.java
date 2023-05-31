@@ -37,14 +37,6 @@ public class Usuario {
         this.telefoneUsuario = telefoneUsuario;
     }
 
-    public String getTelefoneUsuario() {
-        return telefoneUsuario;
-    }
-
-    public void setTelefoneUsuario(String telefoneUsuario) {
-        this.telefoneUsuario = telefoneUsuario;
-    }
-
     public int getCodUsuario() {
         return codUsuario;
     }
@@ -65,6 +57,10 @@ public class Usuario {
         return emailUsuario;
     }
 
+    public String getTelefoneUsuario() {
+        return telefoneUsuario;
+    }
+
     public void setNomeUsuario(String nomeUsuario) {
         this.nomeUsuario = nomeUsuario;
     }
@@ -81,5 +77,8 @@ public class Usuario {
         this.emailUsuario = emailUsuario;
     }
 
-     
+    public void setTelefoneUsuario(String telefoneUsuario) {
+        this.telefoneUsuario = telefoneUsuario;
     }
+
+   }

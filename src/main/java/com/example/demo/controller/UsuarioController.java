@@ -39,7 +39,7 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.OK). body(usuarioService.listaUsuarios());
     }
    
-    @GetMapping("usuario/{codusuario}")
+    @GetMapping("/usuario/{codusuario}")
     @ApiResponses({
         @ApiResponse(code=200,message="Usuario Encontrado"),
         @ApiResponse(code=404,message="Usuario Nao Encontrado")
@@ -48,7 +48,7 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.OK).body(usuarioService.getByIdUsuario(codusuario));
     }
     
-    @PostMapping("usuario")
+    @PostMapping("/usuario")
     @ApiResponses({
         @ApiResponse(code=200,message="Usuario Salvo Com Maestria"),
         @ApiResponse(code=404,message="Nao Foi Possivel Salvar Usuario")
@@ -57,7 +57,7 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.salvaUsuario(usuario));
     }
     
-    @PutMapping("usuario")
+    @PutMapping("/usuario")
     @ApiResponses({
         @ApiResponse(code=200,message="Usuario Atualizado com SucessoEncontrado"),
         @ApiResponse(code=404,message="Nao foi possivel atualizar Usuario")
@@ -66,7 +66,7 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.OK).body(usuarioService.atualizaUsuario(usuario));
     }
     
-    @DeleteMapping("usuario/{codusuario}")
+    @DeleteMapping("/usuario/{codusuario}")
     @ApiResponses({
         @ApiResponse(code=200,message="Usuario Foi Removido"),
         @ApiResponse(code=404,message="Nao Foi Possivel remover Usuario")
@@ -87,8 +87,8 @@ public ResponseEntity<String> getByCpfUsuarioAndSenhaUsuario(@RequestBody Usuari
 
     boolean isValid = verificarCredenciais(cpfUsuario, senhaUsuario);
 
-    if (isValid) {
-        return ResponseEntity.ok().body("{"message": "Login realizado com sucesso"}");
+   if (isValid) {
+        return ResponseEntity.ok().body("{\"message\": \"Login realizado com sucesso\"}");
     } else {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas");
     }
@@ -105,7 +105,6 @@ public boolean verificarCredenciais(String cpfUsuario, String senhaUsuario) {
     }
 
     return false;
-     
-    
-    
+}
+
 }

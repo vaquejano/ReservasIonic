@@ -11,26 +11,28 @@ export class CadastrousuarioPage {
     cpf_usuario :  any;
     email_usuario :  any;
     nome_usuario :  any;
-    senha_usuario : any
-    telefone_usuario : any
+    senha_usuario : any;
+    telefone_usuario : any;
+    dados: any;
   
   constructor(private cadastrousuarioservice: CadastrousuarioService) {
   
-    this.cpf_usuario = '';
-    this.email_usuario = '';
-    this.nome_usuario = '';
-    this.senha_usuario = '';
-    this.telefone_usuario = '';
+    this.cpf_usuario = '',
+    this.email_usuario = '',
+    this.nome_usuario = '',
+    this.senha_usuario = '',
+    this.telefone_usuario = '',
+    this.dados = cadastrousuarioservice;
   }
 
    public salvaUsuario(){
     const obj = {     
       
-      cpf_usuario   : this.cpf_usuario,
-      email_usuario : this.email_usuario,
-      nome_usuario  : this.nome_usuario,
-      senha_usuario : this.senha_usuario,
-      telefone_usuario : this.telefone_usuario
+      cpfUsuario   : this.cpf_usuario,
+      emailUsuario : this.email_usuario,
+      nomeUsuario  : this.nome_usuario,
+      senhaUsuario : this.senha_usuario,
+      telefoneUsuario : this.telefone_usuario
     }
 
     this.cadastrousuarioservice.salvaUsuario(obj).then((dados:any) => {
