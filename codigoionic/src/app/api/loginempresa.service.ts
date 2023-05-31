@@ -10,16 +10,33 @@ export class LoginempresaService {
 
   constructor(private http: HttpClient) { }
 
-  verificarCredenciais(cnpj: string, senha: string): Observable<boolean> {
-    const url = `${this.host}/login/`; // Substitua pelo URL correto do seu endpoint de login
+  getId(id: any){
+    const url2 = `${this.host}/login/`;
+   
 
-    const body = {
-      cnpjEmpresa: cnpj,
-      senhaEmpresa: senha
-    };
+    return new Promise((ret) => {
+      this.http.get(url2 + id).subscribe(body2 => {
+        ret(body2);
+      });
+    });
+  }
+
+  public verificarCredenciais(cnpj: string, senha: string) {
+    return new Promise((ret) => {
+      const url = `${this.host}/login/`;
+
+      const body = {
+        cnpjEmpresa: cnpj,
+        senhaEmpresa: senha
+      };
+
+      this.http.post<boolean>(url, body).subscribe((empresa: any) => {
+        ret(empresa);
+      });
+  
+    });
 
     
 
-    return this.http.post<boolean>(url, body);
   }
 }

@@ -9,8 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./empresa.page.scss'],
 })
 export class EmpresaPage {
-  cnpj_empresa: any;
-  senha_empresa: any;
+  cnpjEmpresa: any;
+  senhaEmpresa: any;
+  codEmpresa: any;
   loginBemSucedido = false;
 
   constructor(
@@ -20,16 +21,21 @@ export class EmpresaPage {
   ) { }
 
   fazerLogin() {
-    const cnpj = this.cnpj_empresa;
-    const senha = this.senha_empresa;
+    const cnpj = this.cnpjEmpresa;
+    const senha = this.senhaEmpresa;
+    const id = this.codEmpresa;
 
-    this.loginempresaservice.verificarCredenciais(cnpj, senha).subscribe(
-      (credenciaisValidas) => {
-        if (credenciaisValidas) {
+    this.loginempresaservice.verificarCredenciais(cnpj, senha).then(
+      (empresa) => {
+        if (empresa) {
+          console.log('apareceu o carai da empresa')
+          console.log(empresa)
           // Login bem-sucedido
-          console.log('Login realizado com sucesso');
+          
           this.loginBemSucedido = true;
           this.router.navigate(['/listagemreservas']);
+          // fazer um metoo getbyid
+          this.loginempresaservice.getId(id);
         } else {
           // Login falhou
           console.log('Credenciais inválidas');

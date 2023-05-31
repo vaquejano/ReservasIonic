@@ -79,12 +79,12 @@ public class EmpresaController {
         return ResponseEntity.status(HttpStatus.OK).body("Empresa removida com sucesso");
     }
 
- @PostMapping("/login")
+@PostMapping("/login")
 @ApiResponses({
     @ApiResponse(code = 200, message = "Login realizado com sucesso"),
     @ApiResponse(code = 401, message = "Credenciais inválidas")
 })
-public ResponseEntity<String> getByCnpjEmpresaAndSenhaEmpresa(@RequestBody Empresa empresa) {
+public ResponseEntity<Empresa> getByCnpjEmpresaAndSenhaEmpresa(@RequestBody Empresa empresa) {
     String cnpjEmpresa = empresa.getCnpjEmpresa();
     String senhaEmpresa = empresa.getSenhaEmpresa();
 
@@ -94,25 +94,9 @@ public ResponseEntity<String> getByCnpjEmpresaAndSenhaEmpresa(@RequestBody Empre
         Empresa empresaLogada = optionalEmpresa.get();
         int idEmpresa = empresaLogada.getCodEmpresa();
 
-        return ResponseEntity.ok().body("{\"message\": \"Login realizado com sucesso\", \"codEmpresa\": " + idEmpresa + "}");
+            return ResponseEntity.ok().body(empresaLogada);
     } else {
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas");
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
     }
 }
-
-
-
-public boolean verificarCredenciais(String cnpjEmpresa, String senhaEmpresa) {
-    Optional<Empresa> optionalEmpresa = empresaService.getByCnpjEmpresaAndSenhaEmpresa(cnpjEmpresa, senhaEmpresa);
-    if (optionalEmpresa.isPresent()) {
-        Empresa empresa = optionalEmpresa.get();
-        String senhaArmazenada = empresa.getSenhaEmpresa();
-        String cnpjArmazenado = empresa.getCnpjEmpresa();
-        
-        return cnpjEmpresa.equals(cnpjArmazenado) && senhaEmpresa.equals(senhaArmazenada);
-    }
-
-    return false;
-}
-    
 }

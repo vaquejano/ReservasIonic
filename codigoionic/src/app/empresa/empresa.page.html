@@ -10,12 +10,12 @@
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked>CNPJ</ion-label>
-    <ion-input [(ngModel)]="cnpj_empresa"></ion-input>
+    <ion-input [(ngModel)]="cnpjEmpresa"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Senha </ion-label>
-    <ion-input [(ngModel)]="senha_empresa"></ion-input>
+    <ion-input [(ngModel)]="senhaEmpresa"></ion-input>
   </ion-item>
 
 <br>
@@ -24,9 +24,9 @@
 <ion-button shape="round" class="login-button green-button" (click)="fazerLogin()">
   <ion-icon slot="start" name="enter-outline"></ion-icon>
   <b>Entrar</b>
-  <ng-container *ngIf="loginBemSucedido; else erroTemplate" routerLink="/listagemreservas">
+  <ng-container *ngIf="loginBemSucedido; else erroTemplate">
   </ng-container>
-  <ng-template #erroTemplate >
+  <ng-template #erroTemplate>
     <br><br>
     tentativa de colocar um alerta falha caso de errado a verificaçao de errado
 
