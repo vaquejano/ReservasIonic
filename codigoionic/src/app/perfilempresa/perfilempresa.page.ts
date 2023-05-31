@@ -58,6 +58,7 @@
   import { Component, OnInit } from '@angular/core';
   import { ActivatedRoute } from '@angular/router';
   import { DadosService } from '../api/dados.service';
+  import { AlteraempresaService} from '../api/alteraempresa.service';
   
   @Component({
     selector: 'app-perfilempresa',
@@ -78,8 +79,21 @@
       senhaEmpresa: ''
     }
   
+<<<<<<< HEAD
     constructor(private activatedRoute: ActivatedRoute, private dadosservice: DadosService) {
       
+=======
+    constructor(private activatedRoute: ActivatedRoute, private dadosservice: DadosService, private alteraempresaservice: AlteraempresaService) {
+      this.nome_fantasia = '';
+      this.cnpj_empresa = '';
+      this.email_empresa = '';
+      this.nome_responsavel = '';
+      this.endereco_empresa = '';
+      this.porte_empresa = '';
+      this.ramo_empresa = '';
+      this.senha_empresa = '';
+      this.dados = dadosservice;
+>>>>>>> b41beee47d38c3272f3110aee9fb0d17597d3832
     }
   
     ngOnInit() {
@@ -108,6 +122,32 @@
       }
     }
   
+public alteraDados(){
+  const obj = {
+    nomeFantasia    : this.nome_fantasia,
+    cnpjEmpresa     : this.cnpj_empresa,
+    emailEmpresa    : this.email_empresa,
+    nomeResponsavel : this.nome_responsavel,
+    enderecoEmpresa : this.endereco_empresa,
+    porteEmpresa    : this.porte_empresa,
+    ramoEmpresa     : this.ramo_empresa,
+    senhaEmpresa    : this.senha_empresa
+  }
+
+  this.alteraempresaservice.alteraDados(obj).then((dados:any) => {
+    this.nome_fantasia = dados.nomeFantasia;
+    this.cnpj_empresa = dados.cnpjEmpresa;
+    this.email_empresa = dados.emailEmpresa;
+    this.nome_responsavel = dados.nomeResponsavel;
+    this.endereco_empresa = dados.enderecoEmpresa;
+    this.porte_empresa = dados.porteEmpresa;
+    this.ramo_empresa = dados.ramoEmpresa
+    this.senha_empresa = dados.senhaEmpresa;
+  })
+}
+
+public alertButtons = ['OK'];
+
   }
   
   
