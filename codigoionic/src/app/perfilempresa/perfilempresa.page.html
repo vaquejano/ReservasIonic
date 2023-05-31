@@ -1,68 +1,83 @@
 <ion-header>
-  <ion-toolbar class="fundo">
+   <ion-toolbar class="fundo">
+   <ion-title> {{nome_fantasia}} </ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
       </ion-buttons>
-    <ion-title>{{nome_fantasia}}</ion-title>
+    
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content class="fundo">
   <ion-card class="fundo">
     <ion-card-header class="fundo">
-      <ion-card-title><b>Informações da Empresa</b></ion-card-title>
+      <ion-card-title style="text-align: center;"><b>Informações</b></ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-item class="fundo">
-        <ion-label>Nome Fantasia:</ion-label>
+        <ion-label><b>Nome Fantasia:</b></ion-label>
         <ion-text>{{nome_fantasia}}</ion-text>
       </ion-item>
 
       <ion-item class="fundo">
-        <ion-label>CNPJ:</ion-label>
+        <ion-label><b>CNPJ:</b></ion-label>
         <ion-text>{{cnpj_empresa}}</ion-text>
       </ion-item>
 
       <ion-item class="fundo">
-        <ion-label>Email:</ion-label>
+        <ion-label><b>Email:</b></ion-label>
         <ion-text>{{email_empresa}}</ion-text>
       </ion-item>
 
       <ion-item class="fundo">
-        <ion-label>Responsável pela Empresa:</ion-label>
+        <ion-label><b>Responsável pela Empresa:</b></ion-label>
         <ion-text>{{nome_responsavel}}</ion-text>
       </ion-item>
 
       <ion-item class="fundo">
-        <ion-label>Endereço:</ion-label>
+        <ion-label><b>Endereço:</b></ion-label>
         <ion-text>{{endereco_empresa}}</ion-text>
       </ion-item>
 
       <ion-item class="fundo">
-        <ion-label>Porte da Empresa:</ion-label>
+        <ion-label><b>Porte da Empresa:</b></ion-label>
         <ion-text>{{porte_empresa}}</ion-text>
       </ion-item>
 
       <ion-item class="fundo">
-        <ion-label>Ramo da Empresa:</ion-label>
+        <ion-label><b>Ramo da Empresa: </b></ion-label>
         <ion-text>{{ramo_empresa}}</ion-text>
+        
       </ion-item>
     </ion-card-content>
   </ion-card>
 
-
   <ion-row>
     <ion-col size="6">
-      <ion-button shape="round" color="primary" routerLink="/alterardadosempresa">
+      <ion-button id="present-alert" style="font-weight: bold; padding-left: 30px;" class="login-button green-button" shape="round" color="primary" click="alteraDados()">
         <ion-icon slot="start" name="create-outline"></ion-icon>
-        Alterar dados
+        Alterar
+        <Br>
+          Dados
       </ion-button>
+
+      <ion-alert
+      routerLink="/perfilempresa"
+      trigger="present-alert"
+      header="Finalizado"
+      message="Alteração concluída!"
+      [buttons]="alertButtons"
+      ></ion-alert>
+
     </ion-col>
 
     <ion-col size="6" class="ion-text-end">
-      <ion-button shape="round" color="danger" routerLink="/home">
+      <ion-button style="font-weight: bold; padding-right: 30px;" shape="round" color="danger" routerLink="/home">
         <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
-        DESATIVAR CONTA
+        Desativar
+        <br>
+        Conta
       </ion-button>
     </ion-col>
 
