@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { DadosService } from '../api/dados.service';
 
 @Component({
   selector: 'app-listagemempresas',
@@ -8,9 +10,10 @@ import { NavController } from '@ionic/angular';
 })
 export class ListagemempresasPage {
 
-    public selected = 0;
+  nome_fantasia: string;
+  dados: any;
 
-    
+    public selected = 0;
 
     public pathImgs = '../../assets/img/';
 
@@ -23,9 +26,17 @@ export class ListagemempresasPage {
 
     
 
-  constructor(private navCtrl: NavController) {
+  constructor(private navCtrl: NavController, private router: Router, private dadosservice: DadosService) {
     this.setSelected(1);
+    this.nome_fantasia = 'nome_fantasia';
+    this.dados = dadosservice;
    }
+
+   ngOnInit() {
+    this.dados.getAllDados('empresas').then((empresa: { nome_fantasia: string; }) => {
+      this.nome_fantasia = empresa.nome_fantasia;
+    });
+  }
 
    public goDescricaoempresa(descricaoempresa:any){
     this.navCtrl.navigateForward('descricaoempresa',{
