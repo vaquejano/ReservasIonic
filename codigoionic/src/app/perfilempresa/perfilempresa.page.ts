@@ -7,7 +7,7 @@
 //   styleUrls: ['./perfilempresa.page.scss'],
 // })
 // export class PerfilempresaPage {
-  
+
 //   cod_empresa: any;
 //   nome_fantasia: string;
 //   cnpj_empresa: string;
@@ -59,14 +59,15 @@
   import { ActivatedRoute } from '@angular/router';
   import { DadosService } from '../api/dados.service';
   import { AlteraempresaService} from '../api/alteraempresa.service';
-  
+  import { ExcluiempresaService } from '../api/excluiempresa.service';
+
   @Component({
     selector: 'app-perfilempresa',
     templateUrl: './perfilempresa.page.html',
     styleUrls: ['./perfilempresa.page.scss'],
   })
   export class PerfilempresaPage implements OnInit {
-  
+
     public empresa = {
       codEmpresa: 0,
       nomeFantasia: '',
@@ -76,33 +77,19 @@
       enderecoEmpresa: '',
       porteEmpresa: '',
       ramoEmpresa: '',
-      senhaEmpresa: ''
+      senhaEmpresa: '',
+      dados: ''
     }
-    senha_empresa: string;
-    ramo_empresa: string;
-    porte_empresa: string;
-    endereco_empresa: string;
-    nome_responsavel: string;
-    email_empresa: string;
-    cnpj_empresa: string;
-    nome_fantasia: string;
 
     constructor(
       private activatedRoute: ActivatedRoute,
       private dadosservice: DadosService,
-      private alteraempresaservice: AlteraempresaService
+      private alteraempresaservice: AlteraempresaService,
+      private excluiempresaservice: ExcluiempresaService
       ){
-      
-      this.nome_fantasia = '';
-      this.cnpj_empresa = '';
-      this.email_empresa = '';
-      this.nome_responsavel = '';
-      this.endereco_empresa = '';
-      this.porte_empresa = '';
-      this.ramo_empresa = '';
-      this.senha_empresa = '';
+
     }
-  
+
     ngOnInit() {
       this.activatedRoute.queryParams.subscribe(params => {
         if (params['codEmpresa']) {
@@ -112,7 +99,7 @@
         }
       });
     }
-  
+
     public getDadoById() {
       if (this.empresa.codEmpresa) {
         this.dadosservice.getDadoById(this.empresa.codEmpresa).then((dados: any) => {
@@ -128,34 +115,26 @@
         });
       }
     }
-  
-public alteraDados(){
-  const obj = {
-    nomeFantasia    : this.nome_fantasia,
-    cnpjEmpresa     : this.cnpj_empresa,
-    emailEmpresa    : this.email_empresa,
-    nomeResponsavel : this.nome_responsavel,
-    enderecoEmpresa : this.endereco_empresa,
-    porteEmpresa    : this.porte_empresa,
-    ramoEmpresa     : this.ramo_empresa,
-    senhaEmpresa    : this.senha_empresa
-  }
 
-  this.alteraempresaservice.alteraDados(obj).then((dados:any) => {
-    this.nome_fantasia = dados.nomeFantasia;
-    this.cnpj_empresa = dados.cnpjEmpresa;
-    this.email_empresa = dados.emailEmpresa;
-    this.nome_responsavel = dados.nomeResponsavel;
-    this.endereco_empresa = dados.enderecoEmpresa;
-    this.porte_empresa = dados.porteEmpresa;
-    this.ramo_empresa = dados.ramoEmpresa
-    this.senha_empresa = dados.senhaEmpresa;
-  })
+public alteraDados(){
+  if (this.empresa.codEmpresa) {
+    this.dadosservice.deleteDados(this.empresa.codEmpresa).then((dados: any) => {
+      this.empresa.codEmpresa = dados.codEmpresa;
+      this.empresa.nomeFantasia = dados.nomeFantasia;
+      this.empresa.cnpjEmpresa = dados.cnpjEmpresa;
+      this.empresa.emailEmpresa = dados.emailEmpresa;
+      this.empresa.nomeResponsavel = dados.nomeResponsavel;
+      this.empresa.enderecoEmpresa = dados.enderecoEmpresa;
+      this.empresa.porteEmpresa = dados.porteEmpresa;
+      this.empresa.ramoEmpresa = dados.ramoEmpresa;
+      this.empresa.senhaEmpresa = dados.senhaEmpresa;
+    });
+  }
 }
 
 public alertButtons = ['OK'];
 
   }
-  
-  
-  
+
+
+
