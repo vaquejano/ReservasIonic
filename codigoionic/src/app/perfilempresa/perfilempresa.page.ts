@@ -78,12 +78,21 @@
       ramoEmpresa: '',
       senhaEmpresa: ''
     }
-  
-<<<<<<< HEAD
-    constructor(private activatedRoute: ActivatedRoute, private dadosservice: DadosService) {
+    senha_empresa: string;
+    ramo_empresa: string;
+    porte_empresa: string;
+    endereco_empresa: string;
+    nome_responsavel: string;
+    email_empresa: string;
+    cnpj_empresa: string;
+    nome_fantasia: string;
+
+    constructor(
+      private activatedRoute: ActivatedRoute,
+      private dadosservice: DadosService,
+      private alteraempresaservice: AlteraempresaService
+      ){
       
-=======
-    constructor(private activatedRoute: ActivatedRoute, private dadosservice: DadosService, private alteraempresaservice: AlteraempresaService) {
       this.nome_fantasia = '';
       this.cnpj_empresa = '';
       this.email_empresa = '';
@@ -92,8 +101,6 @@
       this.porte_empresa = '';
       this.ramo_empresa = '';
       this.senha_empresa = '';
-      this.dados = dadosservice;
->>>>>>> b41beee47d38c3272f3110aee9fb0d17597d3832
     }
   
     ngOnInit() {

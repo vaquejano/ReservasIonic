@@ -4,13 +4,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
       </ion-buttons>
-<<<<<<< HEAD
-    <ion-title>{{empresa.nomeFantasia}}</ion-title>
-=======
-    
->>>>>>> b41beee47d38c3272f3110aee9fb0d17597d3832
-  </ion-toolbar>
-  
+</ion-toolbar>
 </ion-header>
 
 <ion-content class="fundo">
@@ -20,81 +14,47 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item class="fundo">
-<<<<<<< HEAD
-        <ion-label>Nome Fantasia:</ion-label>
+
+        <ion-label><b>Nome Fantasia:</b></ion-label>
         <ion-text>{{empresa.nomeFantasia}}</ion-text>
       </ion-item>
 
       <ion-item class="fundo">
-        <ion-label>CNPJ:</ion-label>
+        <ion-label><b>CNPJ:</b></ion-label>
         <ion-text>{{empresa.cnpjEmpresa}}</ion-text>
       </ion-item>
 
       <ion-item class="fundo">
-        <ion-label>Email:</ion-label>
+        <ion-label><b>Email:</b></ion-label>
         <ion-text>{{empresa.emailEmpresa}}</ion-text>
       </ion-item>
 
       <ion-item class="fundo">
-        <ion-label>Responsável pela Empresa:</ion-label>
+        <ion-label><b>Responsável pela Empresa:</b></ion-label>
         <ion-text>{{empresa.nomeResponsavel}}</ion-text>
       </ion-item>
 
       <ion-item class="fundo">
-        <ion-label>Endereço:</ion-label>
+        <ion-label><b>Endereço:</b></ion-label>
         <ion-text>{{empresa.enderecoEmpresa}}</ion-text>
       </ion-item>
 
       <ion-item class="fundo">
-        <ion-label>Porte da Empresa:</ion-label>
+        <ion-label><b>Porte da Empresa:</b></ion-label>
         <ion-text>{{empresa.porteEmpresa}}</ion-text>
       </ion-item>
 
       <ion-item class="fundo">
-        <ion-label>Ramo da Empresa:</ion-label>
+        <ion-label><b>Ramo da Empresa:</b></ion-label>
         <ion-text>{{empresa.ramoEmpresa}}</ion-text>
-=======
-        <ion-label><b>Nome Fantasia:</b></ion-label>
-        <ion-text>{{nome_fantasia}}</ion-text>
-      </ion-item>
 
-      <ion-item class="fundo">
-        <ion-label><b>CNPJ:</b></ion-label>
-        <ion-text>{{cnpj_empresa}}</ion-text>
-      </ion-item>
-
-      <ion-item class="fundo">
-        <ion-label><b>Email:</b></ion-label>
-        <ion-text>{{email_empresa}}</ion-text>
-      </ion-item>
-
-      <ion-item class="fundo">
-        <ion-label><b>Responsável pela Empresa:</b></ion-label>
-        <ion-text>{{nome_responsavel}}</ion-text>
-      </ion-item>
-
-      <ion-item class="fundo">
-        <ion-label><b>Endereço:</b></ion-label>
-        <ion-text>{{endereco_empresa}}</ion-text>
-      </ion-item>
-
-      <ion-item class="fundo">
-        <ion-label><b>Porte da Empresa:</b></ion-label>
-        <ion-text>{{porte_empresa}}</ion-text>
-      </ion-item>
-
-      <ion-item class="fundo">
-        <ion-label><b>Ramo da Empresa: </b></ion-label>
-        <ion-text>{{ramo_empresa}}</ion-text>
-        
->>>>>>> b41beee47d38c3272f3110aee9fb0d17597d3832
       </ion-item>
     </ion-card-content>
   </ion-card>
 
   <ion-row>
     <ion-col size="6">
-      <ion-button id="present-alert" style="font-weight: bold; padding-left: 30px;" class="login-button green-button" shape="round" color="primary" click="alteraDados()">
+      <ion-button id="present-alert" style="font-weight: bold; padding-left: 25px;" class="login-button green-button" shape="round" color="primary" click="alteraDados()">
         <ion-icon slot="start" name="create-outline"></ion-icon>
         Alterar
         <Br>
@@ -105,14 +65,14 @@
       routerLink="/perfilempresa"
       trigger="present-alert"
       header="Finalizado"
-      message="Alteração concluída!"
+      message="Alteração concluída com sucesso!"
       [buttons]="alertButtons"
       ></ion-alert>
 
     </ion-col>
 
     <ion-col size="6" class="ion-text-end">
-      <ion-button style="font-weight: bold; padding-right: 30px;" shape="round" color="danger" routerLink="/home">
+      <ion-button style="font-weight: bold; padding-right: 25px;" shape="round" color="danger" routerLink="/home">
         <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
         Desativar
         <br>
