@@ -38,9 +38,9 @@ export class EmpresaPage {
           this.loginempresaservice.getId(id);
         } else {
           // Login falhou
-          console.log('Credenciais inválidas');
+          console.log('Credenciais inválidas')
           this.loginBemSucedido = false;
-          this.exibirAlerta('Dados incorretos');
+          this.exibirAlerta('Dados incorretos')
         }
       },
       (error) => {

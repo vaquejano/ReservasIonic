@@ -24,13 +24,6 @@
 <ion-button shape="round" class="login-button green-button" (click)="fazerLogin()">
   <ion-icon slot="start" name="enter-outline"></ion-icon>
   <b>Entrar</b>
-  <ng-container *ngIf="loginBemSucedido; else erroTemplate">
-  </ng-container>
-  <ng-template #erroTemplate>
-    <br><br>
-    tentativa de colocar um alerta falha caso de errado a verificaçao de errado
-
-  </ng-template>
 </ion-button>
 
 <br>

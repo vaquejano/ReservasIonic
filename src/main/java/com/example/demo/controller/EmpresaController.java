@@ -92,7 +92,7 @@ public ResponseEntity<Empresa> getByCnpjEmpresaAndSenhaEmpresa(@RequestBody Empr
 
     if (optionalEmpresa.isPresent()) {
         Empresa empresaLogada = optionalEmpresa.get();
-        int idEmpresa = empresaLogada.getCodEmpresa();
+  
 
             return ResponseEntity.ok().body(empresaLogada);
     } else {

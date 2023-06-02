@@ -67,7 +67,7 @@
   export class PerfilempresaPage implements OnInit {
 
     public empresa = {
-      codEmpresa: 0,
+      codEmpresa: '',
       nomeFantasia: '',
       cnpjEmpresa: '',
       emailEmpresa: '',
@@ -76,7 +76,7 @@
       porteEmpresa: '',
       ramoEmpresa: '',
       senhaEmpresa: '',
-      dados: ''
+      empresa: ''
     }
 
     constructor(
@@ -88,8 +88,11 @@
 
     ngOnInit() {
       this.activatedRoute.queryParams.subscribe(params => {
+
+        this.empresa.codEmpresa = params['codEmpresa']
+        
         if (params['codEmpresa']) {
-          this.empresa.codEmpresa = Number(params['codEmpresa']);
+          this.empresa.codEmpresa = String(params['codEmpresa']);
           console.log('cod_empresa:', this.empresa.codEmpresa); // Exibe o valor de cod_empresa no console
           this.getDadoById();
         }
@@ -97,18 +100,19 @@
     }
 
     public getDadoById() {
-      if (this.empresa.codEmpresa) {
-        this.dadosservice.getDadoById(this.empresa.codEmpresa).then((dados: any) => {
-          this.empresa.codEmpresa = dados.codEmpresa;
-          this.empresa.nomeFantasia = dados.nomeFantasia;
-          this.empresa.cnpjEmpresa = dados.cnpjEmpresa;
-          this.empresa.emailEmpresa = dados.emailEmpresa;
-          this.empresa.nomeResponsavel = dados.nomeResponsavel;
-          this.empresa.enderecoEmpresa = dados.enderecoEmpresa;
-          this.empresa.porteEmpresa = dados.porteEmpresa;
-          this.empresa.ramoEmpresa = dados.ramoEmpresa;
-          this.empresa.senhaEmpresa = dados.senhaEmpresa;
+      {
+        this.dadosservice.getDadoById(this.empresa.codEmpresa, this.empresa.cnpjEmpresa, this.empresa.senhaEmpresa, this.empresa.nomeFantasia, this.empresa.emailEmpresa, this.empresa.enderecoEmpresa, this.empresa.nomeResponsavel, this.empresa.porteEmpresa, this.empresa.ramoEmpresa).then((empresa: any) => {
+          this.empresa.codEmpresa = empresa.codEmpresa;
+          this.empresa.nomeFantasia = empresa.nomeFantasia;
+          this.empresa.cnpjEmpresa = empresa.cnpjEmpresa;
+          this.empresa.emailEmpresa = empresa.emailEmpresa;
+          this.empresa.nomeResponsavel = empresa.nomeResponsavel;
+          this.empresa.enderecoEmpresa = empresa.enderecoEmpresa;
+          this.empresa.porteEmpresa = empresa.porteEmpresa;
+          this.empresa.ramoEmpresa = empresa.ramoEmpresa;
+          this.empresa.senhaEmpresa = empresa.senhaEmpresa;
         });
+        
       }
     }
   }

@@ -18,14 +18,39 @@ export class DadosService {
     });
   }
 
-  public getDadoById(id: number) {
-    const url = `${this.host}login/${id}`;
-    return new Promise((ret) => {
-      this.http.get(url).subscribe(dados => {
-        ret(dados);
+  public getDadoById (codEmpresa: string, cnpjEmpresa: string, senhaEmpresa: string, emailEmpresa: string, enderecoEmpresa: string, nomeFantasia: string, nomeResponsavel: string, porteEmpresa: string, ramoEmpresa: string ) {
+
+      return new Promise((ret) => {
+        
+        
+        const body = {
+          codEmpresa: codEmpresa,
+          cnpjEmpresa: cnpjEmpresa,
+          senhaEmpresa: senhaEmpresa,
+          emailEmpresa: emailEmpresa,
+          enderecoEmpresa: enderecoEmpresa,
+          nomeFantasia: nomeFantasia,
+          nomeResponsavel: nomeResponsavel,
+          porteEmpresa: porteEmpresa,
+          ramoEmpresa: ramoEmpresa
+        }
+  
+        this.http.get(this.host + 'login').subscribe(empresa => {
+          ret(empresa);
+        });
+        console.log(body)
       });
-    });
-  }
+    }
+
+
+
+
+
+
+
+
+
+
 
   public postDados(obj: any) {
     return new Promise((ret) => {
