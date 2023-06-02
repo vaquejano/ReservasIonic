@@ -58,8 +58,6 @@
   import { Component, OnInit } from '@angular/core';
   import { ActivatedRoute } from '@angular/router';
   import { DadosService } from '../api/dados.service';
-  import { AlteraempresaService} from '../api/alteraempresa.service';
-  import { ExcluiempresaService } from '../api/excluiempresa.service';
 
   @Component({
     selector: 'app-perfilempresa',
@@ -84,8 +82,6 @@
     constructor(
       private activatedRoute: ActivatedRoute,
       private dadosservice: DadosService,
-      private alteraempresaservice: AlteraempresaService,
-      private excluiempresaservice: ExcluiempresaService
       ){
 
     }
@@ -115,26 +111,4 @@
         });
       }
     }
-
-public alteraDados(){
-  if (this.empresa.codEmpresa) {
-    this.dadosservice.deleteDados(this.empresa.codEmpresa).then((dados: any) => {
-      this.empresa.codEmpresa = dados.codEmpresa;
-      this.empresa.nomeFantasia = dados.nomeFantasia;
-      this.empresa.cnpjEmpresa = dados.cnpjEmpresa;
-      this.empresa.emailEmpresa = dados.emailEmpresa;
-      this.empresa.nomeResponsavel = dados.nomeResponsavel;
-      this.empresa.enderecoEmpresa = dados.enderecoEmpresa;
-      this.empresa.porteEmpresa = dados.porteEmpresa;
-      this.empresa.ramoEmpresa = dados.ramoEmpresa;
-      this.empresa.senhaEmpresa = dados.senhaEmpresa;
-    });
   }
-}
-
-public alertButtons = ['OK'];
-
-  }
-
-
-

@@ -54,36 +54,23 @@
 
   <ion-row>
     <ion-col size="6">
-      <ion-button id="present-alert" style="font-weight: bold; padding-left: 25px;" class="login-button green-button" shape="round" click="alteraDados()">
+      <ion-button style="font-weight: bold; padding-left: 25px;" class="login-button green-button" shape="round" routerLink="/alterardadosempresa">
         <ion-icon slot="start" name="create-outline"></ion-icon>
         Alterar
         <Br>
           Dados
       </ion-button>
 
-      <ion-alert
-      trigger="present-alert"
-      header="Finalizado"
-      message="Alteração concluída com sucesso!"
-      [buttons]="alertButtons"
-      ></ion-alert>
     </ion-col>
 
     <ion-col size="6">
-      <ion-button id="present-alert" style="font-weight: bold; padding-right: 25px;" shape="round" color="danger" click="excluiEmpresa()">
+      <ion-button id="present-alert" style="font-weight: bold; padding-right: 25px;" shape="round" color="danger" click="deletarDados()">
         <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
         Desativar
         <br>
         Conta
-      </ion-button>
 
-      <ion-alert
-      routerLink="/home"
-      trigger="present-alert"
-      header="Finalizado"
-      message="Conta excluída com sucesso!"
-      [buttons]="alertButtons"
-      ></ion-alert>
+      </ion-button>
 
     </ion-col>
 
