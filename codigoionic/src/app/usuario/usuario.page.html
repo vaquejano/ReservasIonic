@@ -10,19 +10,20 @@
   <img src="assets/img/resrvtab.png">
 
   <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked>CPF</ion-label>
+    <ion-label position="floating" stacked> CPF: </ion-label>
     <ion-input [(ngModel)]="cpf_usuario"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked>Senha</ion-label>
+    <ion-label position="floating" stacked> Senha: </ion-label>
     <ion-input [(ngModel)]="senha_usuario"></ion-input>
   </ion-item>
 
 <br>
 <br>
 
-<ion-button style="font-weight: bold;" shape="round" class="login-button green-button" (click)="fazerLogin()"> 
+<div class="ion-text-center">
+<ion-button shape="round" class="login-button green-button" (click)="fazerLogin()">
   <ion-icon slot="start" name="enter-outline"></ion-icon>
   <b>Entrar</b>
   <ng-container *ngIf="loginBemSucedido; else erroTemplate">
@@ -30,10 +31,11 @@
   <ng-template #erroTemplate >
     <br><br>
 
-    TENTATIVA DE COLOCAR UM ALERTA
+    <!-- TENTATIVA DE COLOCAR UM ALERTA -->
 
   </ng-template>
 </ion-button>
+</div>
 
 <br>
 <br>
