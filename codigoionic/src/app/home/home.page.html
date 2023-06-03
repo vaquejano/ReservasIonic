@@ -2,22 +2,28 @@
 </ion-header>
 <ion-content [fullscreen]="true" class="fundo">
 <ion-row class="ion-justify-content-center">
-  <ion-col size="6">
+  <ion-col style="top: -15px;">
   <img src="assets/img/resrvtab.png">
 </ion-col>
 </ion-row>
 
-<ion-row class="ion-justify-content-center">
-  <ion-col size="2">
-  <img src="assets/img/usuario.png" routerLink="/usuario" style="width: 60px; height: 60px;">
+
+<ion-row class="ion-justify-content-center" style="margin-left: 15px">
+  <ion-col size="4">
+  <img src="assets/img/usuario.png" routerLink="/usuario" class="icones">
+  <div style="margin-top: -10px">
   <ion-text><h3>Usuário</h3></ion-text>
+</div>
 </ion-col>
 
-<ion-col size="2">
-  <img src="assets/img/empresa.png" routerLink="/empresa" style="width: 60px; height: 60px;">
+<ion-col size="4">
+  <img src="assets/img/empresa.png" routerLink="/empresa" class="icones">
+  <div style="margin-top: -10px">
   <ion-text><h4>Empresa</h4></ion-text>
+</div>
 </ion-col>
 </ion-row>
+
 </ion-content>
 <ion-footer class="ion-no-border">
   <ion-toolbar class="fundo">

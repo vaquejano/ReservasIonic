@@ -12,22 +12,22 @@
   </ion-row>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked><b> CNPJ: </b></ion-label>
+    <ion-label position="floating" stacked> CNPJ: </ion-label>
     <ion-input [(ngModel)]="cnpj_empresa"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating"><b> Nome Fantasia: </b></ion-label>
+    <ion-label position="floating"> Nome Fantasia: </ion-label>
     <ion-input [(ngModel)]="nome_fantasia"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked><b> Endereço da Empresa: </b></ion-label>
+    <ion-label position="floating" stacked> Endereço da Empresa: </ion-label>
     <ion-input [(ngModel)]="endereco_empresa"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating"><b> Porte da Empresa </b></ion-label>
+    <ion-label position="floating"> Porte da Empresa </ion-label>
     <ion-select [(ngModel)]="porte_empresa" placeholder="Selecione uma opção">
       <ion-select-option [value]="'Grande'"> Grande </ion-select-option>
       <ion-select-option [value]="'Medio'"> Medio </ion-select-option>
@@ -36,28 +36,27 @@
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked><b> Ramo da Empresa: </b></ion-label>
+    <ion-label position="floating" stacked> Ramo da Empresa: </ion-label>
     <ion-input [(ngModel)]="ramo_empresa"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked><b> Responsável pela empresa: </b></ion-label>
+    <ion-label position="floating" stacked> Responsável pela empresa: </ion-label>
     <ion-input [(ngModel)]="nome_responsavel"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked><b> E-mail: </b></ion-label>
+    <ion-label position="floating" stacked> E-mail: </ion-label>
     <ion-input [(ngModel)]="email_empresa"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked><b> Senha: </b></ion-label>
+    <ion-label position="floating" stacked> Senha: </ion-label>
     <ion-input type="password" [(ngModel)]="senha_empresa"></ion-input>
   </ion-item>
 
   <br>
-  <br>
-  
+
   <ion-row class="ion-text-center">
     <ion-col>
       <ion-button class="cadastrar-button green-button" (click)="salvaEmpresa()" >
@@ -67,7 +66,7 @@
     </ion-col>
   </ion-row>
 
-
-
-  <ion-alert routerLink="/empresa" trigger="present-alert" header="Finalizado" message="Cadastro concluído!"
+  <ion-alert routerLink="/empresa" trigger="present-alert" header="Finalizado!" message="Cadastro concluído!"
     [buttons]="alertButtons"></ion-alert>
+<br>
+<br>
