@@ -18,24 +18,16 @@ export class DadosService {
     });
   }
 
-  public getDadoById (codEmpresa: string, cnpjEmpresa: string, senhaEmpresa: string, emailEmpresa: string, enderecoEmpresa: string, nomeFantasia: string, nomeResponsavel: string, porteEmpresa: string, ramoEmpresa: string ) {
+  public getDadoById (codempresa: string) {
 
       return new Promise((ret) => {
         
         
         const body = {
-          codEmpresa: codEmpresa,
-          cnpjEmpresa: cnpjEmpresa,
-          senhaEmpresa: senhaEmpresa,
-          emailEmpresa: emailEmpresa,
-          enderecoEmpresa: enderecoEmpresa,
-          nomeFantasia: nomeFantasia,
-          nomeResponsavel: nomeResponsavel,
-          porteEmpresa: porteEmpresa,
-          ramoEmpresa: ramoEmpresa
+          codEmpresa: codempresa
         }
   
-        this.http.get(this.host + 'login').subscribe(empresa => {
+        this.http.get(this.host + 'empresa/'+`${codempresa}`).subscribe(empresa => {
           ret(empresa);
         });
         console.log(body)

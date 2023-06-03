@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DadosService } from '../api/dados.service';
+import { EmpresaPage } from '../empresa/empresa.page';
 
 
 
@@ -9,26 +10,35 @@ import { DadosService } from '../api/dados.service';
   templateUrl: './listagemreservas.page.html',
   styleUrls: ['./listagemreservas.page.scss'],
 })
-export class ListagemreservasPage implements OnInit {
+export class ListagemreservasPage  {
 
-  nome_fantasia: string;
-  dados: any;
+  empresa: any
+  nome_fantasia: any
+  dados: any
 
-  constructor(private router: Router, private dadosservice: DadosService) {
-    this.nome_fantasia = 'nome_fantasia';
-    this.dados = dadosservice;
-  }
+  @ViewChild('empresaTest') empresaLogada:  EmpresaPage | undefined
 
-  ngOnInit() {
-    this.dados.getAllDados('empresas').then((empresa: { nome_fantasia: string; }) => {
-      this.nome_fantasia = empresa.nome_fantasia;
+  constructor(private router: Router, private dadosservice: DadosService, private route: ActivatedRoute) {
+
+    this.route.queryParams.subscribe((params) => {
+      this.dados = params['codEmpresa'];
     });
+
+    
+    
   }
+
+  // ngOnInit() {
+  //   this.dados.getAllDados('empresas').then((empresa: { nome_fantasia: string; }) => {
+  //     this.nome_fantasia = empresa.nome_fantasia;
+  //   });
+  // }
 
   openPerfilEmpresa() {
-    this.dados.getDadoById().then((dados: any) => {
-      const idEmpresa = dados.codEmpresa;
-      this.router.navigate(['/perfilempresa'], { queryParams: { codEmpresa: idEmpresa } });
+    console.log(this.dados)
+    this.empresa.getId(this.dados).subscribe(() => {
+      
+      this.router.navigate(['/perfilempresa']);
     });
   }
 

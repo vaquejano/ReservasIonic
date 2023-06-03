@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginempresaService } from '../api/loginempresa.service';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,17 +13,30 @@ export class EmpresaPage {
   senhaEmpresa: any;
   codEmpresa: any;
   loginBemSucedido = false;
+  empresaLogada: any
+  empresa : any
+  codEmpresa2: any
 
   constructor(
     private loginempresaservice: LoginempresaService,
     private alertController: AlertController,
-    private router: Router
-  ) { }
+    private router: Router,
+    private navCtrl: NavController
+  ) {}
+
+
+  enviarDados(codEmpresa: any) {
+    this.navCtrl.navigateForward('listagemreservas', {
+      queryParams: { codEmpresa: codEmpresa },
+    });
+  }
+
 
   fazerLogin() {
     const cnpj = this.cnpjEmpresa;
     const senha = this.senhaEmpresa;
     const id = this.codEmpresa;
+    
 
     this.loginempresaservice.verificarCredenciais(cnpj, senha).then(
       (empresa) => {
@@ -35,7 +48,8 @@ export class EmpresaPage {
           this.loginBemSucedido = true;
           this.router.navigate(['/listagemreservas']);
           // fazer um metoo getbyid
-          this.loginempresaservice.getId(id);
+          this.empresaLogada = this.loginempresaservice.getId(id);
+          
         } else {
           // Login falhou
           console.log('Credenciais inválidas')

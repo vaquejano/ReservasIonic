@@ -64,7 +64,7 @@
     templateUrl: './perfilempresa.page.html',
     styleUrls: ['./perfilempresa.page.scss'],
   })
-  export class PerfilempresaPage implements OnInit {
+  export class PerfilempresaPage  {
 
     public empresa = {
       codEmpresa: '',
@@ -80,28 +80,16 @@
     }
 
     constructor(
-      private activatedRoute: ActivatedRoute,
+      
       private dadosservice: DadosService,
       ){
 
     }
 
-    ngOnInit() {
-      this.activatedRoute.queryParams.subscribe(params => {
-
-        this.empresa.codEmpresa = params['codEmpresa']
-        
-        if (params['codEmpresa']) {
-          this.empresa.codEmpresa = String(params['codEmpresa']);
-          console.log('cod_empresa:', this.empresa.codEmpresa); // Exibe o valor de cod_empresa no console
-          this.getDadoById();
-        }
-      });
-    }
-
+   
     public getDadoById() {
       {
-        this.dadosservice.getDadoById(this.empresa.codEmpresa, this.empresa.cnpjEmpresa, this.empresa.senhaEmpresa, this.empresa.nomeFantasia, this.empresa.emailEmpresa, this.empresa.enderecoEmpresa, this.empresa.nomeResponsavel, this.empresa.porteEmpresa, this.empresa.ramoEmpresa).then((empresa: any) => {
+        this.dadosservice.getDadoById(this.empresa.codEmpresa).then((empresa: any) => {
           this.empresa.codEmpresa = empresa.codEmpresa;
           this.empresa.nomeFantasia = empresa.nomeFantasia;
           this.empresa.cnpjEmpresa = empresa.cnpjEmpresa;
