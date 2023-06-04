@@ -74,14 +74,24 @@
       color: #000000;
   }
 
-  .cor-letra{
-    color: #505800
-  }
-
-  .background{
-    background-color: #494848;
-  }
-
   .ops-menu{
     font-size: 20px;
   }
+
+  ion-title{
+    font-weight: bold;
+  }
+
+  .negrito {
+    ion-icon {
+      font-weight: bold;
+    }
+  }
+
+  .itens-menu{
+    display: block;
+    margin: 5px auto;
+    margin-left: auto;
+    font-size: 30px;
+  }
+

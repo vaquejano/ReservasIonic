@@ -1,22 +1,15 @@
-<ion-header [translucent]="true">
-  <ion-toolbar class="fundo">
-    <ion-buttons slot="start">
+ <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
       </ion-buttons>
-    <ion-title style="text-align: center;"><b> Alterar dados </b></ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true" class="fundo">
-  <ion-row class="ion-justify-content-center">
-    <ion-col size="13">
+  <ion-row class="ion-text-center">
+    <ion-col size="13" >
     <img src="assets/img/resrvtab.png">
   </ion-col>
   </ion-row>
 
-
-
-   <ion-item style="margin-bottom: 5px" class="fundo">
+ <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> E-mail: </ion-label>
     <ion-input [(ngModel)]="usuario.email_usuario"></ion-input>
   </ion-item>
@@ -28,9 +21,10 @@
 
   <br>
   <div class="ion-text-center">
-  <ion-button shape="round" color="success" routerLink="/perfil">
+  <ion-button shape="round" class="login-button green-button" routerLink="/perfil">
     <ion-icon slot="start" name="checkbox-outline"></ion-icon>
-    <b>Salvar </b>
+    <br>
+    <b> Alterar </b>
   </ion-button>
 </div>
 
