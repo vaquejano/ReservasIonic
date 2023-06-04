@@ -3,3 +3,53 @@
       font-size: 30px;
       color: #ff0000;
   }
+
+  .cardapio-container {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+
+  }
+  .cardapio {
+    --background: transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 11px;
+ }
+ .nome-cardapio-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    font-weight: bold;
+}
+
+.nome-cardapio-wrapper .label {
+color: black;
+margin-top: 4px;
+}
+
+.imagem-empresa{
+  border-radius: 15px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.ion-justify-content-center {
+  justify-content: center;
+}
+
+ion-text {
+  font-weight: bold;
+  text-align: center;
+}
+
+ion-input {
+margin: 5px;
+}
