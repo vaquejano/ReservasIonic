@@ -6,18 +6,23 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LoginempresaService {
-  private host = 'http://localhost:8080/api';
+  private host = 'http://localhost:8080/api/';
 
   constructor(private http: HttpClient) { }
 
-  getId(id: any){
-    const url2 = `${this.host}/login/`;
-   
-
-    return new Promise((ret) => {
-      this.http.get(url2 + id).subscribe(body2 => {
-        ret(body2);
-      });
+  getId(codEmpresa: any): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.host + 'empresa/'+`${codEmpresa}`).subscribe(
+        (empresa) => {
+          resolve(empresa);
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    }).catch((error) => {
+      console.error('Erro na requisição HTTP:', error);
+      throw error;
     });
   }
 

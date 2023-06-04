@@ -55,9 +55,11 @@
   //   })
   // }
 
-  import { Component, OnInit } from '@angular/core';
+  import { Component, OnInit, ViewChild } from '@angular/core';
   import { ActivatedRoute } from '@angular/router';
   import { DadosService } from '../api/dados.service';
+import { NavController } from '@ionic/angular';
+import { ListagemreservasPage } from '../listagemreservas/listagemreservas.page';
 
   @Component({
     selector: 'app-perfilempresa',
@@ -79,14 +81,19 @@
       empresa: ''
     }
 
+    dados: any
+
     constructor(
       
-      private dadosservice: DadosService,
+      private dadosservice: DadosService, private navCtrl: NavController, private route: ActivatedRoute
       ){
 
+        // this.route.queryParams.subscribe((params) => {
+        //   this.dados = params['codEmpresa'];
+        // });
     }
 
-   
+    // @ViewChild('empresaTest') empresaLogada:  ListagemreservasPage | undefined
     public getDadoById() {
       {
         this.dadosservice.getDadoById(this.empresa.codEmpresa).then((empresa: any) => {

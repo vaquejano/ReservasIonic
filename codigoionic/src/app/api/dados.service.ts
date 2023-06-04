@@ -18,22 +18,41 @@ export class DadosService {
     });
   }
 
-  public getDadoById (codempresa: string) {
+  // public getDadoById (codempresa: string) {
 
-      return new Promise((ret) => {
-        
-        
-        const body = {
-          codEmpresa: codempresa
-        }
-  
-        this.http.get(this.host + 'empresa/'+`${codempresa}`).subscribe(empresa => {
-          ret(empresa);
-        });
-        console.log(body)
-      });
-    }
+  //     return new Promise((ret) => {
 
+
+  //       const body = {
+  //         codEmpresa: codempresa
+  //       }
+
+  //       this.http.get(this.host + 'empresa/'+`${codempresa}`).subscribe(empresa => {
+  //         ret(empresa);
+  //       });
+  //       console.log(body)
+  //     });
+  //   }
+
+
+  public getDadoById(codEmpresa: string) {
+    return new Promise((ret) => {
+      const body = {
+        codEmpresa: codEmpresa,
+        // cnpjEmpresa: cnpjEmpresa,
+        // senhaEmpresa: senhaEmpresa,
+        // emailEmpresa: emailEmpresa,
+        // enderecoEmpresa: enderecoEmpresa,
+        // nomeFantasia: nomeFantasia,
+        // nomeResponsavel: nomeResponsavel,
+        // porteEmpresa: porteEmpresa,
+        // ramoEmpresa: ramoEmpresa
+      }
+      this.http.get(this.host + 'empresa/'+`${codEmpresa}`).subscribe(empresa => {
+        ret(empresa);
+      }); console.log(body)
+    });
+  }
 
 
 

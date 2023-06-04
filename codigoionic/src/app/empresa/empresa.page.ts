@@ -25,17 +25,13 @@ export class EmpresaPage {
   ) {}
 
 
-  enviarDados(codEmpresa: any) {
-    this.navCtrl.navigateForward('listagemreservas', {
-      queryParams: { codEmpresa: codEmpresa },
-    });
-  }
+  
 
 
   fazerLogin() {
     const cnpj = this.cnpjEmpresa;
     const senha = this.senhaEmpresa;
-    const id = this.codEmpresa;
+    const codEmpresa = this.codEmpresa;
     
 
     this.loginempresaservice.verificarCredenciais(cnpj, senha).then(
@@ -48,7 +44,8 @@ export class EmpresaPage {
           this.loginBemSucedido = true;
           this.router.navigate(['/listagemreservas']);
           // fazer um metoo getbyid
-          this.empresaLogada = this.loginempresaservice.getId(id);
+           this.empresaLogada = this.loginempresaservice.getId(codEmpresa);
+          
           
         } else {
           // Login falhou
@@ -73,4 +70,12 @@ export class EmpresaPage {
 
     await alert.present();
   }
+
+
+
+  // enviarDados(codEmpresa: any) {
+  //   this.navCtrl.navigateForward('listagemreservas', {
+  //     queryParams: { codEmpresa: codEmpresa },
+  //   });
+  // }
 }
