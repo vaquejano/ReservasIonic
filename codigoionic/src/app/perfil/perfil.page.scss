@@ -1,0 +1,23 @@
+ion-label{
+  font-weight: bold;
+}
+
+ion-button{
+  font-weight: bold;
+}
+
+ion-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+}
+
+.button-col:not(:last-child) {
+  margin-right: 100px;
+}
