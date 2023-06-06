@@ -16,22 +16,22 @@
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> CPF: </ion-label>
-    <ion-input [(ngModel)]="cpf_usuario"></ion-input>
+    <ion-input type="number" placeholder="000.000.000-00" [(ngModel)]="cpf_usuario"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> E-mail: </ion-label>
-    <ion-input [(ngModel)]="email_usuario"></ion-input>
+    <ion-input type="email" placeholder="email@domain.com" [(ngModel)]="email_usuario"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Senha: </ion-label>
-    <ion-input [(ngModel)]="senha_usuario"></ion-input>
+    <ion-input type="password" [(ngModel)]="senha_usuario"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Telefone: </ion-label>
-    <ion-input [(ngModel)]="telefone_usuario"></ion-input>
+    <ion-input type="tel" placeholder="4499999-9999" [(ngModel)]="telefone_usuario"></ion-input>
   </ion-item>
 
 <br>

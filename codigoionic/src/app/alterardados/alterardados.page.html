@@ -4,24 +4,20 @@
 
 <ion-content [fullscreen]="true" class="fundo">
   <ion-row class="ion-text-center">
-    <ion-col size="13" >
+    <ion-col>
     <img src="assets/img/resrvtab.png">
   </ion-col>
   </ion-row>
 
-  <ion-row>
-    <ion-col>
- <ion-item class="fundo">
-    <ion-label stacked> E-mail: </ion-label>
-    <ion-input [(ngModel)]="usuario.email_usuario"></ion-input>
+ <ion-item style="margin-bottom: 5px" class="fundo">
+    <ion-label position="floating" stacked> E-mail: </ion-label>
+    <ion-input type="email" placeholder="email@domain.com" [(ngModel)]="usuario.email_usuario"></ion-input>
   </ion-item>
 
-  <ion-item class="fundo">
-    <ion-label stacked> Senha: </ion-label>
-    <ion-input [(ngModel)]="usuario.senha_usuario"></ion-input>
+  <ion-item style="margin-bottom: 5px" class="fundo">
+    <ion-label position="floating" stacked> Senha: </ion-label>
+    <ion-input type="password" [(ngModel)]="usuario.senha_usuario"></ion-input>
   </ion-item>
-  </ion-col>
-  </ion-row>
 
   <br>
   <div class="ion-text-center">
