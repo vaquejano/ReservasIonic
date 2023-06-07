@@ -68,46 +68,33 @@ import { ListagemreservasPage } from '../listagemreservas/listagemreservas.page'
   })
   export class PerfilempresaPage  {
 
-    public empresa = {
-      codEmpresa: '',
-      nomeFantasia: '',
-      cnpjEmpresa: '',
-      emailEmpresa: '',
-      nomeResponsavel: '',
-      enderecoEmpresa: '',
-      porteEmpresa: '',
-      ramoEmpresa: '',
-      senhaEmpresa: '',
-      empresa: ''
-    }
-
-    dados: any
+    public empresaLogada : any = {}
 
     constructor(
       
       private dadosservice: DadosService, private navCtrl: NavController, private route: ActivatedRoute
       ){
 
-        // this.route.queryParams.subscribe((params) => {
-        //   this.dados = params['codEmpresa'];
-        // });
+        this.route.queryParams.subscribe((params) => {
+          this.empresaLogada = params['empresaLogada'];
+        });
     }
 
-    // @ViewChild('empresaTest') empresaLogada:  ListagemreservasPage | undefined
-    public getDadoById() {
-      {
-        this.dadosservice.getDadoById(this.empresa.codEmpresa).then((empresa: any) => {
-          this.empresa.codEmpresa = empresa.codEmpresa;
-          this.empresa.nomeFantasia = empresa.nomeFantasia;
-          this.empresa.cnpjEmpresa = empresa.cnpjEmpresa;
-          this.empresa.emailEmpresa = empresa.emailEmpresa;
-          this.empresa.nomeResponsavel = empresa.nomeResponsavel;
-          this.empresa.enderecoEmpresa = empresa.enderecoEmpresa;
-          this.empresa.porteEmpresa = empresa.porteEmpresa;
-          this.empresa.ramoEmpresa = empresa.ramoEmpresa;
-          this.empresa.senhaEmpresa = empresa.senhaEmpresa;
-        });
+    // // @ViewChild('empresaTest') empresaLogada:  ListagemreservasPage | undefined
+    // public getDadoById() {
+    //   {
+    //     this.dadosservice.getDadoById(this.empresa.codEmpresa).then((empresa: any) => {
+    //       this.empresa.codEmpresa = empresa.codEmpresa;
+    //       this.empresa.nomeFantasia = empresa.nomeFantasia;
+    //       this.empresa.cnpjEmpresa = empresa.cnpjEmpresa;
+    //       this.empresa.emailEmpresa = empresa.emailEmpresa;
+    //       this.empresa.nomeResponsavel = empresa.nomeResponsavel;
+    //       this.empresa.enderecoEmpresa = empresa.enderecoEmpresa;
+    //       this.empresa.porteEmpresa = empresa.porteEmpresa;
+    //       this.empresa.ramoEmpresa = empresa.ramoEmpresa;
+    //       this.empresa.senhaEmpresa = empresa.senhaEmpresa;
+    //     });
         
-      }
-    }
+    //   }
+    // }
   }

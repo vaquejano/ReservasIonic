@@ -11,13 +11,14 @@ export class LoginempresaService {
   constructor(private http: HttpClient) { }
 
   getId(codEmpresa: any): Promise<any> {
-    return new Promise((resolve, reject) => {
+    console.log(codEmpresa)
+    return new Promise((resolve) => {
       this.http.get(this.host + 'empresa/'+`${codEmpresa}`).subscribe(
         (empresa) => {
+          console.log(empresa)
           resolve(empresa);
         },
         (error) => {
-          reject(error);
         }
       );
     }).catch((error) => {

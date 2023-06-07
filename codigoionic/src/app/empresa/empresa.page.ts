@@ -35,16 +35,19 @@ export class EmpresaPage {
     
 
     this.loginempresaservice.verificarCredenciais(cnpj, senha).then(
-      (empresa) => {
+      (empresa: any) => {
         if (empresa) {
-          console.log('apareceu o carai da empresa')
-          console.log(empresa)
           // Login bem-sucedido
           
           this.loginBemSucedido = true;
-          this.router.navigate(['/listagemreservas']);
+          
           // fazer um metoo getbyid
-           this.empresaLogada = this.loginempresaservice.getId(codEmpresa);
+          this.loginempresaservice.getId(empresa.codEmpresa).then(emprexa => {
+            this.empresaLogada = emprexa;
+            this.navCtrl.navigateForward('listagemreservas', {
+              queryParams: { empresaLogada: this.empresaLogada },
+            });
+          });
           
           
         } else {
