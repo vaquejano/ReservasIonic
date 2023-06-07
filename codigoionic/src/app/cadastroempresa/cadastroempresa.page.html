@@ -55,15 +55,19 @@
 
   <br>
 
-  <ion-row class="ion-text-center">
-    <ion-col>
-      <ion-button class="cadastrar-button green-button" (click)="salvaEmpresa()" >
-        <ion-icon slot="start" name="duplicate-outline"></ion-icon>
-        <b>Cadastrar</b>
-      </ion-button>
-    </ion-col>
-  </ion-row>
-
-  <ion-alert routerLink="/empresa" trigger="present-alert" header="Finalizado!" message="Cadastro concluído!"
-    [buttons]="alertButtons"></ion-alert>
-<br>
+  <div class="ion-text-center">
+    <ion-button shape="round" id="present-alert" class="cadastrar-button green-button" (click)="salvaEmpresa()" >
+      <ion-icon slot="start" name="duplicate-outline"></ion-icon>
+      Cadastrar
+    </ion-button>
+  </div>
+  
+      <ion-alert
+      routerLink="/empresa"
+      trigger="present-alert"
+      header="Finalizado"
+      message="Cadastro concluído!"
+      [buttons]="alertButtons"
+      ></ion-alert>
+  <br>
+  </ion-content>

@@ -96,7 +96,7 @@ public ResponseEntity<Empresa> getByCnpjEmpresaAndSenhaEmpresa(@RequestBody Empr
 
             return ResponseEntity.ok().body(empresaLogada);
     } else {
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+        return ResponseEntity.ok().body(null);
     }
 }
 }

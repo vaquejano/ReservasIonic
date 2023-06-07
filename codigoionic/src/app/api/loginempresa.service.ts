@@ -29,7 +29,7 @@ export class LoginempresaService {
 
   public verificarCredenciais(cnpj: string, senha: string) {
     return new Promise((ret) => {
-      const url = `${this.host}/login/`;
+      const url = `${this.host}login/`;
 
       const body = {
         cnpjEmpresa: cnpj,
