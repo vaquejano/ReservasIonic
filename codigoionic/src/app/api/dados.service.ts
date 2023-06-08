@@ -60,11 +60,17 @@ export class DadosService {
     });
   }
 
-  public deleteDados(id: number) {
-    return new Promise((ret) => {
-      this.http.delete(this.host + id).subscribe(dados => {
-        console.log(dados);
-      });
+  public deleteDados(empresaLogada: any): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      this.http.delete(this.host + 'empresa/' + empresaLogada.codEmpresa, { responseType: 'text' }).subscribe(
+        () => {
+          resolve('Empresa removida com sucesso');
+        },
+        (error) => {
+          reject(error);
+        }
+      );
     });
   }
+  
 }
