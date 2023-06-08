@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +10,36 @@ export class LoginempresaService {
 
   constructor(private http: HttpClient) { }
 
-  verificarCredenciais(cnpj: string, senha: string): Observable<boolean>  {
-      const url = `${this.host}/login/`;
+  getId(codEmpresa: any): Promise<any> {
+    console.log(codEmpresa)
+    return new Promise((resolve) => {
+      this.http.get(this.host + 'empresa/'+`${codEmpresa}`).subscribe(
+        (empresa) => {
+          console.log(empresa)
+          resolve(empresa);
+        },
+        (error) => {
+        }
+      );
+    }).catch((error) => {
+      console.error('Erro na requisição HTTP:', error);
+      throw error;
+    });
+  }
+
+  public verificarCredenciais(cnpj: string, senha: string) {
+    return new Promise((ret) => {
+      const url = `${this.host}login/`;
 
       const body = {
         cnpjEmpresa: cnpj,
         senhaEmpresa: senha
       };
 
-      return this.http.post<boolean>(url, body);
-  }
+      this.http.post<boolean>(url, body).subscribe((empresa: any) => {
+        ret(empresa);
+      });
+
+    });
+}
 }

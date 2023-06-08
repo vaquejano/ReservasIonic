@@ -7,32 +7,32 @@
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Nome Fantasia: </ion-label>
-    <ion-input [(ngModel)]="empresa.nome_fantasia"></ion-input>
+    <ion-input [(ngModel)]="empresaLogada.nomeFantasia">  {{ empresaLogada.nomeFantasia }}  </ion-input>
   </ion-item>
 
    <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> E-mail: </ion-label>
-    <ion-input type="email" placeholder="email@domain.com" [(ngModel)]="empresa.email_empresa"></ion-input>
+    <ion-input type="email" placeholder="email@domain.com" [(ngModel)]="empresaLogada.emailEmpresa"> {{ empresaLogada.emailEmpresa }}</ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Nome do responsável: </ion-label>
-    <ion-input [(ngModel)]="empresa.nome_responsavel"></ion-input>
+    <ion-input [(ngModel)]="empresaLogada.nomeResponsavel">  {{ empresaLogada.nomeResponsavel }}</ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Endereço: </ion-label>
-    <ion-input [(ngModel)]="empresa.endereco_empresa"></ion-input>
+    <ion-input [(ngModel)]="empresaLogada.enderecoEmpresa"> {{ empresaLogada.enderecoEmpresa }}</ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Senha: </ion-label>
-    <ion-input type="password" [(ngModel)]="empresa.senha_empresa"></ion-input>
+    <ion-input type="password" [(ngModel)]="empresaLogada.senhaEmpresa"> {{ empresaLogada.senhaEmpresa }}</ion-input>
   </ion-item>
  <br>
   <ion-row class="ion-text-center">
     <ion-col>
-  <ion-button shape="round" class="login-button green-button" routerLink="/perfilempresa">
+  <ion-button shape="round" class="login-button green-button" (click)="alterarDados()">
     <ion-icon slot="start" name="checkbox-outline"></ion-icon>
     <b>Salvar</b>
   </ion-button>

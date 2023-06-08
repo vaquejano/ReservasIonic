@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginempresaService } from '../api/loginempresa.service';
-import { AlertController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { AlertController, NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-empresa',
@@ -9,29 +9,39 @@ import { Router } from '@angular/router';
   styleUrls: ['./empresa.page.scss'],
 })
 export class EmpresaPage {
-  cnpj_empresa: any;
-  senha_empresa: any;
+  cnpjEmpresa: any;
+  senhaEmpresa: any;
+  codEmpresa: any;
+  empresaLogada: any;
   loginBemSucedido = false;
 
   constructor(
     private loginempresaservice: LoginempresaService,
     private alertController: AlertController,
-    private router: Router
+    private navCtrl: NavController
   ) {}
 
-fazerLogin() {
-    const cnpj = this.cnpj_empresa;
-    const senha = this.senha_empresa;
+  fazerLogin() {
+    const cnpj = this.cnpjEmpresa;
+    const senha = this.senhaEmpresa;
+    const codEmpresa = this.codEmpresa;
 
-    this.loginempresaservice.verificarCredenciais(cnpj, senha).subscribe(
-      (credenciaisValidas) => {
-        if (credenciaisValidas) {
+
+    this.loginempresaservice.verificarCredenciais(cnpj, senha).then(
+      (empresa: any) => {
+
+        if (empresa) {
 
           // Login bem-sucedido
 
          console.log('Login realizado com sucesso');
           this.loginBemSucedido = true;
-          this.router.navigate(['/listagemreservas']);
+          this.loginempresaservice.getId(empresa.codEmpresa).then(empresa => {
+            this.empresaLogada = empresa;
+            this.navCtrl.navigateForward('listagemreservas', {
+              queryParams: { empresaLogada: this.empresaLogada },
+            });
+          });
         } else {
 
           // Login falhou

@@ -25,14 +25,14 @@ public class Mesa {
     @Column(name = "quantidade_lugar")
     private double quantidadeLugar;
 
-    public Mesa() {
-    }
+    @Column(name = "disponivel")
+    private boolean disponivel;
 
-    public Mesa(int codMesa, Empresa empresa, double quantidadeLugar) {
+    public Mesa(Integer codMesa, Empresa empresa, double quantidadeLugar, boolean disponivel) {
         this.codMesa = codMesa;
         this.empresa = empresa;
         this.quantidadeLugar = quantidadeLugar;
-
+        this.disponivel = disponivel;
     }
 
     public Integer getCodMesa() {
@@ -47,8 +47,25 @@ public class Mesa {
         return quantidadeLugar;
     }
 
+    public boolean isDisponivel() {
+        return disponivel;
+    }
+
+    public void setCodMesa(Integer codMesa) {
+        this.codMesa = codMesa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
     public void setQuantidadeLugar(double quantidadeLugar) {
         this.quantidadeLugar = quantidadeLugar;
     }
 
-}
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
+    }
+
+
+    }
