@@ -39,7 +39,7 @@ public class SwaggerConfiguracoes {
         .description("API Para Reserva de Mesas!")
         .version("1.0")
         .termsOfServiceUrl("https://https://github.com/vaquejano")
-        .license("Alunos Carlos Bergamo, Bruno Mecca, Lohan, Heinrick, Caio")
+        .license("Alunos: Carlos Bergamo, Bruno Mecca, Lohan Goncalves, Lucas Gava")
         .build();
     }
 }

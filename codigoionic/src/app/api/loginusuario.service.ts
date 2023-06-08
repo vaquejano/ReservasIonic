@@ -11,13 +11,12 @@ export class LoginusuarioService {
   constructor(private http: HttpClient) { }
 
   verificarCredenciais(cpf: string, senha: string): Observable<boolean> {
-    const url = `${this.host}/loginusuario/`; // Substitua pelo URL correto do seu endpoint de login
+    const url = `${this.host}/loginusuario/`;
 
     const body = {
       cpfUsuario: cpf,
       senhaUsuario: senha
     };
-  
 
     return this.http.post<boolean>(url, body);
   }

@@ -7,10 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-
-
-
 @Entity
 @Table(name="empresa")
 public class Empresa {

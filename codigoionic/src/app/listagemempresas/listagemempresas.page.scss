@@ -66,6 +66,7 @@
     -webkit-box-shadow: -0.5px 0.5px 4px 0px rgba(121, 121, 121, 0.75);
     -moz-box-shadow: -0.5px 0.5px 4px 0px rgba(121, 121, 121, 0.75);
     box-shadow: -0.5px 0.5px 4px 0px rgba(121, 121, 121, 0.75);
+    cursor: pointer;
   }
 
   .fonte{
@@ -76,6 +77,7 @@
 
   .ops-menu{
     font-size: 20px;
+    cursor: pointer;
   }
 
   ion-title{
@@ -95,3 +97,6 @@
     font-size: 30px;
   }
 
+  .clicavel{
+    cursor: pointer;
+  }

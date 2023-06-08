@@ -14,8 +14,6 @@ export class ListagemreservasPage {
 
   public empresaLogada : any = {}
 
-  
-
   constructor(private router: Router, private dadosservice: DadosService, private route: ActivatedRoute, private navCtrl: NavController) {
 
     this.route.queryParams.subscribe((params) => {
@@ -31,6 +29,6 @@ export class ListagemreservasPage {
   }
 
 
-  
+
 
 }

@@ -71,7 +71,7 @@ import { ListagemreservasPage } from '../listagemreservas/listagemreservas.page'
     public empresaLogada : any = {}
 
     constructor(
-      
+
       private dadosservice: DadosService, private navCtrl: NavController, private route: ActivatedRoute
       ){
 
@@ -79,7 +79,7 @@ import { ListagemreservasPage } from '../listagemreservas/listagemreservas.page'
           this.empresaLogada = params['empresaLogada'];
         });
     }
-
+  }
     // // @ViewChild('empresaTest') empresaLogada:  ListagemreservasPage | undefined
     // public getDadoById() {
     //   {
@@ -94,7 +94,6 @@ import { ListagemreservasPage } from '../listagemreservas/listagemreservas.page'
     //       this.empresa.ramoEmpresa = empresa.ramoEmpresa;
     //       this.empresa.senhaEmpresa = empresa.senhaEmpresa;
     //     });
-        
+
     //   }
     // }
-  }

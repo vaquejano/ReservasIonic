@@ -26,19 +26,25 @@ export class UsuarioPage {
     this.loginusuarioservice.verificarCredenciais(cpf, senha).subscribe(
       (credenciaisValidas) => {
         if (credenciaisValidas) {
+
           // Login bem-sucedido
+
           console.log('Login realizado com sucesso');
           this.loginBemSucedido = true;
           this.router.navigate(['/listagemempresas']);
         } else {
+
           // Login falhou
+
           console.log('Credenciais inválidas');
           this.loginBemSucedido = false;
           this.exibirAlerta('Dados incorretos');
         }
       },
       (error) => {
+
         // Tratar erro de requisição
+
         console.log('Erro ao verificar credenciais', error);
       }
     );
@@ -53,4 +59,5 @@ export class UsuarioPage {
 
     await alert.present();
   }
+
 }

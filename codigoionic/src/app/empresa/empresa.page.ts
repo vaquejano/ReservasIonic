@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginempresaService } from '../api/loginempresa.service';
-import { AlertController, NavController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,61 +9,46 @@ import { Router } from '@angular/router';
   styleUrls: ['./empresa.page.scss'],
 })
 export class EmpresaPage {
-  cnpjEmpresa: any;
-  senhaEmpresa: any;
-  codEmpresa: any;
+  cnpj_empresa: any;
+  senha_empresa: any;
   loginBemSucedido = false;
-  empresaLogada: any
-  empresa : any
-  codEmpresa2: any
 
   constructor(
     private loginempresaservice: LoginempresaService,
     private alertController: AlertController,
-    private router: Router,
-    private navCtrl: NavController
+    private router: Router
   ) {}
 
+fazerLogin() {
+    const cnpj = this.cnpj_empresa;
+    const senha = this.senha_empresa;
 
-  
-
-
-  fazerLogin() {
-    const cnpj = this.cnpjEmpresa;
-    const senha = this.senhaEmpresa;
-    const codEmpresa = this.codEmpresa;
-    
-
-    this.loginempresaservice.verificarCredenciais(cnpj, senha).then(
-      (empresa: any) => {
-      
-        if (empresa) {
+    this.loginempresaservice.verificarCredenciais(cnpj, senha).subscribe(
+      (credenciaisValidas) => {
+        if (credenciaisValidas) {
 
           // Login bem-sucedido
-          
+
+         console.log('Login realizado com sucesso');
           this.loginBemSucedido = true;
-          
-          
-          this.loginempresaservice.getId(empresa.codEmpresa).then(emprexa => {
-            this.empresaLogada = emprexa;
-            this.navCtrl.navigateForward('listagemreservas', {
-              queryParams: { empresaLogada: this.empresaLogada },
-            });
-          });
-          
-          
+          this.router.navigate(['/listagemreservas']);
         } else {
-          
+
+          // Login falhou
+
           console.log('Credenciais inválidas')
           this.loginBemSucedido = false;
           this.exibirAlerta('Dados incorretos')
         }
       },
       (error) => {
-        
+
+        // Tratar erro de requisição
+
         console.log('Erro ao verificar credenciais', error);
       }
     );
+
   }
 
   async exibirAlerta(mensagem: string) {
@@ -76,11 +61,10 @@ export class EmpresaPage {
     await alert.present();
   }
 
+  onKeyUp(event: { key: string; }) {
+    if (event.key === 'Enter') {
+      this.fazerLogin();
+    }
+  }
 
-
-  // enviarDados(codEmpresa: any) {
-  //   this.navCtrl.navigateForward('listagemreservas', {
-  //     queryParams: { codEmpresa: codEmpresa },
-  //   });
-  // }
 }

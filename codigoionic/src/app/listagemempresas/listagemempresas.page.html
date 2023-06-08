@@ -26,19 +26,16 @@
         </ion-header>
         <br>
 
-        <div class="ops-menu ion-text-center">
-
+<div class="clicavel" routerLink="/perfil">
           <ion-icon class="fundo" name="person-outline" class="itens-menu"></ion-icon>
-        <ion-text routerLink="/perfil"><b> Perfil</b></ion-text>
+        <ion-text><b> Perfil</b></ion-text>
+      </div>
         <br>
-        <br>
+        <div class="clicavel" routerLink="/home">
         <ion-icon style="size: 1px;" name="exit-outline" class="itens-menu"></ion-icon>
-        <ion-text routerLink="/home"><b> Sair</b></ion-text>
+        <ion-text><b> Sair</b></ion-text>
         </div>
-
-
         <br>
-
       </ion-toolbar>
     </ion-menu>
 
@@ -69,4 +66,3 @@
               <b>{{ descricaoempresa.nome }}</b>
             </ion-col>
       </ion-row>
-
