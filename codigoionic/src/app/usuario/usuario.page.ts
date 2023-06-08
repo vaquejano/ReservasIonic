@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginusuarioService } from '../api/loginusuario.service';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,36 +9,45 @@ import { Router } from '@angular/router';
   styleUrls: ['./usuario.page.scss'],
 })
 export class UsuarioPage {
-  cpf_usuario: any;
-  senha_usuario: any;
+  cpfUsuario: any;
+  senhaUsuario: any;
+  codUsuario: any;
+  usuarioLogado: any;
   loginBemSucedido = false;
 
   constructor(
     private loginusuarioservice: LoginusuarioService,
     private alertController: AlertController,
-    private router: Router
+    private navCtrl: NavController
   ) { }
 
   fazerLogin() {
-    const cpf = this.cpf_usuario;
-    const senha = this.senha_usuario;
+    const cpf = this.cpfUsuario;
+    const senha = this.senhaUsuario;
+    const codUsuario =  this.codUsuario;
 
-    this.loginusuarioservice.verificarCredenciais(cpf, senha).subscribe(
-      (credenciaisValidas) => {
-        if (credenciaisValidas) {
+     this.loginusuarioservice.verificarCredenciais(cpf, senha).then(
+      (usuario: any) => {
+
+        if (usuario) {
 
           // Login bem-sucedido
 
-          console.log('Login realizado com sucesso');
+         console.log('Login realizado com sucesso');
           this.loginBemSucedido = true;
-          this.router.navigate(['/listagemempresas']);
+          this.loginusuarioservice.getId(usuario.codUsuario).then(usuario => {
+            this.usuarioLogado = usuario;
+            this.navCtrl.navigateForward('listagemempresas', {
+              queryParams: { usuarioLogado: this.usuarioLogado },
+            });
+          });
         } else {
 
           // Login falhou
 
-          console.log('Credenciais inválidas');
+          console.log('Credenciais inválidas')
           this.loginBemSucedido = false;
-          this.exibirAlerta('Dados incorretos');
+          this.exibirAlerta('Dados incorretos')
         }
       },
       (error) => {
@@ -48,6 +57,7 @@ export class UsuarioPage {
         console.log('Erro ao verificar credenciais', error);
       }
     );
+
   }
 
   async exibirAlerta(mensagem: string) {
@@ -58,6 +68,12 @@ export class UsuarioPage {
     });
 
     await alert.present();
+  }
+
+  onKeyUp(event: { key: string; }) {
+    if (event.key === 'Enter') {
+      this.fazerLogin();
+    }
   }
 
 }
