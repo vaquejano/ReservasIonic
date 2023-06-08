@@ -29,4 +29,19 @@ export class PerfilempresaPage {
       queryParams: { empresaLogada: this.empresaLogada },
     });
   }
+
+  deletarDados() {
+    const confirmar = confirm('Tem certeza de que deseja deletar sua conta?');
+  
+    if (confirmar) {
+      this.dadosservice.deleteDados(this.empresaLogada).then((empresa: any) => {
+        this.empresaLogada = empresa;
+        console.log('Empresa deletada com sucesso!');
+        this.navCtrl.navigateForward('home')
+      });
+    } else {
+      console.log('Evento deletar conta cancelado!')
+    }
+  }
+
 }

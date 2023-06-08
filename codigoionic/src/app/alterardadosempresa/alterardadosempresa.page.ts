@@ -22,13 +22,15 @@ export class AlterardadosempresaPage {
   }
 
   alterarDados() {
-    // Aqui você pode implementar a lógica para atualizar os dados no serviço
     this.alterardadosservice.putDados(this.empresaLogada).then(
-      (response) => {
+      (empresa: any) => {
         // Lógica de sucesso
+        this.empresaLogada = empresa;
         console.log('Dados atualizados com sucesso!');
         // Navegar para a próxima página
-        this.navCtrl.navigateForward('perfilempresa');
+        this.navCtrl.navigateForward('perfilempresa', {
+          queryParams: { empresaLogada: this.empresaLogada },
+        });
       },
       (error) => {
         // Lógica de erro

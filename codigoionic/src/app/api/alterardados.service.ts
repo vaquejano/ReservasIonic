@@ -20,8 +20,8 @@ export class AlterardadosService {
 
       let headers = new HttpHeaders();
       headers.append('Content-Type', 'application/json; charset=UTF-8');
-      this.http.put(this.host + empresaLogada.codEmpresa , JSON.stringify(empresaLogada), { headers: headers }).subscribe(dados => {
-        ret(dados);
+      this.http.put(this.host, (empresaLogada), { headers: headers }).subscribe(empresa => {
+        ret(empresa);
       });
     });
   }
