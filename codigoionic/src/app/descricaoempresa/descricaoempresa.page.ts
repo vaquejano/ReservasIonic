@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DadosService } from '../api/dados.service';
 import { NavController } from '@ionic/angular';
 import { ListagemempresasPage } from '../listagemempresas/listagemempresas.page';
 import { AlertController } from '@ionic/angular';
+import { ReservausuarioService } from '../api/reservausuario.service';
+
 
 @Component({
   selector: 'app-descricaoempresa',
@@ -28,8 +29,19 @@ export class DescricaoempresaPage {
     preco: 10
   }
 
+  data_reserva: any;
+  quantidade_lugar: any;
+  horario: any;
+
   constructor(
-    private dadosservice: DadosService, private navCtrl: NavController, private route: ActivatedRoute, public alertController: AlertController) {
+     private reservausuarioservice: ReservausuarioService, private navCtrl: NavController, private route: ActivatedRoute, public alertController: AlertController) {
+
+      this.data_reserva = '';
+      this.quantidade_lugar= '',
+      this.horario = ''
+
+
+
     this.route.queryParams.subscribe(params=>{
       this.descricaoempresa = params['descricaoempresa']
     });
@@ -39,6 +51,27 @@ export class DescricaoempresaPage {
     });
 
   }
+
+
+  public reservando(){
+    const obj = {
+    dataReserva : this.data_reserva,
+    quantidadeLugar : this.quantidade_lugar,
+    horario : this.horario
+  }
+
+
+  this.reservausuarioservice.reservando(obj).then((dados:any) => {
+
+
+
+})
+
+
+}
+
+
+
 
   async mostrarAlerta() {
     const alerta = await this.alertController.create({
@@ -50,14 +83,6 @@ export class DescricaoempresaPage {
   }
 
 
-  public add(){
-    this.reservas += 1;
-  }
-
-  public remove(){
-    if(this.reservas > 0){
-      this.reservas -= 1;
-    }
-  }
+  
 
 }

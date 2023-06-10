@@ -38,8 +38,22 @@ public class Reserva {
     @Column(name = "quantidade_lugar")
     private double quantidadeLugar;
 
-   @Column(name = "data_reserva")
-     private LocalDate dataReserva;
+    @Column(name = "data_reserva")
+    private LocalDate dataReserva;
+
+    @Column(name = "horario")
+    private String horario;
+
+    public Reserva(Integer codReserva, Usuario usuario, Mesa mesa, Empresa empresa, boolean situacao, double quantidadeLugar, LocalDate dataReserva, String horario) {
+        this.codReserva = codReserva;
+        this.usuario = usuario;
+        this.mesa = mesa;
+        this.empresa = empresa;
+        this.situacao = situacao;
+        this.quantidadeLugar = quantidadeLugar;
+        this.dataReserva = dataReserva;
+        this.horario = horario;
+    }
 
     public void setCodReserva(Integer codReserva) {
         this.codReserva = codReserva;
@@ -67,6 +81,10 @@ public class Reserva {
 
     public void setDataReserva(LocalDate dataReserva) {
         this.dataReserva = dataReserva;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
     }
 
     public Integer getCodReserva() {
@@ -97,14 +115,8 @@ public class Reserva {
         return dataReserva;
     }
 
-    public Reserva(Integer codReserva, Usuario usuario, Mesa mesa, Empresa empresa, boolean situacao, double quantidadeLugar, LocalDate dataReserva) {
-        this.codReserva = codReserva;
-        this.usuario = usuario;
-        this.mesa = mesa;
-        this.empresa = empresa;
-        this.situacao = situacao;
-        this.quantidadeLugar = quantidadeLugar;
-        this.dataReserva = dataReserva;
+    public String getHorario() {
+        return horario;
     }
 
-}
+   }

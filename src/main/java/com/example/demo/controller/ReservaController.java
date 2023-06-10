@@ -30,22 +30,22 @@ public class ReservaController {
         return ResponseEntity.status(HttpStatus.OK). body(reservaService.listaReservas());
 
 }  
-    @GetMapping("reserva/{codreserva}")
+    @GetMapping("/reserva/{codreserva}")
     public ResponseEntity<Optional<Reserva>> getByIdReserva(@PathVariable Integer codreserva){
         return ResponseEntity.status(HttpStatus.OK).body(reservaService.getByIdReserva(codreserva));
 }
 
-    @PostMapping("reserva")
+    @PostMapping("/reserva")
     public ResponseEntity<Reserva> salvaReserva(@RequestBody Reserva reserva){
         return ResponseEntity.status(HttpStatus.CREATED).body(reservaService.salvaReserva(reserva));
 }
 
-    @PutMapping("reserva")
+    @PutMapping("/reserva")
     public ResponseEntity<Reserva> atualizaReserva(@RequestBody Reserva reserva){
         return ResponseEntity.status(HttpStatus.OK).body(reservaService.atualizaReserva(reserva));
 }
 
-    @DeleteMapping("reserva/{codreserva}")
+    @DeleteMapping("/reserva/{codreserva}")
     public ResponseEntity<String> deleteByIdReserva(@PathVariable Integer codreserva){
         reservaService.deleteByIdReserva(codreserva);
         return ResponseEntity.status(HttpStatus.OK).body("Reserva removida com sucesso");
