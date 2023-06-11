@@ -30,20 +30,20 @@
       <ion-text><br><b> {{ descricaoempresa.descricao }} </b></ion-text>
     </ion-col>
     </ion-row>
-
     <br>
     <br>
 
   <ion-row>
     <ion-col class="ion-text-center">
     <ion-text > Data </ion-text>
-    <ion-input class="borda-input" label-placement="floating" fill="solid" placeholder="Somente números"></ion-input>
+    <ion-input class="borda-input" label-placement="floating" fill="solid" placeholder="Somente números" (keydown)="somenteNumeros($event)">
+    </ion-input>
     <br>
     <ion-text > Horário </ion-text>
-    <ion-input class="borda-input" label-placement="floating" fill="solid"></ion-input>
+    <ion-input class="borda-input" label-placement="floating" fill="solid" (keydown)="somenteNumeros($event)"></ion-input>
     <br>
     <ion-text > Quantidade de lugares </ion-text>
-    <ion-input class="borda-input" label-placement="floating" fill="solid" placeholder="Somente números"></ion-input>
+    <ion-input class="borda-input" label-placement="floating" fill="solid" placeholder="Somente números" (keydown)="somenteNumeros($event)"></ion-input>
 </ion-col>
   </ion-row>
 <br>

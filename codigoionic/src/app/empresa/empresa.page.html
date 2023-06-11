@@ -19,7 +19,7 @@
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Senha: </ion-label>
-    <ion-input type="password" [(ngModel)]="senhaEmpresa" (keyup)="onKeyUp($event)"></ion-input>
+    <ion-input type="password" [(ngModel)]="senhaEmpresa" (keyup.enter)="fazerLogin()"></ion-input>
   </ion-item>
 
 <br>

@@ -71,10 +71,11 @@ export class EmpresaPage {
     await alert.present();
   }
 
-  onKeyUp(event: { key: string; }) {
-    if (event.key === 'Enter') {
-      this.fazerLogin();
-    }
+  onKeyUp(event: any) {
+    const input = event.target;
+    const regex = /[^\d]/g;
+    input.value = input.value.replace(regex, '');
+    this.cnpjEmpresa = input.value;
   }
 
 }

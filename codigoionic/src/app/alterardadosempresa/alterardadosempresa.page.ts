@@ -38,4 +38,25 @@ export class AlterardadosempresaPage {
       }
     );
   }
+
+  validaNome(event: any) {
+    const pattern = /[0-9]/; // Regex para encontrar dígitos numéricos
+    const inputChar = String.fromCharCode(event.keyCode || event.which);
+
+    if (pattern.test(inputChar)) {
+      // Se o caractere inserido for um número, impedir a entrada
+      event.preventDefault();
+    }
+  }
+
+  validaResponsavel(event: any) {
+    const pattern = /[0-9]/; // Regex para encontrar dígitos numéricos
+    const inputChar = String.fromCharCode(event.keyCode || event.which);
+
+    if (pattern.test(inputChar)) {
+      // Se o caractere inserido for um número, impedir a entrada
+      event.preventDefault();
+    }
+  }
+
 }

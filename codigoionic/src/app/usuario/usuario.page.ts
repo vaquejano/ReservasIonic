@@ -47,7 +47,7 @@ export class UsuarioPage {
 
           console.log('Credenciais inválidas')
           this.loginBemSucedido = false;
-          this.exibirAlerta('Dados incorretos')
+          this.exibirAlerta('Dados incorretos!')
         }
       },
       (error) => {
@@ -70,10 +70,10 @@ export class UsuarioPage {
     await alert.present();
   }
 
-  onKeyUp(event: { key: string; }) {
-    if (event.key === 'Enter') {
-      this.fazerLogin();
-    }
+  onKeyUp(event: any) {
+    const input = event.target;
+    const regex = /[^\d]/g;
+    input.value = input.value.replace(regex, '');
+    this.cpfUsuario = input.value;
   }
-
 }

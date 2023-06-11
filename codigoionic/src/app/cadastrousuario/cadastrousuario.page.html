@@ -11,12 +11,12 @@
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Nome: </ion-label>
-    <ion-input [(ngModel)]="nome_usuario"></ion-input>
+    <ion-input [(ngModel)]="nome_usuario" (input)="filtrarCampoNome($event)"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> CPF: </ion-label>
-    <ion-input type="number" placeholder="000.000.000-00" [(ngModel)]="cpf_usuario"></ion-input>
+    <ion-input type="number" placeholder="000.000.000-00" [(ngModel)]="cpf_usuario" (keyup)="filtraCampoCpf($event)"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
@@ -31,7 +31,7 @@
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Telefone: </ion-label>
-    <ion-input type="tel" placeholder="4499999-9999" [(ngModel)]="telefone_usuario"></ion-input>
+    <ion-input type="tel" placeholder="4499999-9999" [(ngModel)]="telefone_usuario" (keyup.enter)="salvaUsuario()" (keyup)="filtraCampoTel($event)"></ion-input>
   </ion-item>
 
 <br>
@@ -42,13 +42,5 @@
     Cadastrar
   </ion-button>
 </div>
-
-    <ion-alert
-    routerLink="/usuario"
-    trigger="present-alert"
-    header="Finalizado"
-    message="Cadastro concluído!"
-    [buttons]="alertButtons"
-    ></ion-alert>
 <br>
   </ion-content>

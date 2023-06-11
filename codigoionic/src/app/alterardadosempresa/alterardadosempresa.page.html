@@ -7,7 +7,7 @@
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Nome Fantasia: </ion-label>
-    <ion-input [(ngModel)]="empresaLogada.nomeFantasia">  {{ empresaLogada.nomeFantasia }}  </ion-input>
+    <ion-input [(ngModel)]="empresaLogada.nomeFantasia" (keypress)="validaNome($event)">  {{ empresaLogada.nomeFantasia }}  </ion-input>
   </ion-item>
 
    <ion-item style="margin-bottom: 5px" class="fundo">
@@ -17,7 +17,7 @@
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Nome do responsável: </ion-label>
-    <ion-input [(ngModel)]="empresaLogada.nomeResponsavel">  {{ empresaLogada.nomeResponsavel }}</ion-input>
+    <ion-input [(ngModel)]="empresaLogada.nomeResponsavel" (keypress)="validaResponsavel($event)">  {{ empresaLogada.nomeResponsavel }}</ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
