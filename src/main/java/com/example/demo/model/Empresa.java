@@ -112,7 +112,4 @@ public class Empresa {
     public void setEnderecoEmpresa(String enderecoEmpresa) {
         this.enderecoEmpresa = enderecoEmpresa;
     }
-   
-
-
 }

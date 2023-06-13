@@ -80,5 +80,4 @@ public class Usuario {
     public void setTelefoneUsuario(String telefoneUsuario) {
         this.telefoneUsuario = telefoneUsuario;
     }
-
    }

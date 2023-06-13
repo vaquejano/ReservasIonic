@@ -1,9 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DadosService } from '../api/dados.service';
 import { NavController } from '@ionic/angular';
-import { ListagemempresasPage } from '../listagemempresas/listagemempresas.page';
-import { ConexaousuarioService } from '../conexaousuario/conexaousuario.service';
 
 @Component({
   selector: 'app-perfil',
@@ -23,4 +21,25 @@ export class PerfilPage {
       this.usuarioLogado = params['usuarioLogado'];
     });
   }
+
+  alterarDados() {
+    this.navCtrl.navigateForward('alterardados', {
+      queryParams: { usuarioLogado: this.usuarioLogado },
+    });
+  }
+
+  deletarDados() {
+    const confirmar = confirm('Tem certeza de que deseja deletar sua conta?');
+  
+    if (confirmar) {
+      this.dadosservice.deleteDados(this.usuarioLogado).then((usuario: any) => {
+        this.usuarioLogado = usuario;
+        console.log('Usuário deletada com sucesso!');
+        this.navCtrl.navigateForward('home')
+      });
+    } else {
+      console.log('Evento deletar conta cancelado!')
+    }
+  }
+
 }

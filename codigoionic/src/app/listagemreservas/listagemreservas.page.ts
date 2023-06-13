@@ -1,9 +1,7 @@
-import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DadosService } from '../api/dados.service';
 import { NavController } from '@ionic/angular';
-
-
 
 @Component({
   selector: 'app-listagemreservas',
@@ -27,8 +25,4 @@ export class ListagemreservasPage {
       queryParams: { empresaLogada: this.empresaLogada },
     });
   }
-
-
-
-
 }

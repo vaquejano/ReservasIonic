@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoginempresaService } from '../api/loginempresa.service';
 import { AlertController, NavController } from '@ionic/angular';
 
@@ -25,7 +25,6 @@ export class EmpresaPage {
     const cnpj = this.cnpjEmpresa;
     const senha = this.senhaEmpresa;
     const codEmpresa = this.codEmpresa;
-
 
     this.loginempresaservice.verificarCredenciais(cnpj, senha).then(
       (empresa: any) => {

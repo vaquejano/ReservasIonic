@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { DadosService } from '../api/dados.service';
@@ -30,7 +30,6 @@ export class ListagemempresasPage {
     this.setSelected(1);
     this.nome_fantasia = 'nome_fantasia';
     this.dados = dadosservice;
-
     this.route.queryParams.subscribe((params) => {
       this.usuarioLogado = params['usuarioLogado'];
     });
@@ -63,5 +62,4 @@ export class ListagemempresasPage {
     .filter(el => el.categoria == this.selected)
     .map(el => el.visibled = true);
   }
-
 }

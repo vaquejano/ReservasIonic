@@ -34,12 +34,12 @@ public class UsuarioController {
         @ApiResponse(code=200,message="Lista de Usuarios Encontrado"),
         @ApiResponse(code=404,message="Lista Usuario Nao Encontrado")
     })
-    
     public ResponseEntity <List<Usuario>> listaUsuarios(){
         return ResponseEntity.status(HttpStatus.OK). body(usuarioService.listaUsuarios());
     }
    
     @GetMapping("/usuario/{codusuario}")
+    @ApiOperation("Codigo id do usuario")
     @ApiResponses({
         @ApiResponse(code=200,message="Usuario Encontrado"),
         @ApiResponse(code=404,message="Usuario Nao Encontrado")
@@ -49,6 +49,7 @@ public class UsuarioController {
     }
     
     @PostMapping("/usuario")
+    @ApiOperation("Salvar dados do usuario")
     @ApiResponses({
         @ApiResponse(code=200,message="Usuario Salvo Com Maestria"),
         @ApiResponse(code=404,message="Nao Foi Possivel Salvar Usuario")
@@ -58,18 +59,20 @@ public class UsuarioController {
     }
     
     @PutMapping("/usuario")
+    @ApiOperation("Atualizar Dados do usuario")
     @ApiResponses({
-        @ApiResponse(code=200,message="Usuario Atualizado com SucessoEncontrado"),
-        @ApiResponse(code=404,message="Nao foi possivel atualizar Usuario")
+        @ApiResponse(code=200,message="Dados do usuario atualizado com sucesso"),
+        @ApiResponse(code=404,message="Erro ao atualizar dados do usuario")
     })
     public ResponseEntity<Usuario> atualizaUsuario(@RequestBody Usuario usuario){
         return ResponseEntity.status(HttpStatus.OK).body(usuarioService.atualizaUsuario(usuario));
     }
     
     @DeleteMapping("/usuario/{codusuario}")
+    @ApiOperation("Deletar usuario")
     @ApiResponses({
-        @ApiResponse(code=200,message="Usuario Foi Removido"),
-        @ApiResponse(code=404,message="Nao Foi Possivel remover Usuario")
+        @ApiResponse(code=200,message="Usuario deletado com sucesso"),
+        @ApiResponse(code=404,message="Erro ao deletar o usuario")
     })
     public ResponseEntity<String> deleteByIdUsuario(@PathVariable Integer codusuario){
         usuarioService.deleteByIdUsuario(codusuario);

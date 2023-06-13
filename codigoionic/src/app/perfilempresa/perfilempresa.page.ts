@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { DadosService } from '../api/dados.service';
 import { NavController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-perfilempresa',
   templateUrl: './perfilempresa.page.html',
