@@ -10,10 +10,10 @@ export class DadosService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllDados() {
+  public getEmpresas() {
     return new Promise((ret) => {
-      this.http.get(this.host + 'login').subscribe(dados => {
-        ret(dados);
+      this.http.get(this.host + 'empresas').subscribe(empresa => {
+        ret(empresa);
       });
     });
   }

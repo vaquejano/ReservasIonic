@@ -10,7 +10,7 @@
             <ion-buttons slot="end">
               <ion-menu-button></ion-menu-button>
             </ion-buttons>
-            <ion-title> Empresas </ion-title>
+            <ion-title> descricaoempresas.nomeFantasia </ion-title>
           </ion-toolbar>
         </ion-header>
     </ion-toolbar>
@@ -26,7 +26,7 @@
         </ion-header>
         <br>
 
-<div class="clicavel" routerLink="/perfil">
+<div class="clicavel" (click)="openPerfil()">
           <ion-icon class="fundo" name="person-outline" class="itens-menu"></ion-icon>
         <ion-text><b> Perfil</b></ion-text>
       </div>
@@ -57,12 +57,12 @@
         <ion-col size="12" class="card-descricaoempresa">
           <ion-row>
             <ion-col size="12" class="img-descricaoempresa">
-              <img [src]="pathImgs + descricaoempresa.imagem[0]">
+              <img [src]="pathImgs + descricaoempresa.imagemEmpresa">
             </ion-col>
           </ion-row>
 
           <ion-row class="ion-text-center fonte">
             <ion-col>
-              <b>{{ descricaoempresa.nome }}</b>
+              <b>{{ descricaoempresa.nomeFantasia }}</b>
             </ion-col>
       </ion-row>
