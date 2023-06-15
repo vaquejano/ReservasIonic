@@ -13,15 +13,9 @@ export class DescricaoempresaPage {
   public usuarioLogado : any = {}
   public pathImgs = '../../assets/img/';
   public reservas = 0;
-  public descricaoempresa = {
-    codigo: 0,
-    categoria: 0,
-    nome: '',
-    descricao: '',
-    imagem: [],
-    visibled: false,
-    preco: 10
-  };
+
+  
+  public descricaoempresa = {};
 
   data_reserva: any;
   quantidade_lugar: any;

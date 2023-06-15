@@ -41,15 +41,22 @@ export class ListagemempresasPage {
     // this.nome_fantasia = 'nome_fantasia';
     // this.dados = dadosservice;
 
+  
+
     this.route.queryParams.subscribe((params) => {
       this.usuarioLogado = params['usuarioLogado'];
+      this.dadosservice.getEmpresas().then((empresa: any) => {
+        this.descricaoempresas = empresa;
+
+        console.log(this.descricaoempresas)
+      });
     });
    }
 
    ngOnInit() {
-    this.dadosservice.getEmpresas().then((empresa: any) => {
-      this.descricaoempresas = empresa;
-    });
+    // this.dadosservice.getEmpresas().then((empresa: any) => {
+    //   this.descricaoempresas = empresa;
+    // });
   }
 
   openPerfil() {
