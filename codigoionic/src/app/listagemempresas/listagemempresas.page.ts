@@ -66,6 +66,7 @@ export class ListagemempresasPage {
   }
 
    public goDescricaoempresa(descricaoempresa:any){
+    console.log(descricaoempresa)
     this.navCtrl.navigateForward('descricaoempresa',{
       queryParams: { descricaoempresa: descricaoempresa}
     });

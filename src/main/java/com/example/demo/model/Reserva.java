@@ -32,9 +32,6 @@ public class Reserva {
     @JoinColumn(name = "cod_empresa", referencedColumnName = "cod_empresa")
     private Empresa empresa;
 
-    @Column(name = "situacao")
-    private boolean situacao;
-
     @Column(name = "quantidade_lugar")
     private double quantidadeLugar;
 
@@ -44,12 +41,11 @@ public class Reserva {
     @Column(name = "horario")
     private String horario;
 
-    public Reserva(Integer codReserva, Usuario usuario, Mesa mesa, Empresa empresa, boolean situacao, double quantidadeLugar, LocalDate dataReserva, String horario) {
+    public Reserva(Integer codReserva, Usuario usuario, Mesa mesa, Empresa empresa, double quantidadeLugar, LocalDate dataReserva, String horario) {
         this.codReserva = codReserva;
         this.usuario = usuario;
         this.mesa = mesa;
         this.empresa = empresa;
-        this.situacao = situacao;
         this.quantidadeLugar = quantidadeLugar;
         this.dataReserva = dataReserva;
         this.horario = horario;
@@ -69,10 +65,6 @@ public class Reserva {
 
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
-    }
-
-    public void setSituacao(boolean situacao) {
-        this.situacao = situacao;
     }
 
     public void setQuantidadeLugar(double quantidadeLugar) {
@@ -103,10 +95,6 @@ public class Reserva {
         return empresa;
     }
 
-    public boolean isSituacao() {
-        return situacao;
-    }
-
     public double getQuantidadeLugar() {
         return quantidadeLugar;
     }
@@ -119,4 +107,4 @@ public class Reserva {
         return horario;
     }
 
-   }
+    }

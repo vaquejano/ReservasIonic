@@ -11,15 +11,17 @@ import { ReservausuarioService } from '../api/reservausuario.service';
 })
 export class DescricaoempresaPage {
   public usuarioLogado : any = {}
-  public pathImgs = '../../assets/img/';
+  public descricaoempresa : any  = {};
+
   public reservas = 0;
 
-  
-  public descricaoempresa = {};
+codEmpresa : any;
+data_reserva      : any;
+quantidade_lugar  : any;
+horario           : any;
+dados: any;
 
-  data_reserva: any;
-  quantidade_lugar: any;
-  horario: any;
+  
 
   constructor(
      private reservausuarioservice: ReservausuarioService,
@@ -30,9 +32,14 @@ export class DescricaoempresaPage {
       this.data_reserva = '';
       this.quantidade_lugar= '',
       this.horario = '';
+      this.codEmpresa ='';
+      this.dados = reservausuarioservice;
+      
+
 
     this.route.queryParams.subscribe(params=>{
       this.descricaoempresa = params['descricaoempresa']
+      this.codEmpresa = this.descricaoempresa.codEmpresa;
     });
 
     this.route.queryParams.subscribe((params) => {
@@ -40,16 +47,52 @@ export class DescricaoempresaPage {
     });
   }
 
-  public reservando(){
-    const obj = {
-    dataReserva : this.data_reserva,
-    quantidadeLugar : this.quantidade_lugar,
-    horario : this.horario
-  };
 
-  this.reservausuarioservice.reservando(obj).then((dados:any) => {
-})
-}
+  formatarData(event: any) {
+    const valorDigitado = event.target.value;
+    const data = new Date(valorDigitado);
+    const dataReserva = data.toISOString().split('T')[0];
+    this.data_reserva = dataReserva;
+  }
+
+
+  // public reservando() {
+  //   this.reservausuarioservice.getId(this.descricaoempresa).then((codEmpresa: string) => {
+  //     const obj = {
+  //       dataReserva: this.data_reserva,
+  //       quantidadeLugar: this.quantidade_lugar,
+  //       horario: this.horario,
+  //       codEmpresa: codEmpresa
+  //     };
+  
+  //     this.reservausuarioservice.reservando(obj).then((dados: any) => {
+  //       this.data_reserva = dados.dataReserva;
+  //       this.quantidade_lugar = dados.quantidadeLugar;
+  //       this.horario = dados.horario;
+  //       this.descricaoempresa.codEmpresa = dados.descricaoempresa.codEmpresa
+  //       // Lógica adicional após a reserva ser salva no banco de dados
+  //     });
+  //   });
+  // }
+
+  public reservando(){
+    
+   
+      const obj = {
+        dataReserva: this.data_reserva,
+        quantidadeLugar: this.quantidade_lugar,
+        horario: this.horario,
+        codEmpresa: this.descricaoempresa.codEmpresa
+      };
+    
+      this.reservausuarioservice.reservando(obj).then((dados: any) => {
+        this.data_reserva = dados.dataReserva;
+        this.quantidade_lugar = dados.quantidadeLugar;
+        this.horario = dados.horario;
+        this.descricaoempresa.codEmpresa = dados.descricaoempresa.codEmpresa
+        
+      });
+    }
 
   async mostrarAlerta() {
     const alerta = await this.alertController.create({

@@ -25,27 +25,44 @@
   <ion-row class="ion-justify-content-center">
     <ion-col size="11" class="img-lanche">
       <div class="image-container">
-      <img [src]="pathImgs + descricaoempresa.imagem[0]" class="imagem-empresa">
+      <img [src]="descricaoempresa.imagemEmpresa" class="imagem-empresa">
     </div>
-      <ion-text><br><b> {{ descricaoempresa.descricao }} </b></ion-text>
+      <!-- <ion-text><br><b> {{ descricaoempresa.descricao }} </b></ion-text> -->
     </ion-col>
     </ion-row>
     <br>
     <br>
 
-  <ion-row>
+
+    <ion-item style="margin-bottom: 5px" class="fundo">
+      <ion-label position="floating" stacked> Data: "Colocar as barras entre os números"</ion-label>
+      <ion-input [(ngModel)]="data_reserva" (ionChange)="formatarData($event)"></ion-input>
+    </ion-item>
+
+    <ion-item style="margin-bottom: 5px" class="fundo">
+      <ion-label position="floating" stacked> Horario: </ion-label>
+      <ion-input  [(ngModel)]="horario">  {{descricaoempresa.codEmpresa}}</ion-input>
+    </ion-item>
+
+    <ion-item style="margin-bottom: 5px" class="fundo">
+      <ion-label position="floating" stacked> Quantidade de Lugares: </ion-label>
+      <ion-input type="password" [(ngModel)]="quantidade_lugar"></ion-input>
+    </ion-item>
+
+
+  <!-- <ion-row>
     <ion-col class="ion-text-center">
     <ion-text > Data </ion-text>
-    <ion-input class="borda-input" label-placement="floating" fill="solid" placeholder="Somente números" (keydown)="somenteNumeros($event)">
+    <ion-input class="borda-input" label-placement="floating" fill="solid" placeholder="Somente números" [(ngModel)]="data_reserva" (keydown)="somenteNumeros($event)">
     </ion-input>
     <br>
     <ion-text > Horário </ion-text>
-    <ion-input class="borda-input" label-placement="floating" fill="solid" (keydown)="somenteNumeros($event)"></ion-input>
+    <ion-input class="borda-input" label-placement="floating" fill="solid" [(ngModel)]="horario" (keydown)="somenteNumeros($event)"></ion-input>
     <br>
     <ion-text > Quantidade de lugares </ion-text>
-    <ion-input class="borda-input" label-placement="floating" fill="solid" placeholder="Somente números" (keydown)="somenteNumeros($event)"></ion-input>
+    <ion-input class="borda-input" label-placement="floating" fill="solid" placeholder="Somente números" [(ngModel)]="quantidade_lugar"  (keydown)="somenteNumeros($event)"></ion-input>
 </ion-col>
-  </ion-row>
+  </ion-row> -->
 <br>
 
 <ion-button shape="round" class="login-button green-button" (click)="reservando()" >
