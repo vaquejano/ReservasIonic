@@ -11,15 +11,20 @@ import { ReservausuarioService } from '../api/reservausuario.service';
 })
 export class DescricaoempresaPage {
   public usuarioLogado : any = {}
+
+
+  
   public descricaoempresa : any  = {};
 
-  public reservas = 0;
 
-codEmpresa : any;
+
+  public reservas = 0;
+empresa : any;
+codEmpresa        : any;
 data_reserva      : any;
 quantidade_lugar  : any;
 horario           : any;
-dados: any;
+dados             : any;
 
   
 
@@ -32,7 +37,7 @@ dados: any;
       this.data_reserva = '';
       this.quantidade_lugar= '',
       this.horario = '';
-      this.codEmpresa ='';
+     
       this.dados = reservausuarioservice;
       
 
@@ -75,24 +80,22 @@ dados: any;
   //   });
   // }
 
-  public reservando(){
-    
-   
-      const obj = {
-        dataReserva: this.data_reserva,
-        quantidadeLugar: this.quantidade_lugar,
-        horario: this.horario,
-        codEmpresa: this.descricaoempresa.codEmpresa
-      };
-    
-      this.reservausuarioservice.reservando(obj).then((dados: any) => {
-        this.data_reserva = dados.dataReserva;
-        this.quantidade_lugar = dados.quantidadeLugar;
-        this.horario = dados.horario;
-        this.descricaoempresa.codEmpresa = dados.descricaoempresa.codEmpresa
-        
+  public reservando() {
+    const obj = {
+      dataReserva: this.data_reserva,
+      quantidadeLugar: this.quantidade_lugar,
+      horario: this.horario,
+      codEmpresa: this.descricaoempresa.codEmpresa ,
+      empresa: this.descricaoempresa.codEmpresa // Alterei para utilizar o atributo correto
+    };
+  
+    this.reservausuarioservice.reservando(obj).then((dados: any) => {
+      this.data_reserva = dados.dataReserva;
+      this.quantidade_lugar = dados.quantidadeLugar;
+      this.horario = dados.horario;
+      this.empresa = dados.empresa;
       });
-    }
+    } 
 
   async mostrarAlerta() {
     const alerta = await this.alertController.create({

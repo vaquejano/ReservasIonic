@@ -41,6 +41,9 @@ public class Reserva {
     @Column(name = "horario")
     private String horario;
 
+public Reserva() {
+}
+
     public Reserva(Integer codReserva, Usuario usuario, Mesa mesa, Empresa empresa, double quantidadeLugar, LocalDate dataReserva, String horario) {
         this.codReserva = codReserva;
         this.usuario = usuario;
