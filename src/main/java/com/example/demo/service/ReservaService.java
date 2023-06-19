@@ -15,4 +15,5 @@ public interface ReservaService {
     
     public void deleteByIdReserva(Integer codReserva); 
         
+    List<Reserva> listarReservasPorEmpresa(Long codEmpresa);
 }

@@ -12,23 +12,24 @@ import { ListagemreservasService } from '../api/listagemreservas.service';
 export class ListagemreservasPage {
 
   public empresaLogada : any = {}
+  public descricaoreservas: any = {}
 
-  public descricaoreservas = [
-    { codReserva      : '',
-      dataReserva     : '',
-      horario         : '',
-      quantidadeLugar : '',
-      codEmpresa      : '',
-      codUsuario      : ''
+  // public descricaoreservas = [
+  //   { codReserva      : '',
+  //     dataReserva     : '',
+  //     horario         : '',
+  //     quantidadeLugar : '',
+  //     codEmpresa      : '',
+  //     codUsuario      : ''
 
-    }
-  ]
+  //   }
+  // ]
 
   constructor(private router: Router, private listagemreservasservice: ListagemreservasService, private route: ActivatedRoute, private navCtrl: NavController) {
 
     this.route.queryParams.subscribe((params) => {
       this.empresaLogada = params['empresaLogada'];
-      this.listagemreservasservice.getReservas().then((reservas: any) =>{
+      this.listagemreservasservice.getReservas(this.empresaLogada.codEmpresa).then((reservas: any) =>{
         this.descricaoreservas = reservas
       })
     });
@@ -39,4 +40,21 @@ export class ListagemreservasPage {
       queryParams: { empresaLogada: this.empresaLogada },
     });
   }
-}
+
+  confirmarReserva(){
+    const confirmar = confirm('Tem certeza de que deseja cancelar a reserva?');
+  
+    if (confirmar) {
+      this.listagemreservasservice.deleteReserva(this.descricaoreservas).then((reservas: any) => {
+        this.descricaoreservas = reservas;
+        console.log('Reserva cancelada com sucesso!');
+        
+      });
+    } else {
+      console.log('Evento deletar reserva cancelado!')
+    }
+  }
+
+  }
+
+

@@ -24,7 +24,7 @@ export class EmpresaPage {
   fazerLogin() {
     const cnpj = this.cnpjEmpresa;
     const senha = this.senhaEmpresa;
-    const codEmpresa = this.codEmpresa;
+    
 
     this.loginempresaservice.verificarCredenciais(cnpj, senha).then(
       (empresa: any) => {

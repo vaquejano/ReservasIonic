@@ -38,7 +38,10 @@ public class ReservaServiceImpl implements ReservaService {
     }
     
  
-    
+    @Override
+    public List<Reserva> listarReservasPorEmpresa(Long codEmpresa) {
+        return reservaRepository.findByEmpresaCodEmpresa(codEmpresa);
+    }
     
     
     
