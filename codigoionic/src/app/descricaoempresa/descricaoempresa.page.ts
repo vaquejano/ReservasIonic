@@ -16,15 +16,36 @@ export class DescricaoempresaPage {
   
   public descricaoempresa : any  = {};
 
+  public reserv = {
+    codReserva: 0,
+    quantidadeLugar: 0,
+    dataReserva: '',
+    horario: '',
+
+    usuario: {
+      codUsuario: 0,
+      cpfUsuario: '',
+      emailUsuario: '',
+      nomeUsuario: '',
+      senhaUsuario: '',
+      telefoneUsuario: ''
+    },
+    empresa: {
+      codEmpresa: 0,
+      cardapioEmpresa: '',
+      cnpjEmpresa: '',
+      emailEmpresa: '',
+      enderecoEmpresa: '',
+      imagemEmpresa: '',
+      nomeFantasia: '',
+      nomeResponsavel: '',
+      porteEmpresa: '',
+      ramoEmpresa: '',
+      senhaEmpresa: ''
+    },
+  }
 
 
-  public reservas = 0;
-empresa : any;
-codEmpresa        : any;
-data_reserva      : any;
-quantidade_lugar  : any;
-horario           : any;
-dados             : any;
 
   
 
@@ -34,17 +55,12 @@ dados             : any;
      private route: ActivatedRoute,
      public alertController: AlertController) {
 
-      this.data_reserva = '';
-      this.quantidade_lugar= '',
-      this.horario = '';
-     
-      this.dados = reservausuarioservice;
+      
       
 
 
     this.route.queryParams.subscribe(params=>{
       this.descricaoempresa = params['descricaoempresa']
-      this.codEmpresa = this.descricaoempresa.codEmpresa;
     });
 
     this.route.queryParams.subscribe((params) => {
@@ -57,43 +73,28 @@ dados             : any;
     const valorDigitado = event.target.value;
     const data = new Date(valorDigitado);
     const dataReserva = data.toISOString().split('T')[0];
-    this.data_reserva = dataReserva;
+    this.reserv.dataReserva = dataReserva;
   }
 
 
-  // public reservando() {
-  //   this.reservausuarioservice.getId(this.descricaoempresa).then((codEmpresa: string) => {
-  //     const obj = {
-  //       dataReserva: this.data_reserva,
-  //       quantidadeLugar: this.quantidade_lugar,
-  //       horario: this.horario,
-  //       codEmpresa: codEmpresa
-  //     };
   
-  //     this.reservausuarioservice.reservando(obj).then((dados: any) => {
-  //       this.data_reserva = dados.dataReserva;
-  //       this.quantidade_lugar = dados.quantidadeLugar;
-  //       this.horario = dados.horario;
-  //       this.descricaoempresa.codEmpresa = dados.descricaoempresa.codEmpresa
-  //       // Lógica adicional após a reserva ser salva no banco de dados
-  //     });
-  //   });
-  // }
-
   public reservando() {
-    const obj = {
-      dataReserva: this.data_reserva,
-      quantidadeLugar: this.quantidade_lugar,
-      horario: this.horario,
-      codEmpresa: this.descricaoempresa.codEmpresa ,
-      empresa: this.descricaoempresa.codEmpresa // Alterei para utilizar o atributo correto
-    };
-  
-    this.reservausuarioservice.reservando(obj).then((dados: any) => {
-      this.data_reserva = dados.dataReserva;
-      this.quantidade_lugar = dados.quantidadeLugar;
-      this.horario = dados.horario;
-      this.empresa = dados.empresa;
+    this.reserv.codReserva = this.reserv.codReserva;
+    this.reserv.dataReserva = this.reserv.dataReserva;
+    this.reserv.quantidadeLugar = this.reserv.quantidadeLugar;
+    this.reserv.horario = this.reserv.horario;
+    this.reserv.empresa = this.descricaoempresa;
+    this.reserv.usuario = this.usuarioLogado;
+
+    
+
+    this.reservausuarioservice.reservando(this.reserv).then((dados: any) => {
+      this.reserv.codReserva = dados.codReserva;
+      this.reserv.dataReserva = dados.dataReserva;
+      this.reserv.quantidadeLugar = dados.quantidadeLugar;
+      this.reserv.horario = dados.horario;
+      this.reserv.empresa = dados.descricaoempresa
+      this.reserv.usuario = dados.usuarioLogado
       });
     } 
 

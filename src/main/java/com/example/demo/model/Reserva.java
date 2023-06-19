@@ -25,10 +25,6 @@ public class Reserva {
     private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name = "cod_mesa", referencedColumnName = "cod_mesa")
-    private Mesa mesa;
-
-    @ManyToOne
     @JoinColumn(name = "cod_empresa", referencedColumnName = "cod_empresa")
     private Empresa empresa;
 
@@ -41,13 +37,12 @@ public class Reserva {
     @Column(name = "horario")
     private String horario;
 
-public Reserva() {
-}
+    public Reserva() {
+    }
 
-    public Reserva(Integer codReserva, Usuario usuario, Mesa mesa, Empresa empresa, double quantidadeLugar, LocalDate dataReserva, String horario) {
+    public Reserva(Integer codReserva, Usuario usuario, Empresa empresa, double quantidadeLugar, LocalDate dataReserva, String horario) {
         this.codReserva = codReserva;
         this.usuario = usuario;
-        this.mesa = mesa;
         this.empresa = empresa;
         this.quantidadeLugar = quantidadeLugar;
         this.dataReserva = dataReserva;
@@ -60,10 +55,6 @@ public Reserva() {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
-    }
-
-    public void setMesa(Mesa mesa) {
-        this.mesa = mesa;
     }
 
     public void setEmpresa(Empresa empresa) {
@@ -90,10 +81,6 @@ public Reserva() {
         return usuario;
     }
 
-    public Mesa getMesa() {
-        return mesa;
-    }
-
     public Empresa getEmpresa() {
         return empresa;
     }
@@ -110,4 +97,4 @@ public Reserva() {
         return horario;
     }
 
-    }
+}

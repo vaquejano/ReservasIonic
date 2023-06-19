@@ -51,7 +51,7 @@
     </div>
 
     <ion-col size="6" *ngFor="let descricaoempresa of descricaoempresas; let ix = index"
-      (click)="goDescricaoempresa(descricaoempresa)">
+      (click)="goDescricaoempresa(descricaoempresa, usuarioLogado)">
       
       <br>
       <ion-row>

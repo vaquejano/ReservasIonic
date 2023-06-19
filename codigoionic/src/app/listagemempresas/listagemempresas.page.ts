@@ -54,9 +54,7 @@ export class ListagemempresasPage {
    }
 
    ngOnInit() {
-    // this.dadosservice.getEmpresas().then((empresa: any) => {
-    //   this.descricaoempresas = empresa;
-    // });
+    
   }
 
   openPerfil() {
@@ -65,10 +63,10 @@ export class ListagemempresasPage {
     });
   }
 
-   public goDescricaoempresa(descricaoempresa:any){
+   public goDescricaoempresa(descricaoempresa:any, usuarioLogado: any){
     console.log(descricaoempresa)
     this.navCtrl.navigateForward('descricaoempresa',{
-      queryParams: { descricaoempresa: descricaoempresa}
+      queryParams: { descricaoempresa: descricaoempresa, usuarioLogado: usuarioLogado}
     });
   }
 
