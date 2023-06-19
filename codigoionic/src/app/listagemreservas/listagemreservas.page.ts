@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DadosService } from '../api/dados.service';
 import { NavController } from '@ionic/angular';
+import { ListagemreservasService } from '../api/listagemreservas.service';
 
 @Component({
   selector: 'app-listagemreservas',
@@ -12,12 +13,25 @@ export class ListagemreservasPage {
 
   public empresaLogada : any = {}
 
-  constructor(private router: Router, private dadosservice: DadosService, private route: ActivatedRoute, private navCtrl: NavController) {
+  public descricaoreservas = [
+    { codReserva      : '',
+      dataReserva     : '',
+      horario         : '',
+      quantidadeLugar : '',
+      codEmpresa      : '',
+      codUsuario      : ''
+
+    }
+  ]
+
+  constructor(private router: Router, private listagemreservasservice: ListagemreservasService, private route: ActivatedRoute, private navCtrl: NavController) {
 
     this.route.queryParams.subscribe((params) => {
       this.empresaLogada = params['empresaLogada'];
+      this.listagemreservasservice.getReservas().then((reservas: any) =>{
+        this.descricaoreservas = reservas
+      })
     });
-
   }
 
   openPerfilEmpresa() {

@@ -23,7 +23,7 @@ export class ListagemempresasPage {
     //  public descricaoempresas : any = {} 
 
     public descricaoempresas = [
-      { codigo          : '',
+      { codEmpresa      : '',
         nomeFantasia    : '',
         cnpjEmpresa     : '',
         emailEmpresa    : '',
