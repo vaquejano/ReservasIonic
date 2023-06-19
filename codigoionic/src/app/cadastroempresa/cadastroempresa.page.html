@@ -11,7 +11,12 @@
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> CNPJ: </ion-label>
-    <ion-input type="number" placeholder="00.000.000/0001-00" [(ngModel)]="cnpj_empresa" (keyup)="onKeyUp($event)"></ion-input>
+    <ion-input
+    #cnpjInput
+    type="number"
+    placeholder="00.000.000/0001-00"
+    [(ngModel)]="cnpj_empresa"
+    (keyup)="filtrarCampoCnpj($event)"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
@@ -45,7 +50,12 @@
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> E-mail: </ion-label>
-    <ion-input type="text" placeholder="email@domain.com" [(ngModel)]="email_empresa"></ion-input>
+    <ion-input
+    type="text"
+    placeholder="email@domain.com"
+    [(ngModel)]="email_empresa"
+    pattern="[a-zA-Z0-9_.-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?"
+    ></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">

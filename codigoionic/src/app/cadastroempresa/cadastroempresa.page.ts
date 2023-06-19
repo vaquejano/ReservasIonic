@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CadastroempresaService } from '../api/cadastroempresa.service';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
-
+import { NgModel } from '@angular/forms';
 @Component({
   selector: 'app-cadastroempresa',
   templateUrl: './cadastroempresa.page.html',
@@ -12,14 +12,14 @@ export class CadastroempresaPage {
 
   nome_fantasia: any;
   cnpj_empresa: any;
-  email_empresa: any;
+  email_empresa: string;
   nome_responsavel: any;
   endereco_empresa: any;
   porte_empresa: any;
   ramo_empresa: any;
   senha_empresa: any;
   dados: any;
-  isCadastroEnabled: boolean;
+  @ViewChild('cnpjInput', { static: false }) cpfInput!: NgModel;
 
   constructor(
     private cadastroempresaservice: CadastroempresaService,
@@ -36,19 +36,38 @@ export class CadastroempresaPage {
   this.ramo_empresa = '';
   this.senha_empresa = '';
   this.dados = cadastroempresaservice;
-  this.isCadastroEnabled = false;
 }
 
   public async salvaEmpresa() {
-    if (!this.isCadastroEnabled) {
+    if (
+      !this.nome_fantasia ||
+      !this.cnpj_empresa ||
+      !this.email_empresa ||
+      !this.nome_responsavel ||
+      !this.endereco_empresa ||
+      !this.porte_empresa ||
+      !this.ramo_empresa ||
+      !this.senha_empresa
+    ) {
       const alert = await this.alertController.create({
       header: 'Erro',
-      message: 'Preencha todos os campos corretamente.',
+      message: 'Preencha todos os campos.',
       buttons: ['OK']
     });
     await alert.present();
     return;
   }
+
+  const emailRegex = /[a-zA-Z0-9_.-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?/;
+    if (!emailRegex.test(this.email_empresa)) {
+      const alert = await this.alertController.create({
+        header: 'Erro',
+        message: 'Informe um e-mail válido.',
+        buttons: ['OK'],
+      });
+      await alert.present();
+      return;
+    }
 
     const obj = {
       nomeFantasia    : this.nome_fantasia,
@@ -91,12 +110,17 @@ export class CadastroempresaPage {
     await alert.present();
   }
 
-  onKeyUp(event: any) {
+  filtrarCampoCnpj(event: any) {
     const input = event.target;
     const regex = /[^\d]/g;
-    input.value = input.value.replace(regex, '');
-    this.cnpj_empresa = input.value;
-    this.validarCamposPreenchidos();
+    let value = input.value.replace(regex, '');
+
+    if (value.length > 14) {
+      value = value.slice(0, 14);
+    }
+
+    input.value = value;
+    this.cnpj_empresa = value;
   }
 
   filtrarCampoNome(event: any) {
@@ -104,7 +128,6 @@ export class CadastroempresaPage {
     const regex = /[0-9]/g;
     input.value = input.value.replace(regex, '');
     this.nome_fantasia = input.value;
-    this.validarCamposPreenchidos();
   }
 
   filtrarCampoRamo(event: any) {
@@ -112,7 +135,6 @@ export class CadastroempresaPage {
     const regex = /[0-9]/g;
     input.value = input.value.replace(regex, '');
     this.ramo_empresa = input.value;
-    this.validarCamposPreenchidos();
   }
 
   filtrarCampoResponsavel(event: any) {
@@ -120,21 +142,7 @@ export class CadastroempresaPage {
     const regex = /[0-9]/g;
     input.value = input.value.replace(regex, '');
     this.nome_responsavel = input.value;
-    this.validarCamposPreenchidos();
   }
-
-  validarCamposPreenchidos() {
-    this.isCadastroEnabled = (
-      this.nome_fantasia !== '' &&
-      this.cnpj_empresa !== '' &&
-      this.email_empresa !== '' &&
-      this.nome_responsavel !== '' &&
-      this.endereco_empresa !== '' &&
-      this.porte_empresa !== '' &&
-      this.ramo_empresa !== '' &&
-      this.senha_empresa !== ''
-    );
-    }
 }
 
 

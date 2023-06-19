@@ -1,46 +1,56 @@
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
+<ion-buttons slot="start">
+  <ion-back-button></ion-back-button>
+</ion-buttons>
 
 <ion-content [fullscreen]="true" class="fundo">
- <ion-row class="ion-text-center">
-  <ion-col >
-  <img src="assets/img/resrvtab.png">
+<ion-row class="ion-text-center">
+<ion-col >
+<img src="assets/img/resrvtab.png">
 </ion-col>
 </ion-row>
 
-  <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked> Nome: </ion-label>
-    <ion-input [(ngModel)]="nome_usuario" (input)="filtrarCampoNome($event)"></ion-input>
-  </ion-item>
+<ion-item style="margin-bottom: 5px" class="fundo">
+<ion-label position="floating" stacked> Nome: </ion-label>
+<ion-input [(ngModel)]="nome_usuario" (input)="filtrarCampoNome($event)"></ion-input>
+</ion-item>
 
-  <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked> CPF: </ion-label>
-    <ion-input type="number" placeholder="000.000.000-00" [(ngModel)]="cpf_usuario" (keyup)="filtraCampoCpf($event)"></ion-input>
-  </ion-item>
+<ion-item style="margin-bottom: 5px" class="fundo">
+<ion-label position="floating" stacked> CPF: </ion-label>
+<ion-input
+#cpfInput
+type="number"
+placeholder="000.000.000-00"
+[(ngModel)]="cpf_usuario"
+(keyup)="filtraCampoCpf($event)"></ion-input>
+</ion-item>
 
-  <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked> E-mail: </ion-label>
-    <ion-input type="email" placeholder="email@domain.com" [(ngModel)]="email_usuario"></ion-input>
-  </ion-item>
+<ion-item style="margin-bottom: 5px" class="fundo">
+<ion-label position="floating" stacked> E-mail: </ion-label>
+<ion-input
+type="email"
+placeholder="email@domain.com"
+[(ngModel)]="email_usuario"
+pattern="[a-zA-Z0-9_.-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?"
+></ion-input>
+</ion-item>
 
-  <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked> Senha: </ion-label>
-    <ion-input type="password" [(ngModel)]="senha_usuario"></ion-input>
-  </ion-item>
+<ion-item style="margin-bottom: 5px" class="fundo">
+<ion-label position="floating" stacked> Telefone: </ion-label>
+<ion-input type="tel" placeholder="4499999-9999" [(ngModel)]="telefone_usuario" (keyup)="filtraCampoTel($event)"></ion-input>
+</ion-item>
 
-  <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked> Telefone: </ion-label>
-    <ion-input type="tel" placeholder="4499999-9999" [(ngModel)]="telefone_usuario" (keyup.enter)="salvaUsuario()" (keyup)="filtraCampoTel($event)"></ion-input>
-  </ion-item>
+<ion-item style="margin-bottom: 5px" class="fundo">
+<ion-label position="floating" stacked> Senha: </ion-label>
+<ion-input type="password" [(ngModel)]="senha_usuario" (keyup.enter)="salvaUsuario()"></ion-input>
+</ion-item>
 
 <br>
 
 <div class="ion-text-center">
-  <ion-button shape="round" id="present-alert" class="cadastrar-button green-button" (click)="salvaUsuario()" >
-    <ion-icon slot="start" name="duplicate-outline"></ion-icon>
-    Cadastrar
-  </ion-button>
+<ion-button shape="round" id="present-alert" class="cadastrar-button green-button" (click)="salvaUsuario()" >
+<ion-icon slot="start" name="duplicate-outline"></ion-icon>
+Cadastrar
+</ion-button>
 </div>
 <br>
-  </ion-content>
+</ion-content>

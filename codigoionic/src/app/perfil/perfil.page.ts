@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DadosService } from '../api/dados.service';
+import { DadosUsuarioService } from '../api/dadosusuario.service';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -14,7 +14,7 @@ export class PerfilPage {
 
   constructor(
 
-    private dadosservice: DadosService, private navCtrl: NavController, private route: ActivatedRoute
+    private dadosusuarioservice: DadosUsuarioService, private navCtrl: NavController, private route: ActivatedRoute
   ) {
 
     this.route.queryParams.subscribe((params) => {
@@ -28,13 +28,13 @@ export class PerfilPage {
     });
   }
 
-  deletarDados() {
+  deletarDadosUsuario() {
     const confirmar = confirm('Tem certeza de que deseja deletar sua conta?');
-  
+
     if (confirmar) {
-      this.dadosservice.deleteDados(this.usuarioLogado).then((usuario: any) => {
+      this.dadosusuarioservice.deleteDadosUsuario(this.usuarioLogado).then((usuario: any) => {
         this.usuarioLogado = usuario;
-        console.log('Usuário deletada com sucesso!');
+        console.log('Usuário deletado com sucesso!');
         this.navCtrl.navigateForward('home')
       });
     } else {

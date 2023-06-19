@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CadastrousuarioService } from '../api/cadastrousuario.service';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastrousuario',
@@ -11,40 +12,56 @@ import { Router } from '@angular/router';
 export class CadastrousuarioPage {
 
     cpf_usuario :  any;
-    email_usuario :  any;
+    email_usuario :  string;
     nome_usuario :  any;
     senha_usuario : any;
     telefone_usuario : any;
     dados: any;
-    isCadastroEnabled: boolean;
+    @ViewChild('cpfInput', { static: false }) cpfInput!: NgModel;
 
   constructor(
     private cadastrousuarioservice: CadastrousuarioService,
     private alertController: AlertController,
     private router: Router
-    ) {
 
+    ) {
     this.cpf_usuario = '',
     this.email_usuario = '',
     this.nome_usuario = '',
     this.senha_usuario = '',
     this.telefone_usuario = '',
     this.dados = cadastrousuarioservice;
-    this.isCadastroEnabled = false;
   }
 
   public async salvaUsuario() {
-    if (!this.isCadastroEnabled) {
+    if (
+      !this.cpf_usuario ||
+      !this.email_usuario ||
+      !this.nome_usuario ||
+      !this.senha_usuario ||
+      !this.telefone_usuario
+    ) {
       const alert = await this.alertController.create({
-      header: 'Erro',
-      message: 'Preencha todos os campos corretamente.',
-      buttons: ['OK']
-    });
-    await alert.present();
-    return;
-  }
-    const obj = {
+        header: 'Erro',
+        message: 'Preencha todos os campos.',
+        buttons: ['OK'],
+      });
+      await alert.present();
+      return;
+    }
 
+    const emailRegex = /[a-zA-Z0-9_.-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?/;
+    if (!emailRegex.test(this.email_usuario)) {
+      const alert = await this.alertController.create({
+        header: 'Erro',
+        message: 'Informe um e-mail válido.',
+        buttons: ['OK'],
+      });
+      await alert.present();
+      return;
+    }
+
+    const obj = {
       cpfUsuario   : this.cpf_usuario,
       emailUsuario : this.email_usuario,
       nomeUsuario  : this.nome_usuario,
@@ -82,33 +99,33 @@ export class CadastrousuarioPage {
   filtraCampoCpf(event: any) {
     const input = event.target;
     const regex = /[^\d]/g;
-    input.value = input.value.replace(regex, '');
-    this.cpf_usuario = input.value;
-    this.validarCamposPreenchidos();
-  }
+    let value = input.value.replace(regex, '');
+
+    if (value.length > 11) {
+      value = value.slice(0, 11);
+    }
+
+    input.value = value;
+    this.cpf_usuario = value;
+ }
 
   filtrarCampoNome(event: any) {
     const input = event.target;
     const regex = /[0-9]/g;
     input.value = input.value.replace(regex, '');
     this.nome_usuario = input.value;
-    this.validarCamposPreenchidos();
   }
 
   filtraCampoTel(event: any) {
     const input = event.target;
     const regex = /[^\d]/g;
-    input.value = input.value.replace(regex, '');
-    this.telefone_usuario = input.value;
-    this.validarCamposPreenchidos();
-  }
+    let value = input.value.replace(regex, '');
 
-  validarCamposPreenchidos() {
-    this.isCadastroEnabled = (
-      this.nome_usuario !== '' &&
-      this.cpf_usuario !== '' &&
-      this.email_usuario !== '' &&
-      this.senha_usuario !== ''
-    );
+    if (value.length > 11) {
+      value = value.slice(0, 11);
     }
+
+    input.value = value;
+    this.telefone_usuario = value;
+}
 }
