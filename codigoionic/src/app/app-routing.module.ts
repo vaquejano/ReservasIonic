@@ -57,6 +57,10 @@ const routes: Routes = [
     path: 'alterardadosempresa',
     loadChildren: () => import('./alterardadosempresa/alterardadosempresa.module').then( m => m.AlterardadosempresaPageModule)
   },
+  {
+    path: 'cardapioempresa',
+    loadChildren: () => import('./cardapioempresa/cardapioempresa.module').then( m => m.CardapioempresaPageModule)
+  },
 
 
 ];

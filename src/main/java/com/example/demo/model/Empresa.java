@@ -33,12 +33,14 @@ public class Empresa {
     private String enderecoEmpresa;
     @Column(name = "imagem_empresa")
     private String imagemEmpresa;
+    @Column(name = "cardapio_empresa")
+    private String cardapioEmpresa;
 
     public Empresa() {
 
     }
 
-    public Empresa(int codEmpresa, String nomeFantasia, String cnpjEmpresa, String senhaEmpresa, String emailEmpresa, String ramoEmpresa, String porteEmpresa, String nomeResponsavel, String enderecoEmpresa, String imagemEmpresa) {
+    public Empresa(int codEmpresa, String nomeFantasia, String cnpjEmpresa, String senhaEmpresa, String emailEmpresa, String ramoEmpresa, String porteEmpresa, String nomeResponsavel, String enderecoEmpresa, String imagemEmpresa, String cardapioEmpresa) {
         this.codEmpresa = codEmpresa;
         this.nomeFantasia = nomeFantasia;
         this.cnpjEmpresa = cnpjEmpresa;
@@ -49,6 +51,51 @@ public class Empresa {
         this.nomeResponsavel = nomeResponsavel;
         this.enderecoEmpresa = enderecoEmpresa;
         this.imagemEmpresa = imagemEmpresa;
+        this.cardapioEmpresa = cardapioEmpresa;
+    }
+
+    public int getCodEmpresa() {
+        return codEmpresa;
+    }
+
+    public String getNomeFantasia() {
+        return nomeFantasia;
+    }
+
+    public String getCnpjEmpresa() {
+        return cnpjEmpresa;
+    }
+
+    public String getSenhaEmpresa() {
+        return senhaEmpresa;
+    }
+
+    public String getEmailEmpresa() {
+        return emailEmpresa;
+    }
+
+    public String getRamoEmpresa() {
+        return ramoEmpresa;
+    }
+
+    public String getPorteEmpresa() {
+        return porteEmpresa;
+    }
+
+    public String getNomeResponsavel() {
+        return nomeResponsavel;
+    }
+
+    public String getEnderecoEmpresa() {
+        return enderecoEmpresa;
+    }
+
+    public String getImagemEmpresa() {
+        return imagemEmpresa;
+    }
+
+    public String getCardapioEmpresa() {
+        return cardapioEmpresa;
     }
 
     public void setCodEmpresa(int codEmpresa) {
@@ -91,43 +138,8 @@ public class Empresa {
         this.imagemEmpresa = imagemEmpresa;
     }
 
-    public int getCodEmpresa() {
-        return codEmpresa;
+    public void setCardapioEmpresa(String cardapioEmpresa) {
+        this.cardapioEmpresa = cardapioEmpresa;
     }
 
-    public String getNomeFantasia() {
-        return nomeFantasia;
-    }
-
-    public String getCnpjEmpresa() {
-        return cnpjEmpresa;
-    }
-
-    public String getSenhaEmpresa() {
-        return senhaEmpresa;
-    }
-
-    public String getEmailEmpresa() {
-        return emailEmpresa;
-    }
-
-    public String getRamoEmpresa() {
-        return ramoEmpresa;
-    }
-
-    public String getPorteEmpresa() {
-        return porteEmpresa;
-    }
-
-    public String getNomeResponsavel() {
-        return nomeResponsavel;
-    }
-
-    public String getEnderecoEmpresa() {
-        return enderecoEmpresa;
-    }
-
-    public String getImagemEmpresa() {
-        return imagemEmpresa;
-    }
 }
