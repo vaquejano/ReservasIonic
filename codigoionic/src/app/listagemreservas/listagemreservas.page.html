@@ -1,5 +1,55 @@
-<!-- <ion-content [fullscreen]="true" class="fundo"> -->
-<ion-header>
+<ion-header >
+  <ion-toolbar class="ion-text-center">
+      <ion-header>
+        <ion-toolbar class="fundo">
+          <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+            </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-row >
+  <ion-menu class="fundo" contentId="main-content">
+    <ion-toolbar class="ion-text-center fundo" >
+      <ion-header class="fundo">
+        <ion-toolbar class="fundo">
+        <ion-title> Menu </ion-title>
+      </ion-toolbar>
+      </ion-header>
+      <br>
+
+      <div class="clicavel" (click)="openPerfilEmpresa()">
+        <ion-icon class="fundo" name="person-outline" class="itens-menu"></ion-icon>
+      <ion-text><b> Perfil</b></ion-text>
+    </div>
+      <br>
+      <div class="clicavel" routerLink="/home">
+      <ion-icon style="size: 1px;" name="exit-outline" class="itens-menu"></ion-icon>
+      <ion-text><b> Sair</b></ion-text>
+      </div>
+      <br>
+    </ion-toolbar>
+  </ion-menu>
+
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+      </ion-toolbar>
+    </ion-header>
+  </div>
+
+
+
+<!-- <ion-header>
   <ion-toolbar class="fundo">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
@@ -17,7 +67,7 @@
 
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content class="fundo">
 
@@ -41,8 +91,8 @@
           <ion-row class="ion-text-center fonte">
             <ion-col>
               sdfsdfdsfds
-              <!-- {{descricaoreservas.codReserva}} -->
-              <!-- <b>{{ descricaoreserva.nomeUsuario }}</b>
+              <!-- {{descricaoreservas.codReserva}}
+              <b>{{ descricaoreserva.nomeUsuario }}</b>
               <b>{{ descricaoreserva.dataReserva }}</b>
               <b>{{ descricaoreserva.horario }}</b>
               <b>{{ descricaoreserva.quantidadeLugar }}</b> -->
@@ -54,7 +104,7 @@
 </ion-row>
 </ion-content>
   <br>
-  <!-- <ion-card class="personaliza-card">
+   <!-- <ion-card class="personaliza-card">
     <ion-row class="ion-justify-content-center">
       <ion-col class="col-botao-cancela clicavel">
       <img src="assets/img/botaocancela.jpg" class="botao-cancela">
