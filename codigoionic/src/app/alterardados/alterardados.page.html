@@ -11,22 +11,28 @@
 
  <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> E-mail: </ion-label>
-    <ion-input type="email" placeholder="email@domain.com" [(ngModel)]="usuario.email_usuario"></ion-input>
+    <ion-input
+    type="email"
+    placeholder="email@domain.com"
+    [(ngModel)]="usuarioLogado.email_usuario">
+      {{usuarioLogado.emailUsuario}}
+  </ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Senha: </ion-label>
-    <ion-input type="password" [(ngModel)]="usuario.senha_usuario"></ion-input>
+    <ion-input type="password" [(ngModel)]="usuarioLogado.senha_usuario">
+       {{usuarioLogado.senhaUsuario}}
+    </ion-input>
   </ion-item>
 
   <br>
   <div class="ion-text-center">
-  <ion-button shape="round" class="login-button green-button" routerLink="/perfil">
+  <ion-button shape="round" class="login-button green-button" (click)="alterarDados()">
     <ion-icon slot="start" name="checkbox-outline"></ion-icon>
     <br>
     <b> Salvar </b>
   </ion-button>
 </div>
 <br>
-
 </ion-content>

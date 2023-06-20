@@ -60,7 +60,11 @@
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Senha: </ion-label>
-    <ion-input type="password" [(ngModel)]="senha_empresa" (keyup.enter)="salvaEmpresa()"></ion-input>
+    <ion-input
+    type="password"
+    [(ngModel)]="senha_empresa"
+    (keyup.enter)="salvaEmpresa()"
+    ></ion-input>
   </ion-item>
   <br>
 

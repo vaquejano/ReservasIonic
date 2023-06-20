@@ -12,8 +12,8 @@ export class CadastroempresaService {
 
   public salvaEmpresa(obj: any) {
     return new Promise((ret) => {
-      
-console.log(obj)
+
+      console.log(obj)
 
       let headers = new HttpHeaders();
       headers.append('Content-Type', 'application/json; charset=UTF-8');

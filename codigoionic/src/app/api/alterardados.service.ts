@@ -6,12 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class AlterardadosService {
 
-
   private host = 'http://localhost:8080/api/empresa/';
 
-
   constructor(private http: HttpClient) { }
-
 
   public putDados(empresaLogada: any) {
     return new Promise((ret) => {
@@ -25,5 +22,4 @@ export class AlterardadosService {
       });
     });
   }
-
 }

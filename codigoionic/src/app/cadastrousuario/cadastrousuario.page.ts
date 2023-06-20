@@ -42,7 +42,7 @@ export class CadastrousuarioPage {
       !this.telefone_usuario
     ) {
       const alert = await this.alertController.create({
-        header: 'Erro',
+        header: 'Atenção',
         message: 'Preencha todos os campos.',
         buttons: ['OK'],
       });
@@ -53,7 +53,7 @@ export class CadastrousuarioPage {
     const emailRegex = /[a-zA-Z0-9_.-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?/;
     if (!emailRegex.test(this.email_usuario)) {
       const alert = await this.alertController.create({
-        header: 'Erro',
+        header: 'Atenção',
         message: 'Informe um e-mail válido.',
         buttons: ['OK'],
       });

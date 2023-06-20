@@ -9,6 +9,7 @@ import { AlterardadosService } from '../api/alterardados.service';
   styleUrls: ['./alterardadosempresa.page.scss'],
 })
 export class AlterardadosempresaPage {
+
   public empresaLogada: any = {};
 
   constructor(
@@ -58,5 +59,4 @@ export class AlterardadosempresaPage {
       event.preventDefault();
     }
   }
-
 }
