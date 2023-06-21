@@ -29,25 +29,6 @@ export class DadosUsuarioService {
     });
   }
 
-  public postDados(obj: any) {
-    return new Promise((ret) => {
-      let headers = new HttpHeaders();
-      headers.append('Content-Type', 'application/json; charset=UTF-8');
-      this.http.post(this.host, JSON.stringify(obj), { headers: headers }).subscribe(dados => {
-        ret(dados);
-      });
-    });
-  }
-
-  public putDados(obj: any) {
-    return new Promise((ret) => {
-      let headers = new HttpHeaders();
-      headers.append('Content-Type', 'application/json; charset=UTF-8');
-      this.http.put(this.host + obj.id, JSON.stringify(obj), { headers: headers }).subscribe(dados => {
-        ret(dados);
-      });
-    });
-  }
 
   public deleteDadosUsuario(usuarioLogado: any): Promise<string> {
     return new Promise<string>((resolve, reject) => {

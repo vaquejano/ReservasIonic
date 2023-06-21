@@ -1,11 +1,20 @@
-<ion-content [fullscreen]="true" class="fundo">
-  <ion-buttons slot="start">
+<ion-header class="fundo ion-text-center">
+  <ion-toolbar class="fundo">
+    <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="fundo ion-text-center">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
   <ion-row class="ion-text-center">
-    <ion-col size="13" >
-    <img src="assets/img/resrvtab.png">
-  </ion-col>
+    <ion-col size="13">
+      <img src="assets/img/resrvtab.png">
+    </ion-col>
   </ion-row>
 
   <ion-card class="fundo">
@@ -51,27 +60,27 @@
 
     </ion-card-content>
   </ion-card>
-<br>
+  <br>
   <ion-row class="button-row">
     <div class="ion-text-center">
-    <ion-col size="2" class="button-col">
-      <ion-button class="login-button green-button" shape="round" (click)="alterarDados()">
-        <ion-icon slot="start" name="create-outline"></ion-icon>
-        Alterar
-        <Br>
+      <ion-col size="2" class="button-col">
+        <ion-button class="login-button green-button" shape="round" (click)="alterarDados()">
+          <ion-icon slot="start" name="create-outline"></ion-icon>
+          Alterar
+          <Br>
           Dados
-      </ion-button>
-    </ion-col>
+        </ion-button>
+      </ion-col>
 
-    <ion-col size="2" class="ion-text-end button-col">
-      <ion-button id="present-alert" shape="round" color="danger" (click)="deletarDados()">
-        <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
-        Excluir
-        <br>
-        Conta
-      </ion-button>
-    </ion-col>
-  </div>
+      <ion-col size="2" class="ion-text-end button-col">
+        <ion-button id="present-alert" shape="round" color="danger" (click)="deletarDados()">
+          <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
+          Excluir
+          <br>
+          Conta
+        </ion-button>
+      </ion-col>
+    </div>
   </ion-row>
   <br>
 </ion-content>

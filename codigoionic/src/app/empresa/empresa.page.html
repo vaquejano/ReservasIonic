@@ -1,47 +1,51 @@
-<ion-header>
+<ion-header class="fundo ion-text-center">
+  <ion-toolbar class="fundo">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
+  </ion-toolbar>
 </ion-header>
+
 
 <ion-content [fullscreen]="true" class="fundo">
   <ion-content [fullscreen]="true" class="fundo">
-  <ion-row class="ion-text-center">
-    <ion-col size="13" >
-    <img src="assets/img/resrvtab.png">
-  </ion-col>
-  </ion-row>
+    <ion-row class="ion-text-center">
+      <ion-col size="13">
+        <img src="assets/img/resrvtab.png">
+      </ion-col>
+    </ion-row>
 
-  <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked> CNPJ: </ion-label>
-    <ion-input type="number" placeholder="00.000.000/0001-00" [(ngModel)]="cnpjEmpresa" (keyup)="onKeyUp($event)"></ion-input>
-  </ion-item>
+    <ion-item style="margin-bottom: 5px" class="fundo">
+      <ion-label position="floating" stacked> CNPJ: </ion-label>
+      <ion-input type="number" placeholder="00.000.000/0001-00" [(ngModel)]="cnpjEmpresa"
+        (keyup)="onKeyUp($event)"></ion-input>
+    </ion-item>
 
-  <ion-item style="margin-bottom: 5px" class="fundo">
-    <ion-label position="floating" stacked> Senha: </ion-label>
-    <ion-input type="password" [(ngModel)]="senhaEmpresa" (keyup.enter)="fazerLogin()"></ion-input>
-  </ion-item>
+    <ion-item style="margin-bottom: 5px" class="fundo">
+      <ion-label position="floating" stacked> Senha: </ion-label>
+      <ion-input type="password" [(ngModel)]="senhaEmpresa" (keyup.enter)="fazerLogin()"></ion-input>
+    </ion-item>
 
-<br>
-<br>
+    <br>
+    <br>
 
-<div class="ion-text-center">
-<ion-button shape="round" class="login-button green-button clicavel" (click)="fazerLogin()">
-  <ion-icon slot="start" name="enter-outline"></ion-icon>
-  <b>Entrar</b>
-</ion-button>
-</div>
+    <div class="ion-text-center">
+      <ion-button shape="round" class="login-button green-button clicavel" (click)="fazerLogin()">
+        <ion-icon slot="start" name="enter-outline"></ion-icon>
+        <b>Entrar</b>
+      </ion-button>
+    </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-<div class="ion-text-center">
-<ion-text class="clicavel" routerLink="/cadastroempresa">
-<b><u>Criar conta</u></b></ion-text>
-</div>
-<br>
-<br>
-</ion-content>
+    <div class="ion-text-center">
+      <ion-text class="clicavel" routerLink="/cadastroempresa">
+        <b><u>Criar conta</u></b></ion-text>
+    </div>
+    <br>
+    <br>
+  </ion-content>
