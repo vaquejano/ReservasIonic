@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { AlterardadosPageRoutingModule } from './alterardados-routing.module';
-
 import { AlterardadosPage } from './alterardados.page';
 
 @NgModule({
@@ -17,4 +14,4 @@ import { AlterardadosPage } from './alterardados.page';
   ],
   declarations: [AlterardadosPage]
 })
-export class AlterardadosPageModule {}
+export class AlterardadosPageModule { }

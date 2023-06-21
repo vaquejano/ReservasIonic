@@ -1,51 +1,58 @@
 <ion-content [fullscreen]="true" class="fundo">
   <ion-row class="ion-text-center">
     <ion-col>
-    <img src="assets/img/resrvtab.png">
-  </ion-col>
+      <img src="assets/img/resrvtab.png" />
+    </ion-col>
   </ion-row>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Nome Fantasia: </ion-label>
-    <ion-input [(ngModel)]="empresaLogada.nomeFantasia" (keypress)="validaNome($event)">  {{ empresaLogada.nomeFantasia }}  </ion-input>
+    <ion-input
+      [(ngModel)]="empresaLogada.nomeFantasia"
+      (keypress)="validaNome($event)"
+    ></ion-input>
   </ion-item>
 
-   <ion-item style="margin-bottom: 5px" class="fundo">
+  <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> E-mail: </ion-label>
     <ion-input
-    type="email"
-    placeholder="email@domain.com"
-    [(ngModel)]="empresaLogada.emailEmpresa">
-     {{ empresaLogada.emailEmpresa }} </ion-input>
+      type="email"
+      placeholder="email@domain.com"
+      [(ngModel)]="empresaLogada.emailEmpresa"
+    ></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Nome do responsável: </ion-label>
-    <ion-input [(ngModel)]="empresaLogada.nomeResponsavel" (keypress)="validaResponsavel($event)">  {{ empresaLogada.nomeResponsavel }}</ion-input>
+    <ion-input
+      [(ngModel)]="empresaLogada.nomeResponsavel"
+      (keypress)="validaResponsavel($event)"
+    ></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Endereço: </ion-label>
-    <ion-input [(ngModel)]="empresaLogada.enderecoEmpresa">
-       {{ empresaLogada.enderecoEmpresa }}</ion-input>
+    <ion-input [(ngModel)]="empresaLogada.enderecoEmpresa"></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Senha: </ion-label>
     <ion-input
-    type="password"
-    [(ngModel)]="empresaLogada.senhaEmpresa">
-     {{ empresaLogada.senhaEmpresa }} </ion-input>
+      type="password"
+      [(ngModel)]="empresaLogada.senhaEmpresa"
+    ></ion-input>
   </ion-item>
- <br>
+  <br />
   <ion-row class="ion-text-center">
     <ion-col>
-  <ion-button shape="round" class="login-button green-button" (click)="alterarDados()">
-    <ion-icon slot="start" name="checkbox-outline"></ion-icon>
-    <b>Salvar</b>
-  </ion-button>
-</ion-col>
-</ion-row>
-<br>
-
+      <ion-button
+        shape="round"
+        class="login-button green-button"
+        (click)="alterarDados()">
+        <ion-icon slot="start" name="checkbox-outline"></ion-icon>
+        <b>Salvar</b>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <br />
 </ion-content>

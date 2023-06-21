@@ -1,38 +1,42 @@
- <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      </ion-buttons>
+<ion-buttons slot="start">
+  <ion-back-button></ion-back-button>
+</ion-buttons>
 
 <ion-content [fullscreen]="true" class="fundo">
   <ion-row class="ion-text-center">
     <ion-col>
-    <img src="assets/img/resrvtab.png">
-  </ion-col>
+      <img src="assets/img/resrvtab.png" />
+    </ion-col>
   </ion-row>
 
- <ion-item style="margin-bottom: 5px" class="fundo">
+  <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> E-mail: </ion-label>
     <ion-input
-    type="email"
-    placeholder="email@domain.com"
-    [(ngModel)]="usuarioLogado.email_usuario">
-      {{usuarioLogado.emailUsuario}}
-  </ion-input>
+      type="email"
+      placeholder="email@domain.com"
+      [(ngModel)]="usuarioLogado.email_usuario"
+    ></ion-input>
   </ion-item>
 
   <ion-item style="margin-bottom: 5px" class="fundo">
     <ion-label position="floating" stacked> Senha: </ion-label>
-    <ion-input type="password" [(ngModel)]="usuarioLogado.senha_usuario">
-       {{usuarioLogado.senhaUsuario}}
-    </ion-input>
+    <ion-input
+      type="password"
+      [(ngModel)]="usuarioLogado.senha_usuario"
+    ></ion-input>
   </ion-item>
 
-  <br>
+  <br />
   <div class="ion-text-center">
-  <ion-button shape="round" class="login-button green-button" (click)="alterarDados()">
-    <ion-icon slot="start" name="checkbox-outline"></ion-icon>
-    <br>
-    <b> Salvar </b>
-  </ion-button>
-</div>
-<br>
+    <ion-button
+      shape="round"
+      class="login-button green-button"
+      (click)="alterarDados()"
+    >
+      <ion-icon slot="start" name="checkbox-outline"></ion-icon>
+      <br />
+      <b> Salvar </b>
+    </ion-button>
+  </div>
+  <br />
 </ion-content>
