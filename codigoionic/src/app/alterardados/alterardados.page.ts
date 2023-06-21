@@ -42,7 +42,7 @@ export class AlterardadosPage {
       (usuario: any) => {
         this.exibirAlertaSucesso().then(() => {
         console.log('Dados atualizados com sucesso!');
-        this.navCtrl.navigateForward('perfilempresa', {
+        this.navCtrl.navigateForward('perfil', {
           queryParams: { usuarioLogado: this.usuarioLogado },
         });
       });
