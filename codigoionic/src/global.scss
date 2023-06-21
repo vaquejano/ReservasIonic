@@ -36,3 +36,10 @@
 .blue-button {
   --ion-color-primary: #3D4A58;
 }
+
+/* Chrome e outros */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
