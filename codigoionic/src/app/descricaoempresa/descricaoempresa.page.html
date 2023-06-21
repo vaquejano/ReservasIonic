@@ -27,7 +27,7 @@
       <div class="image-container">
       <img [src]="descricaoempresa.imagemEmpresa" class="imagem-empresa">
     </div>
-      <!-- <ion-text><br><b> {{ descricaoempresa.descricao }} </b></ion-text> -->
+      
     </ion-col>
     </ion-row>
     <br>
@@ -46,23 +46,11 @@
 
     <ion-item style="margin-bottom: 5px" class="fundo">
       <ion-label position="floating" stacked> Quantidade de Lugares: </ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input [(ngModel)]="reserv.quantidadeLugar"  type="number"></ion-input>
     </ion-item>
 
 
-  <!-- <ion-row>
-    <ion-col class="ion-text-center">
-    <ion-text > Data </ion-text>
-    <ion-input class="borda-input" label-placement="floating" fill="solid" placeholder="Somente números" [(ngModel)]="data_reserva" (keydown)="somenteNumeros($event)">
-    </ion-input>
-    <br>
-    <ion-text > Horário </ion-text>
-    <ion-input class="borda-input" label-placement="floating" fill="solid" [(ngModel)]="horario" (keydown)="somenteNumeros($event)"></ion-input>
-    <br>
-    <ion-text > Quantidade de lugares </ion-text>
-    <ion-input class="borda-input" label-placement="floating" fill="solid" placeholder="Somente números" [(ngModel)]="quantidade_lugar"  (keydown)="somenteNumeros($event)"></ion-input>
-</ion-col>
-  </ion-row> -->
+  
 <br>
 
 <ion-button shape="round" class="login-button green-button" (click)="reservando()" >
