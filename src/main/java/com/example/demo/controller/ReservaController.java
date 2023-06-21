@@ -51,17 +51,6 @@ public class ReservaController {
         return ResponseEntity.status(HttpStatus.OK).body("Reserva removida com sucesso");
 }
 
-@GetMapping("/reservas/{codEmpresa}")
-public ResponseEntity<List<Reserva>> listarReservasPorEmpresa(@PathVariable("codEmpresa") Long codEmpresa) {
-    List<Reserva> reservas = reservaService.listarReservasPorEmpresa(codEmpresa);
-    
-    if (reservas.isEmpty()) {
-        return ResponseEntity.noContent().build();
-    } else {
-        return ResponseEntity.ok(reservas);
-    }
-}
-
 }
     
     

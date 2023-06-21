@@ -10,11 +10,11 @@ import { ReservausuarioService } from '../api/reservausuario.service';
   styleUrls: ['./descricaoempresa.page.scss'],
 })
 export class DescricaoempresaPage {
-  public usuarioLogado : any = {}
+  public usuarioLogado: any = {}
 
 
-  
-  public descricaoempresa : any  = {};
+
+  public descricaoempresa: any = {};
 
   public reserv = {
     codReserva: 0,
@@ -47,19 +47,19 @@ export class DescricaoempresaPage {
 
 
 
-  
+
 
   constructor(
-     private reservausuarioservice: ReservausuarioService,
-     private navCtrl: NavController,
-     private route: ActivatedRoute,
-     public alertController: AlertController) {
-
-      
-      
+    private reservausuarioservice: ReservausuarioService,
+    private navCtrl: NavController,
+    private route: ActivatedRoute,
+    public alertController: AlertController) {
 
 
-    this.route.queryParams.subscribe(params=>{
+
+
+
+    this.route.queryParams.subscribe(params => {
       this.descricaoempresa = params['descricaoempresa']
     });
 
@@ -77,7 +77,7 @@ export class DescricaoempresaPage {
   }
 
 
-  
+
   public reservando() {
     this.reserv.codReserva = this.reserv.codReserva;
     this.reserv.dataReserva = this.reserv.dataReserva;
@@ -86,7 +86,6 @@ export class DescricaoempresaPage {
     this.reserv.empresa = this.descricaoempresa;
     this.reserv.usuario = this.usuarioLogado;
 
-    
 
     this.reservausuarioservice.reservando(this.reserv).then((dados: any) => {
       this.reserv.codReserva = dados.codReserva;
@@ -95,8 +94,12 @@ export class DescricaoempresaPage {
       this.reserv.horario = dados.horario;
       this.reserv.empresa = dados.descricaoempresa
       this.reserv.usuario = dados.usuarioLogado
+      this.navCtrl.navigateForward('listagemempresas', {
+        queryParams: { usuarioLogado: this.usuarioLogado },
       });
-    } 
+      this.mostrarAlerta();
+    });
+  }
 
   async mostrarAlerta() {
     const alerta = await this.alertController.create({

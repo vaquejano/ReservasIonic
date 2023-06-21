@@ -36,21 +36,7 @@ public class ReservaServiceImpl implements ReservaService {
     public void deleteByIdReserva(Integer codReserva) {
         reservaRepository.deleteById(codReserva);
     }
-    
- 
-    @Override
-    public List<Reserva> listarReservasPorEmpresa(Long codEmpresa) {
-        return reservaRepository.findByEmpresaCodEmpresa(codEmpresa);
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      
 }
     
     
