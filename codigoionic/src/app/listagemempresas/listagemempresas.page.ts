@@ -33,7 +33,7 @@ export class ListagemempresasPage {
     this.route.queryParams.subscribe((params) => {
       this.usuarioLogado = params['usuarioLogado'];
       this.dadosservice.getEmpresas().then((empresa: any) => {
-      this.descricaoempresas = params['descricaoempresa'];
+      this.descricaoempresas = empresa;
 
         console.log(this.descricaoempresas)
       });
