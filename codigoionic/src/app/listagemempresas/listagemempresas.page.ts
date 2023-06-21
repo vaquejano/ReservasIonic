@@ -15,13 +15,6 @@ export class ListagemempresasPage {
 
     public usuarioLogado : any = {}
 
-    public selected = 0;
-
-    public pathImgs = '';
-
-
-    //  public descricaoempresas : any = {} 
-
     public descricaoempresas = [
       { codEmpresa      : '',
         nomeFantasia    : '',
@@ -36,12 +29,6 @@ export class ListagemempresasPage {
       }]
 
   constructor(private navCtrl: NavController, private router: Router, private dadosservice: DadosService, private route: ActivatedRoute,) {
-    // this.setSelected(1);
-
-    // this.nome_fantasia = 'nome_fantasia';
-    // this.dados = dadosservice;
-
-  
 
     this.route.queryParams.subscribe((params) => {
       this.usuarioLogado = params['usuarioLogado'];
@@ -70,13 +57,5 @@ export class ListagemempresasPage {
     });
   }
 
-  // public setSelected(codigoCategoria: number) {
-  //   this.selected = codigoCategoria;
-
-  //   this.descricaoempresas.map(el => el.visibled = false);
-
-  //   this.descricaoempresas
-  //   .filter(el => el.categoria == this.selected)
-  //   .map(el => el.visibled = true);
-  // }
+ 
 }

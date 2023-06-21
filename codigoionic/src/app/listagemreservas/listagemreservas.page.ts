@@ -12,24 +12,44 @@ import { ListagemreservasService } from '../api/listagemreservas.service';
 export class ListagemreservasPage {
 
   public empresaLogada : any = {}
-  public descricaoreservas: any = {}
+  // public descricaoreservas: any = {}
 
-  // public descricaoreservas = [
-  //   { codReserva      : '',
-  //     dataReserva     : '',
-  //     horario         : '',
-  //     quantidadeLugar : '',
-  //     codEmpresa      : '',
-  //     codUsuario      : ''
-
-  //   }
-  // ]
+  public descricaoreservas = [{
+      codReserva      : '',
+      dataReserva     : '',
+      horario         : '',
+      quantidadeLugar : '',
+      codEmpresa      : '',
+      codUsuario      : '',
+    
+      usuario: {
+        codUsuario: 0,
+        cpfUsuario: '',
+        emailUsuario: '',
+        nomeUsuario: '',
+        senhaUsuario: '',
+        telefoneUsuario: ''
+      },
+      empresa: {
+        codEmpresa: 0,
+        cardapioEmpresa: '',
+        cnpjEmpresa: '',
+        emailEmpresa: '',
+        enderecoEmpresa: '',
+        imagemEmpresa: '',
+        nomeFantasia: '',
+        nomeResponsavel: '',
+        porteEmpresa: '',
+        ramoEmpresa: '',
+        senhaEmpresa: ''
+      },
+}]
 
   constructor(private router: Router, private listagemreservasservice: ListagemreservasService, private route: ActivatedRoute, private navCtrl: NavController) {
 
     this.route.queryParams.subscribe((params) => {
       this.empresaLogada = params['empresaLogada'];
-      this.listagemreservasservice.getReservas(this.empresaLogada.codEmpresa).then((reservas: any) =>{
+      this.listagemreservasservice.getReservas().then((reservas: any) =>{
         this.descricaoreservas = reservas
       })
     });

@@ -15,6 +15,8 @@ export class EmpresaPage {
   empresaLogada: any;
   loginBemSucedido = false;
 
+  
+
   constructor(
     private loginempresaservice: LoginempresaService,
     private alertController: AlertController,

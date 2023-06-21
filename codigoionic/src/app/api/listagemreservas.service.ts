@@ -10,20 +10,11 @@ export class ListagemreservasService {
 
   constructor(private http: HttpClient) { }
 
-  public getReservas(codEmpresa: any): Promise<any> {
-    console.log(codEmpresa)
-    return new Promise((resolve) => {
-      this.http.get(this.host + 'reservas/'+`${codEmpresa}`).subscribe(
-        (empresa) => {
-          console.log(empresa)
-          resolve(empresa);
-        },
-        (error) => {
-        }
-      );
-    }).catch((error) => {
-      console.error('Erro na requisição HTTP:', error);
-      throw error;
+  public getReservas(){
+    return new Promise((ret) => {
+      this.http.get(this.host + 'reservas').subscribe(reserva => {
+        ret(reserva);
+      });
     });
   }
 

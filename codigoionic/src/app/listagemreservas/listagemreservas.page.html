@@ -1,109 +1,77 @@
-<ion-header >
-  <ion-toolbar class="ion-text-center">
-      <ion-header>
-        <ion-toolbar class="fundo">
-          <ion-buttons slot="start">
-            <ion-back-button></ion-back-button>
+<ion-content [fullscreen]="true" class="fundo">
+
+  <ion-header >
+    <ion-toolbar class="ion-text-center">
+        <ion-header>
+          <ion-toolbar class="fundo">
+            <ion-buttons slot="start">
+              <ion-back-button></ion-back-button>
+              </ion-buttons>
+            <ion-buttons slot="end">
+              <ion-menu-button></ion-menu-button>
             </ion-buttons>
+            <ion-title> {{empresaLogada.nomeFantasia}} </ion-title>
+          </ion-toolbar>
+        </ion-header>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-row>
+    <ion-menu class="fundo" contentId="main-content">
+      <ion-toolbar class="ion-text-center fundo" >
+        <ion-header class="fundo">
+          <ion-toolbar class="fundo">
+          <ion-title> Menu </ion-title>
+        </ion-toolbar>
+        </ion-header>
+        <br>
+
+<div class="clicavel" (click)="openPerfilEmpresa()">
+          <ion-icon class="fundo" name="person-outline" class="itens-menu"></ion-icon>
+        <ion-text><b> Perfil</b></ion-text>
+      </div>
+        <br>
+        <div class="clicavel" routerLink="/home">
+        <ion-icon style="size: 1px;" name="exit-outline" class="itens-menu"></ion-icon>
+        <ion-text><b> Sair</b></ion-text>
+        </div>
+        <br>
+      </ion-toolbar>
+    </ion-menu>
+
+    <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar>
           <ion-buttons slot="end">
             <ion-menu-button></ion-menu-button>
           </ion-buttons>
+
         </ion-toolbar>
       </ion-header>
-  </ion-toolbar>
-</ion-header>
-
-<ion-row >
-  <ion-menu class="fundo" contentId="main-content">
-    <ion-toolbar class="ion-text-center fundo" >
-      <ion-header class="fundo">
-        <ion-toolbar class="fundo">
-        <ion-title> Menu </ion-title>
-      </ion-toolbar>
-      </ion-header>
-      <br>
-
-      <div class="clicavel" (click)="openPerfilEmpresa()">
-        <ion-icon class="fundo" name="person-outline" class="itens-menu"></ion-icon>
-      <ion-text><b> Perfil</b></ion-text>
     </div>
-      <br>
-      <div class="clicavel" routerLink="/home">
-      <ion-icon style="size: 1px;" name="exit-outline" class="itens-menu"></ion-icon>
-      <ion-text><b> Sair</b></ion-text>
-      </div>
-      <br>
-    </ion-toolbar>
-  </ion-menu>
-
-  <div class="ion-page" id="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="end">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-
-      </ion-toolbar>
-    </ion-header>
-  </div>
+</ion-row>
 
 
-
-<!-- <ion-header>
-  <ion-toolbar class="fundo">
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center">
-      <b> Reservas </b>
-    </ion-title>
-    <ion-buttons slot="end" class="perfil-container">
-      <ion-button class="perfil" (click)="openPerfilEmpresa()">
-        <div class="icon-wrapper">
-          <ion-icon size="large" name="person-sharp"></ion-icon>
-          <div class="label">Perfil</div>
-        </div>
-      </ion-button>
-
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header> -->
 
 <ion-content class="fundo">
 
-
+<ion-row>
+  <ion-col size="6" *ngFor="let descricaoreserva of descricaoreservas; let ix = index" (click)="confirmarReserva()">
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col size="12" class-="card-descricaoreserva">
+  </ion-col>
+</ion-row>
+<ion-row class="ion-text-center">
+  <ion-col>
+    {{descricaoreservas}}
+  </ion-col>
+</ion-row>
   
 
 
-<ion-row>
-  <ion-col size="6" *ngFor="let descricaoreserva of descricaoreservas; let ix = index"
-      (click)="confirmarReserva()">
-      
-      <br>
-      <ion-row>
-        <ion-col size="12" >
-          <ion-row>
-            <ion-col size="12">
-             
-            </ion-col>
-          </ion-row>
-
-          <ion-row class="ion-text-center fonte">
-            <ion-col>
-              sdfsdfdsfds
-              <!-- {{descricaoreservas.codReserva}}
-              <b>{{ descricaoreserva.nomeUsuario }}</b>
-              <b>{{ descricaoreserva.dataReserva }}</b>
-              <b>{{ descricaoreserva.horario }}</b>
-              <b>{{ descricaoreserva.quantidadeLugar }}</b> -->
-            </ion-col>
-      </ion-row>
-</ion-col>
-</ion-row>
-</ion-col>
-</ion-row>
 </ion-content>
-  <br>
    <!-- <ion-card class="personaliza-card">
     <ion-row class="ion-justify-content-center">
       <ion-col class="col-botao-cancela clicavel">
