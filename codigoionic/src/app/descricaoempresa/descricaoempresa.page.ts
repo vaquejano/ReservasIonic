@@ -69,6 +69,13 @@ export class DescricaoempresaPage {
   }
 
 
+  public cardapio(){
+    this.navCtrl.navigateForward('cardapioempresa', {
+      queryParams: { descricaoempresa: this.descricaoempresa },
+    });
+
+  }
+
   formatarData(event: any) {
     const valorDigitado = event.target.value;
     const data = new Date(valorDigitado);
