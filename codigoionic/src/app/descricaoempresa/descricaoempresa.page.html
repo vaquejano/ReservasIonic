@@ -4,70 +4,58 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title><b> Faça sua reserva! </b></ion-title>
-            <ion-buttons slot="end" class="cardapio-container">
-              <ion-button class="cardapio" (click)="cardapio()">
-                <div class="nome-cardapio-wrapper">
-                  <ion-icon size="large" name="restaurant-sharp"></ion-icon>
-                  <div class="label"> Cardápio </div>
-                </div>
-              </ion-button>
-            </ion-buttons>
+    <ion-buttons slot="end" class="cardapio-container">
+      <ion-button class="cardapio" (click)="cardapio()">
+        <div class="nome-cardapio-wrapper">
+          <ion-icon size="large" name="restaurant-sharp"></ion-icon>
+          <div class="label"> Cardápio </div>
+        </div>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content class="fundo ion-text-center">
-  <!-- <ion-header>
-    <ion-toolbar class="fundo">
-        <ion-header>
-          <ion-toolbar class="fundo">
-            <ion-buttons slot="start">
-              <ion-back-button>Back</ion-back-button>
-              </ion-buttons> -->
- 
-          <!-- </ion-toolbar>
-  </ion-header>
-</ion-toolbar>
-</ion-header> -->
   <br>
 
 
   <ion-row class="ion-justify-content-center">
     <ion-col size="11" class="img-lanche">
       <div class="image-container">
-      <img [src]="descricaoempresa.imagemEmpresa" class="imagem-empresa">
-    </div>
-      
+        <img [src]="descricaoempresa.imagemEmpresa" class="imagem-empresa">
+      </div>
+
     </ion-col>
-    </ion-row>
-    <br>
-    <br>
+  </ion-row>
+  <br>
+  <br>
 
 
-    <ion-item style="margin-bottom: 5px" class="fundo">
-      <ion-label position="floating" stacked> Data: "Colocar as barras entre os números, estilo americano!"</ion-label>
-      <ion-input [(ngModel)]="reserv.dataReserva" (ionChange)="formatarData($event)"></ion-input>
-    </ion-item>
+  <ion-item style="margin-bottom: 5px" class="fundo">
+    <ion-label position="floating" stacked> Data:</ion-label>
+    <ion-input placeholder="Preencher no formato americano! (ano-mês-dia)" [(ngModel)]="reserv.dataReserva" (ionChange)="formatarData($event)"></ion-input>
+  </ion-item>
 
-    <ion-item style="margin-bottom: 5px" class="fundo">
-      <ion-label position="floating" stacked> Horário: </ion-label>
-      <ion-input  [(ngModel)]="reserv.horario">  </ion-input>
-    </ion-item>
+  <ion-item style="margin-bottom: 5px" class="fundo">
+    <ion-label position="floating" stacked> Horário: </ion-label>
+    <ion-input [(ngModel)]="reserv.horario"> </ion-input>
+  </ion-item>
 
-    <ion-item style="margin-bottom: 5px" class="fundo">
-      <ion-label position="floating" stacked> Quantidade de Lugares: </ion-label>
-      <ion-input [(ngModel)]="reserv.quantidadeLugar"  type="number"></ion-input>
-    </ion-item>
+  <ion-item style="margin-bottom: 5px" class="fundo">
+    <ion-label position="floating" stacked> Quantidade de Lugares: </ion-label>
+    <ion-input [(ngModel)]="reserv.quantidadeLugar" type="number"></ion-input>
+  </ion-item>
 
 
-  
-<br>
 
-<ion-button shape="round" class="login-button green-button" (click)="reservando()" >
-  <ion-icon slot="start" name="enter-outline"></ion-icon>
-  <b> Reservar </b>
+  <br>
 
-    <!-- TENTATIVA DE COLOCAR UM ALERTA -->
+  <ion-button shape="round" class="login-button green-button" (click)="reservando()">
+    <ion-icon slot="start" name="enter-outline"></ion-icon>
+    <b> Reservar </b>
 
-</ion-button>
+
+
+  </ion-button>
 </ion-content>
